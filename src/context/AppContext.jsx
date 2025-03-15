@@ -3,10 +3,11 @@ import { createContext, useContext, useState } from 'react';
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [selectedOption, setSelectedOption] = useState('option1');
+  const [selectedTheme, setSelectedTheme] = useState('tema1');
+  const [language, setLanguage] = useState('es');
 
   return (
-    <AppContext.Provider value={{ selectedOption, setSelectedOption }}>
+    <AppContext.Provider value={{ selectedTheme, setSelectedTheme, language, setLanguage }}>
       {children}
     </AppContext.Provider>
   );

@@ -1,16 +1,15 @@
 import NavBar from '../components/NavBar/NavBar';
 import LeftSideBar from '../components/LeftSideBar/LeftSideBar';
-import RightSideBar from '../components/RightSideBar/RightSideBar';
 import MainContent from '../components/MainContent/MainContent';
+import "./AppLayout.css";
 
 const AppLayout = () => {
   return (
-    <div className="app-container">
+    <div className="app-layout">
       <NavBar />
-      <div className="content-layout">
+      <div className="main-area">
         <LeftSideBar />
         <MainContent />
-        <RightSideBar />
       </div>
     </div>
   );

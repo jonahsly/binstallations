@@ -1,0 +1,35 @@
+.expandable-section {
+  border: 1px solid #444;
+  margin-bottom: 10px;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+  background-color: #e4a4a4;
+}
+
+.section-header {
+  padding: 12px;
+  cursor: pointer;
+  background-color: #45502b;
+  font-weight: bold;
+  color: #b84242;
+  border-radius: 8px 8px 0 0;
+}
+
+.section-header:hover {
+  background-color: #444;
+}
+
+.section-content {
+  padding: 16px;
+  background-color: #111;
+  color: white;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 0 0 8px 8px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

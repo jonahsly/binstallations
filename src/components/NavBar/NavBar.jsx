@@ -1,18 +1,24 @@
-import DropdownMenu from "./DropdownMenu";
-import logo from "../../assets/logo.png";
-import "./NavBar.css";
+import { useAppContext } from '../../context/AppContext';
+import './NavBar.css';
 
 const Navbar = () => {
-    return (
-      <header className="navbar">
-      <div className="navbar-content">
-        <img src={logo} alt="Logo" className="logo" />
-        <h1>Mi Aplicación</h1>
-        <DropdownMenu />
-      </div>
-    </header>
-    );
-  };
-  
-  export default Navbar;
-  
+  const { language, setLanguage } = useAppContext();
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-logo">🌐</div>
+      <div className="navbar-title">Mi Aplicación</div>
+      <select
+        className="language-selector"
+        value={language}
+        onChange={(e) => setLanguage(e.target.value)}
+      >
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+      </select>
+    </nav>
+  );
+};
+
+export default Navbar;

@@ -1,23 +1,31 @@
 import { useAppContext } from '../../context/AppContext';
-import Option1Left from './views/Option1Left';
-import Option2Left from './views/Option2Left';
-import Option3Left from './views/Option3Left';
-import Option4Left from './views/Option4Left';
-import Option5Left from './views/Option5Left';
+import './LeftSideBar.css';
 
-
+const themes = [
+  { id: 'tema1', label: 'Tema 1' },
+  { id: 'tema2', label: 'Tema 2' },
+  { id: 'tema3', label: 'Tema 3' },
+  { id: 'tema4', label: 'Tema 4' },
+];
 
 const LeftSidebar = () => {
-  const { selectedOption } = useAppContext();
+  const { selectedTheme, setSelectedTheme } = useAppContext();
 
-  switch (selectedOption) {
-    case 'option1': return <Option1Left />;
-    case 'option2': return <Option2Left />;
-    case 'option3': return <Option3Left />;
-    case 'option4': return <Option4Left />;
-    case 'option5': return <Option5Left />;
-    default: return <Option1Left />;
-  }
+  return (
+    <aside className="left-sidebar">
+      <ul>
+        {themes.map((theme) => (
+          <li
+            key={theme.id}
+            className={selectedTheme === theme.id ? 'active' : ''}
+            onClick={() => setSelectedTheme(theme.id)}
+          >
+            {theme.label}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 };
 
 export default LeftSidebar;

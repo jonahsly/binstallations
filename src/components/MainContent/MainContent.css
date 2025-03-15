@@ -1,0 +1,6 @@
+.main-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #66b3a6;
+  }

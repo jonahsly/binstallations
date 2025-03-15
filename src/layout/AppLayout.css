@@ -1,0 +1,13 @@
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: blueviolet;
+  }
+  
+  .main-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    background-color: aliceblue;
+  }
