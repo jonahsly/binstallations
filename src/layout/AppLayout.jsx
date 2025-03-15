@@ -1,4 +1,4 @@
-import NavBar from '../components/NavBar/NavBar';
+import Navbar from '../components/Navbar/Navbar';
 import LeftSideBar from '../components/LeftSideBar/LeftSideBar';
 import MainContent from '../components/MainContent/MainContent';
 import "./AppLayout.css";
@@ -6,7 +6,7 @@ import "./AppLayout.css";
 const AppLayout = () => {
   return (
     <div className="app-layout">
-      <NavBar />
+      <Navbar />
       <div className="main-area">
         <LeftSideBar />
         <MainContent />

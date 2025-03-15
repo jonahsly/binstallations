@@ -32,8 +32,11 @@ const getSectionsByTheme = (theme) => {
   switch (theme) {
     case 'tema1':
       return [
-        { title: 'Introducción', content: <p>Contenido introductorio.</p> },
-        { title: 'Detalles técnicos', content: <img src="https://via.placeholder.com/400x200" alt="imagen" /> },
+        { title: 'Objetivos en relación la habitat y humano y desde el punto de vista hidráulico',
+          content: <p>Contenido introductorio.</p>
+        },
+        { title: 'La distribución del agua en el interior de un edificio',
+          content: <img src="https://via.placeholder.com/400x200" alt="imagen" /> },
         { title: 'Video demostrativo', content: <video controls src="https://www.w3schools.com/html/mov_bbb.mp4" width="400" /> },
       ];
     case 'tema2':
