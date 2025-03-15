@@ -1,8 +1,13 @@
+import { AppProvider } from './context/AppContext';
 import AppLayout from './layout/AppLayout';
 import './styles/App.css';
 
 function App() {
-  return <AppLayout />;
+  return (
+    <AppProvider>
+      <AppLayout />
+    </AppProvider>
+  );
 }
 
 export default App;
