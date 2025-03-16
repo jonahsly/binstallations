@@ -2,5 +2,7 @@
     flex: 1;
     padding: 10px;
     overflow-y: auto;
-    background-color: #66b3a6;
+    background-color: #111111;
+    margin: 10px;
+    border-radius: 7px;
   }

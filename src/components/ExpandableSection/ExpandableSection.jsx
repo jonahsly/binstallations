@@ -6,7 +6,7 @@ const ExpandableSection = ({ title, isActive, onClick, children }) => {
       <div className="section-header" onClick={onClick}>
         <h3>{title}</h3>
       </div>
-      {isActive && <div className="section-content">{children}</div>}
+      {isActive && <div className="section-content" >{children}</div>}
     </div>
   );
 };

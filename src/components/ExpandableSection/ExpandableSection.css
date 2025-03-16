@@ -1,18 +1,18 @@
 .expandable-section {
-  border: 1px solid #444;
+  border: 1px solid #009ece;
   margin-bottom: 10px;
   transition: all 0.4s ease;
   border-radius: 8px;
-  background-color: #e4a4a4;
+  background-color: #696969;
 }
 
 .section-header {
   padding: 12px;
   cursor: pointer;
-  background-color: #45502b;
+  background-color: #333333;
   font-weight: bold;
-  color: #b84242;
-  border-radius: 8px 8px 0 0;
+  color: #ffffff;
+  border-radius: 8px;
 }
 
 .section-header:hover {
@@ -21,12 +21,13 @@
 
 .section-content {
   padding: 16px;
-  background-color: #111;
-  color: white;
+  background-color: #696969;
+  color: rgb(0, 0, 0);
   max-height: 400px;
   overflow-y: auto;
   border-radius: 0 0 8px 8px;
   animation: fadeIn 0.4s ease;
+  white-space: pre-line;
 }
 
 @keyframes fadeIn {

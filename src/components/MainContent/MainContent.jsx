@@ -3,6 +3,19 @@ import { useAppContext } from '../../context/AppContext';
 import ExpandableSection from '../ExpandableSection/ExpandableSection';
 import './MainContent.css';
 
+import tema1Content from '../../contents/tema1';
+import tema2Content from '../../contents/tema2';
+//import tema3Content from '../../contents/tema3';
+//import tema4Content from '../../contents/tema4';
+//import tema5Content from '../../contents/tema5';
+//import tema6Content from '../../contents/tema6';
+//import tema7Content from '../../contents/tema7';
+//import tema8Content from '../../contents/tema8';
+//import tema9Content from '../../contents/tema9';
+//import tema10Content from '../../contents/tema10';
+//import tema11Content from '../../contents/tema11';
+//import tema12Content from '../../contents/tema12';
+
 const MainContent = () => {
   const { selectedTheme } = useAppContext();
   const sections = getSectionsByTheme(selectedTheme);
@@ -31,14 +44,7 @@ const MainContent = () => {
 const getSectionsByTheme = (theme) => {
   switch (theme) {
     case 'tema1':
-      return [
-        { title: 'Objetivos en relación la habitat y humano y desde el punto de vista hidráulico',
-          content: <p>Contenido introductorio.</p>
-        },
-        { title: 'La distribución del agua en el interior de un edificio',
-          content: <img src="https://via.placeholder.com/400x200" alt="imagen" /> },
-        { title: 'Video demostrativo', content: <video controls src="https://www.w3schools.com/html/mov_bbb.mp4" width="400" /> },
-      ];
+      return tema1Content;
     case 'tema2':
       return [
         { title: 'Resumen', content: <p>Resumen del tema 2.</p> },
