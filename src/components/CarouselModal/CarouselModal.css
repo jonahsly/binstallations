@@ -1,0 +1,73 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content.carousel-modal {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  min-width: 320px;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180px;
+  overflow: hidden;
+  gap: 0.5rem;
+}
+
+.carousel-item {
+  text-align: center;
+  color: #aaa;
+  opacity: 0.5;
+  transition: transform 0.3s ease, opacity 0.3s ease, font-size 0.3s ease;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.carousel-item.active {
+  color: #fff;
+  font-size: 1.4rem;
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.carousel-item.inactive {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.modal-close {
+  background: #ff4444;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
