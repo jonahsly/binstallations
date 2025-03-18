@@ -5,7 +5,7 @@ import './MainContent.css';
 
 import tema1Content from '../../contents/tema1';
 import tema2Content from '../../contents/tema2';
-//import tema3Content from '../../contents/tema3';
+import tema3Content from '../../contents/tema3';
 //import tema4Content from '../../contents/tema4';
 //import tema5Content from '../../contents/tema5';
 //import tema6Content from '../../contents/tema6';
@@ -46,11 +46,9 @@ const getSectionsByTheme = (theme) => {
     case 'tema1':
       return tema1Content;
     case 'tema2':
-      return [
-        { title: 'Resumen', content: <p>Resumen del tema 2.</p> },
-        { title: 'Galería', content: <img src="https://via.placeholder.com/400x200" alt="galeria" /> },
-        { title: 'Notas', content: <p>Notas adicionales.</p> },
-      ];
+      return tema2Content;
+    case 'tema3':
+      return tema3Content;
     default:
       return [];
   }
