@@ -1,3 +1,4 @@
+import React from 'react';
 const tema1Content = [
     {
       id: "section1",

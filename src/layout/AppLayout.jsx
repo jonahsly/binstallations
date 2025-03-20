@@ -1,3 +1,4 @@
+import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import LeftSideBar from '../components/LeftSideBar/LeftSideBar';
 import MainContent from '../components/MainContent/MainContent';

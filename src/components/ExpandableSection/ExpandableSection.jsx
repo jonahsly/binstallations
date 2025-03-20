@@ -1,3 +1,4 @@
+import React from 'react';
 import './ExpandableSection.css';
 
 const ExpandableSection = ({ title, isActive, onClick, children }) => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { React, useState } from 'react';
 import { useAppContext } from '../../context/AppContext';
 import ExpandableSection from '../ExpandableSection/ExpandableSection';
 import './MainContent.css';
@@ -15,6 +15,19 @@ import tema3Content from '../../contents/tema3';
 //import tema10Content from '../../contents/tema10';
 //import tema11Content from '../../contents/tema11';
 //import tema12Content from '../../contents/tema12';
+
+const getSectionsByTheme = (theme) => {
+  switch (theme) {
+    case 'tema1':
+      return tema1Content;
+    case 'tema2':
+      return tema2Content;
+    case 'tema3':
+      return tema3Content;
+    default:
+      return [];
+  }
+};
 
 const MainContent = () => {
   const { selectedTheme } = useAppContext();
@@ -40,17 +53,5 @@ const MainContent = () => {
   );
 };
 
-const getSectionsByTheme = (theme) => {
-  switch (theme) {
-    case 'tema1':
-      return tema1Content;
-    case 'tema2':
-      return tema2Content;
-    case 'tema3':
-      return tema3Content;
-    default:
-      return [];
-  }
-};
 
 export default MainContent;
