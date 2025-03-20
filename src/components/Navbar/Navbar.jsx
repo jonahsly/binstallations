@@ -1,40 +1,18 @@
-import { useLanguage } from '../../context/LanguageContext';
-import React, { useState } from "react";
-import CarouselModal from "../CarouselModal/CarouselModal";
+import { useState } from 'react';
 import './Navbar.css';
+import CarouselModal from '../CarouselModal/CarouselModal';
 
-const cursosMock = [
-  { nombre: "Curso 1", path: "/isanitarias" },
-  { nombre: "Curso 2", path: "/curso2" },
-  { nombre: "Curso 3", path: "/curso3" },
-];
-
-
-const Navbar = ({ onCursoSelect }) => {
-  //const { language, setLanguage, t } = useLanguage();
+const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">🌐</div>
-      <img src="/assets/logo.svg" alt="Logo" className="logo" />
-      <div className="navbar-title" onClick={() => setIsModalOpen(true)}>
+      <div className="navbar-title" onClick={openModal}>
         {"Instalaciones Sanitarias"}
-        </div>
-      <select
-        className="language-switch"
-        /*value={language}*/
-        /*onChange={(e) => setLanguage(e.target.value)}*/
-      >
-        <option value="es">Español</option>
-        <option value="en">English</option>
-      </select>
-      <CarouselModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        cursos={cursosMock}
-        onSelectCurso={onCursoSelect}
-      />
+      </div>
+      {isModalOpen && <CarouselModal onClose={closeModal} />}
     </nav>
   );
 };

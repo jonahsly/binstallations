@@ -1,5 +1,4 @@
 import { useAppContext } from '../../context/AppContext';
-import { useLanguage } from "../../context/LanguageContext";
 import './LeftSideBar.css';
 
 const themes = [
@@ -18,7 +17,6 @@ const themes = [
 ];
 
 const LeftSidebar = () => {
-  //const { t } = useLanguage();
   const { selectedTheme, setSelectedTheme } = useAppContext();
 
   return (

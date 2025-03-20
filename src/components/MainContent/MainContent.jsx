@@ -3,9 +3,9 @@ import { useAppContext } from '../../context/AppContext';
 import ExpandableSection from '../ExpandableSection/ExpandableSection';
 import './MainContent.css';
 
-import tema1Content from '../../contents/01IS/tema1';
-import tema2Content from '../../contents/01IS/tema2';
-import tema3Content from '../../contents/01IS/tema3';
+import tema1Content from '../../contents/tema1';
+import tema2Content from '../../contents/tema2';
+import tema3Content from '../../contents/tema3';
 //import tema4Content from '../../contents/tema4';
 //import tema5Content from '../../contents/tema5';
 //import tema6Content from '../../contents/tema6';
@@ -20,7 +20,6 @@ const MainContent = () => {
   const { selectedTheme } = useAppContext();
   const sections = getSectionsByTheme(selectedTheme);
   const [activeIndex, setActiveIndex] = useState(null);
-
   const handleToggle = (index) => {
     setActiveIndex(prev => (prev === index ? null : index));
   };
