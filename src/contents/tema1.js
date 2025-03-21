@@ -93,7 +93,7 @@ const tema1Content = [
     },
     {
       id: "section4",
-      title: "Reglamentos y Normas",
+      title: "Reglamentos y Normas de Referencia",
       content:
         <ul>
           <li>

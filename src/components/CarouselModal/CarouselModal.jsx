@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CarouselModal.css";
 
-const pages = ["isanitarias", "contra incendio", "inst. de gas"]
+const pages = ["isanitarias", "contra incendio", "inst. de gas", "ieléctrica","vias","otro curso","laminares"]
 
 const CarouselModal = ({ options = pages, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,7 +43,7 @@ const CarouselModal = ({ options = pages, onClose }) => {
       <div className="menu-wrapper">
         <div className="menu-container">
           <div className="menu-option inactive">{options[prev]}</div>
-          <div className="menu-option active">{options[currentIndex]}</div>
+          <div className="menu-option active" >{options[currentIndex]}</div>
           <div className="menu-option inactive">{options[next]}</div>
         </div>
       </div>

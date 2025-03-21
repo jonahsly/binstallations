@@ -59,10 +59,12 @@ body.no-scroll {
   opacity: 1;
   font-weight: bold;
   transform: scale(1.2);
+  transition: ease;
 }
 
 .menu-option.inactive {
   font-size: 1.2rem;
   opacity: 0.4;
   transform: scale(0.9);
+  transition: ease;
 }
