@@ -113,90 +113,117 @@ const tema2Content = [
                 <li>Un equipo de presurización o tanque hidroneumático.</li>
                 <li>La instalación de distribución de agua.</li>
               </ul>
-              <h4>Tanque Hidroneumático.</h4>
+              <h4>Tanque Hidroneumático</h4>
               <p>Consiste básicamente en un tanque hermético que consta de una membrana de goma que
                 lo divide en dos compartimientos, uno para acumular agua y el otro para contener un
                 cierto volumen de aire. Desde el tanque hidroneumático se alimentan la tubería de
                 distribución a los distintos consumos. El volumen de aire dentro del tanque hace las
                 veces de un pulmón que se comprime y descomprime cíclicamente</p>
+              <h4>Principio de Funcionamiento</h4>
+              <p>El agua que es aspirada por la bomba desde el tanque de bombeo, alimenta el consumo
+                de la instalación y simultáneamente se inyecta al tanque hidroneumático un cierto caudal
+                de agua, disminuyendo en consecuencia el volumen de aire y aumentando su presión, hasta
+                un valor preestablecido que es detectado por el presóstato, el cual origina una señal que
+                es utilizada para detener la bomba. La instalación queda así presurizada</p>
+              <p>Cuando se origina algún consumo en la línea de distribución, esta es alimentada con el
+                agua del tanque, disminuyendo progresivamente su volumen y consecuentemente también
+                desciende la presión del aire hasta un valor mínimo preestablecido, actuando el presóstato
+                y volviendo a arrancar la bomba.</p>
+              <p>Este proceso se repite cíclicamente, mientras haya consumo en la distribución. Durante el
+                período de funcionamiento de la bomba, esta debe alimentar simultáneamente, el consumo
+                instantáneo de la instalación y llenar el tanque hidroneumático.</p>
+              <h4>Ciclos de Bombeo</h4>
+              <p>Se define como la cantidad de veces que arranca o para la bomba en una hora. Se ha
+                establecido como conveniente un ciclo de bombeo que está entre 4 y 6 veces por hora. No
+                bastante ello, deberán analizarse otros condicionantes como, por ejemplo, disponibilidad
+                de espacio para el tanque hidroneumático en función de su tamaño, teniendo en cuenta que
+                este disminuye cuando lo hace el ciclo de bombeo.</p>
+              <p> Supongamos que establecemos un ciclo de 6 arranques por hora, esto significa que la
+                bomba funciona durante 5 minutos y los próximos 5 minutos permanece parada, en el
+                siguiente análisis, consideramos al sistema en régimen estacionario, ello significa que
+                los caudales de consumo no varían en el tiempo.</p>
+                <ul>Bomba en funcionamiento, duración 5 minutos:
+                  <li>Alimenta los artefactos de consumo.</li>
+                  <li>Impulsa agua al tanque hidroneumático.</li>
+                  <li>Por efecto del ingreso de agua en el tanque, aumenta la presión del aire hasta el
+                    valor máximo establecido y el presóstato hace parar la bomba.</li>
+                </ul>
+                <ul>Bomba parada, duración 5 minutos:
+                  <li>El consumo es abastecido por el tanque hidroneumático.</li>
+                  <li>Disminuye el volumen de agua y consecuentemente desciende la presión del aire hasta
+                    el valor mínimo establecido y el presóstato hace arrancar la bomba.</li>
+                </ul>
+              <p>Se deduce que el volumen de agua almacenado en el tanque debe ser el necesario para
+                erogar el caudal de consumo durante el tiempo en el que la bomba no funciona. Dado que
+                los tiempos de funcionamiento y parada son iguales, el caudal de ingreso al tanque
+                hidroneumático es igual al caudal de consumo de los artefactos y como la bomba alimenta
+                simultáneamente al tanque y a los consumos, el caudal que eroga la bomba es dos veces del
+                caudal de consumo. Es decir, el caudal de la bomba en el período de tiempo entre
+                arranques (10 minutos), debe proporcionar agua para el consumo durante los 5 minutos de
+                funcionamiento más los 5 minutos en que se encuentra parada.</p>
+              <p>Si se disminuye progresivamente la capacidad del tanque para almacenar agua, aumenta el
+                tiempo de funcionamiento de la bomba, en el límite, la bomba funciona permanentemente y
+                el tanque ya no es necesario. Se acota, sin embargo, que la función del tanque no es
+                solamente acumular agua, sino también mantener presurizada la instalación mientras no
+                haya consumo. Esto es, las válvulas de los artefactos de consumo, mantienen la presión
+                necesaria para asegurar instantáneamente el caudal requerido.</p>
           </li>
-          <li>Por Bombas de Velocidad Variable</li>
+          <li>Por Bombas de Velocidad Variable
+            <p>Estos equipos permiten regular la potencia de funcionamiento de su motor de acuerdo a la
+              demanda. De esa manera, se evitan los golpes de ariete durante el arranque. En cambio, las
+              máquinas van acelerando poco a poco.</p>
+            <p>La variación de la velocidad de giro de la bomba se logra a través de un control
+              electrónico. Ese dispositivo tiene la función de varíar la frecuencia de la alimentación
+              eléctrica que se dirige al motor. Además, una de las ventajas de los sistemas de bombeo de
+              velocidad variable es que se tiene una presión constante.</p>
+            <p>Existen otros mecanismos que también sirven para regular el flujo de agua, pero no tienen
+              las mismas prestaciones. Los presurizadores en línea solo se encienden ante la demanda,
+              pero no hay garantía de mantener la presión cuando están apagados. Por otro lado, los
+              sistemas hidroneumáticos funcionan en un rango fijo de presión que no puede ser variado,
+              no importa si los requerimientos son mayores o menores. Mientras, en los mecanismos con
+              velocidad variable se pueden regular ambas características.</p>
+            <ul>Ventajas del sistema:
+                <li>Sin importar la demanda de agua, siempre se tendrá la misma presión en todos los
+                  servicios.</li>
+                <li>Estos sistemas tienen una alta eficiencia energética que permite ahorros
+                  considerables para las empresas.</li>
+                <li>Se alarga el tiempo de vida de las bombas.</li>
+                <li>Se reducen los gastos de reparación y mantenimiento.</li>
+            </ul>
+          </li>
         </ul>
       </p>
-      <p>
-      
-      </p>
-      <ol>
-        <li><h4>Captación.</h4>
-            <ul>
-              <li>Superficial: Cursos de Agua
-                <ul>
-                  <li>Dentro de cauce</li>
-                  <li>Fuera de cauce</li>
-                  <li>Estanques</li>
-                </ul>
-              </li>
-              <li>Subterráneas:
-                <ul> 
-                  <li>Pozos Profundos</li>
-                  <li>Pozos Someros</li>
-                </ul>
-              </li>
-              <li>Subálveos de cursos de agua
-                <ul> 
-                  <li>Dentro de cauce</li>
-                  <li>Fuera de cauce</li>
-                </ul>
-              </li>
-              <li>Agua de lluvia</li>
-            </ul>
-        </li>
-        <li><h4>Cañerías de Aducción:</h4>
-          <dd>Conduce el agua desde la captación
-          hasta el tratamiento.</dd>
-        </li>
-        <li><h4>Tratamiento:</h4>
-          <dd>Coagulación, floculación y sedimentación,
-            filtración, desinfección.</dd></li>
-        <li><h4>Reserva:</h4>
-          <dd>Compensación de variaciones de consumos,
-            reserva y mantenimiento de presiones en la
-            red de distribución.</dd>
-        </li>
-      </ol>
     </div>,
     images: [],
     video: null
   },
   {
     id: "section3",
-    title: "El Ciclo del Agua en el Edificio",
+    title: "Reserva Total Diaria de Agua Potable",
     content: 
-      <p>
-        La distribución del agua en el edificio se hace en
-        presión, por lo tanto, la forma en que se reseulve
-        la instalación interna del edificio depende de la
-        presión disponible en lared pública de agua potable.
-      </p>,
+      <div>
+        <p>Se define la Reserva Total Diaria de agua potable, como el volumen de agua que se debe
+          almacenar por día en el edificio para:
+          <ol>
+            <li>Proveer de agua potable a la instalación, cuando en la red pública se produce un
+              corte eventual del servicio.</li>
+            <li>Compensar caudales, cuando los de consumo son mayores que los caudales que suministra
+              la red (establecimientos públicos, educacionales, lavaderos, etc.).</li>
+          </ol>
+          <p>Para edificios de vivienda, la reserva total diaria se estima para un consumo de 24 horas,
+            bajo la consideración de que, en ese período, se pueden subsanar los desperfectos que
+            imposibilitan la alimentación de agua desde la red al edificio, y que mantener agua
+            almacenada por más tiempo puede tornar dudosa la potabilidad de esta. En general, se puede
+            considerar según una dotación de 200 a 250 litros/persona/día para los usos normales de una
+            vivienda. No obstante, la Norma específica, con carácter restrictivo, los volúmenes unitarios
+            a adoptar de acuerdo al destino del edificio.</p>
+          <p>En la actualidad, la racionalización del consumo de agua indica que un valor para la
+            dotación estaría en el orden de los 100 lts/persona/día. La reserva total diaria se almacena
+            en el Tanque de Reserva y en el Tanque de Bombeo, en ausencia de este se almacena en el
+            Tanque de Reserva</p>
+        </p>
+      </div>,
       images: [],
-    video: null
-  },
-  {
-    id: "section4",
-    title: "Reglamentos y Normas",
-    content:
-      <ul>
-        <li>
-          <p>Reglamento de Instalaciones Sanitarias Internas:
-            Anexo Normas OSN - Ciudad de Salta</p>
-        </li>
-        <li>
-          <p>Código de Edificación de la Ciudad de Buenos Aires:
-            Anexo Reglamento sobre Instalaciones Sanitarias</p>
-        </li>
-      </ul>
-    ,
-    images: [],
     video: null
   }
 ];

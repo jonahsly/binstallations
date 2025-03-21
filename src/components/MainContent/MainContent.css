@@ -4,4 +4,5 @@
     background-color: #111111;
     margin: 10px;
     border-radius: 7px;
+    overflow-y: auto;
   }

@@ -4,6 +4,7 @@
   padding: 10px;
   margin: 10px;
   border-radius: 7px;
+  overflow-y: auto;
 }
 
 .left-sidebar ul {
