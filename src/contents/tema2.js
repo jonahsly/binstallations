@@ -142,17 +142,15 @@ const tema2Content = [
                 bomba funciona durante 5 minutos y los próximos 5 minutos permanece parada, en el
                 siguiente análisis, consideramos al sistema en régimen estacionario, ello significa que
                 los caudales de consumo no varían en el tiempo.</p>
-                <ul>Bomba en funcionamiento, duración 5 minutos:
-                  <li>Alimenta los artefactos de consumo.</li>
+                Bomba en funcionamiento, duración 5 minutos:
+                <ul><li>Alimenta los artefactos de consumo.</li>
                   <li>Impulsa agua al tanque hidroneumático.</li>
                   <li>Por efecto del ingreso de agua en el tanque, aumenta la presión del aire hasta el
-                    valor máximo establecido y el presóstato hace parar la bomba.</li>
-                </ul>
-                <ul>Bomba parada, duración 5 minutos:
-                  <li>El consumo es abastecido por el tanque hidroneumático.</li>
+                    valor máximo establecido y el presóstato hace parar la bomba.</li></ul>
+                Bomba parada, duración 5 minutos:
+                <ul><li>El consumo es abastecido por el tanque hidroneumático.</li>
                   <li>Disminuye el volumen de agua y consecuentemente desciende la presión del aire hasta
-                    el valor mínimo establecido y el presóstato hace arrancar la bomba.</li>
-                </ul>
+                    el valor mínimo establecido y el presóstato hace arrancar la bomba.</li></ul>
               <p>Se deduce que el volumen de agua almacenado en el tanque debe ser el necesario para
                 erogar el caudal de consumo durante el tiempo en el que la bomba no funciona. Dado que
                 los tiempos de funcionamiento y parada son iguales, el caudal de ingreso al tanque
@@ -170,25 +168,23 @@ const tema2Content = [
           </li>
           <li>Por Bombas de Velocidad Variable
             <p>Estos equipos permiten regular la potencia de funcionamiento de su motor de acuerdo a la
-              demanda. De esa manera, se evitan los golpes de ariete durante el arranque. En cambio, las
-              máquinas van acelerando poco a poco.</p>
-            <p>La variación de la velocidad de giro de la bomba se logra a través de un control
-              electrónico. Ese dispositivo tiene la función de varíar la frecuencia de la alimentación
-              eléctrica que se dirige al motor. Además, una de las ventajas de los sistemas de bombeo de
-              velocidad variable es que se tiene una presión constante.</p>
+              demanda. De esa manera, se evitan los golpes de ariete durante el arranque. La variación
+              de la velocidad de giro de la bomba se logra a través de un control electrónico. Ese
+              dispositivo tiene la función de varíar la frecuencia de la alimentación eléctrica que se
+              dirige al motor.</p>
             <p>Existen otros mecanismos que también sirven para regular el flujo de agua, pero no tienen
               las mismas prestaciones. Los presurizadores en línea solo se encienden ante la demanda,
               pero no hay garantía de mantener la presión cuando están apagados. Por otro lado, los
               sistemas hidroneumáticos funcionan en un rango fijo de presión que no puede ser variado,
               no importa si los requerimientos son mayores o menores. Mientras, en los mecanismos con
               velocidad variable se pueden regular ambas características.</p>
-            <ul>Ventajas del sistema:
-                <li>Sin importar la demanda de agua, siempre se tendrá la misma presión en todos los
-                  servicios.</li>
-                <li>Estos sistemas tienen una alta eficiencia energética que permite ahorros
-                  considerables para las empresas.</li>
-                <li>Se alarga el tiempo de vida de las bombas.</li>
-                <li>Se reducen los gastos de reparación y mantenimiento.</li>
+              Ventajas del sistema:
+            <ul><li>Sin importar la demanda de agua, siempre se tendrá la misma presión en todos los
+                servicios.</li>
+              <li>Estos sistemas tienen una alta eficiencia energética que permite ahorros
+                considerables para las empresas.</li>
+              <li>Se alarga el tiempo de vida de las bombas.</li>
+              <li>Se reducen los gastos de reparación y mantenimiento.</li>
             </ul>
           </li>
         </ul>

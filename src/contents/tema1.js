@@ -6,13 +6,18 @@ const tema1Content = [
       content:
         <div>
           <ol>
-            <li><h4>El Proyecto debe poder ser ejecutado con los medios tecnológicos disponibles.</h4></li>
-            <li><h4>Debe ser capaz de soportar las condiciones de uso normales durante su periodo de vida útil.</h4></li>
-            <li><h4>En ninguna parte del edificio se debe poner en riesgo la seguridad o la salud de sus ocupantes.</h4></li>
-            <li><h4>Debe proporcionar las condiciones bioambientales adecuadas para el desarrollo de las actividades a cuyo destino responde el proyecto.</h4></li>
-            <li><h4>Los costos de la construcción, operación mantenimiento y reparación previsto durante la vida útil deben estar dentro de los márgenes impuestos por el comitente.</h4></li>
-            <li><h4>Debe cumplir con lineamientos estéticos.</h4></li>
-            <li><h4>El proyecto y la ejecución deben respetar restricciones establecidas por las Normas y los Órganos de Contralor.</h4></li>
+            <li>El Proyecto debe poder ser ejecutado con los medios tecnológicos disponibles.</li>
+            <li>Debe ser capaz de soportar las condiciones de uso normales durante su periodo de
+              vida útil.</li>
+            <li>En ninguna parte del edificio se debe poner en riesgo la seguridad o la salud de
+              sus ocupantes.</li>
+            <li>Debe proporcionar las condiciones bioambientales adecuadas para el desarrollo de las
+              actividades a cuyo destino responde el proyecto.</li>
+            <li>Los costos de la construcción, operación mantenimiento y reparación previsto durant
+               la vida útil deben estar dentro de los márgenes impuestos por el comitente.</li>
+            <li>Debe cumplir con lineamientos estéticos.</li>
+            <li>El proyecto y la ejecución deben respetar restricciones establecidas por las Normas
+              y los Órganos de Contralor.</li>
           </ol>
         </div>,
       images: ["/assets/img1.jpg", "/assets/img2.jpg"],
@@ -88,7 +93,7 @@ const tema1Content = [
           la instalación interna del edificio depende de la
           presión disponible en lared pública de agua potable.
         </p>,
-        images: [],
+      images: [],
       video: null
     },
     {
@@ -104,8 +109,7 @@ const tema1Content = [
             <p>Código de Edificación de la Ciudad de Buenos Aires:
               Anexo Reglamento sobre Instalaciones Sanitarias</p>
           </li>
-        </ul>
-      ,
+        </ul>,
       images: [],
       video: null
     }

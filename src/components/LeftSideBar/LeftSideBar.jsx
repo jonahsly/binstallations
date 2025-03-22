@@ -6,7 +6,7 @@ const themes = [
   { id: 'tema1', label: 'Generalidades' },
   { id: 'tema2', label: 'Provisión de Agua' },
   { id: 'tema3', label: '- Sistemas de Cañerías' },
-  { id: 'tema4', label: '- Accesorios y Componentes' },
+  { id: 'tema4', label: '- Componentes del Sistema' },
   { id: 'tema5', label: '- Agua Fría' },
   { id: 'tema6', label: '- Agua Caliente' },
   { id: 'tema7', label: 'Desagües' },
@@ -27,10 +27,7 @@ const LeftSidebar = () => {
           <li
             key={theme.id}
             className={selectedTheme === theme.id ? 'active' : ''}
-            onClick={() => setSelectedTheme(theme.id)}
-          >
-            {/*{ t (theme.label)}*/}
-
+            onClick={() => setSelectedTheme(theme.id)}>
             {theme.label}
           </li>
         ))}

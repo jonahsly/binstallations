@@ -6,7 +6,7 @@ import './MainContent.css';
 import tema1Content from '../../contents/tema1';
 import tema2Content from '../../contents/tema2';
 import tema3Content from '../../contents/tema3';
-//import tema4Content from '../../contents/tema4';
+import tema4Content from '../../contents/tema4';
 //import tema5Content from '../../contents/tema5';
 //import tema6Content from '../../contents/tema6';
 //import tema7Content from '../../contents/tema7';
@@ -24,6 +24,8 @@ const getSectionsByTheme = (theme) => {
       return tema2Content;
     case 'tema3':
       return tema3Content;
+    case 'tema4':
+      return tema4Content;
     default:
       return [];
   }
