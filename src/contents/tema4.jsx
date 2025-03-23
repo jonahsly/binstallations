@@ -10,6 +10,13 @@ import img05a from "../assets/acc05a.png";
 import img05b from "../assets/acc05b.png";
 import img06a from "../assets/acc06a.png";
 import img06b from "../assets/acc06b.png";
+import img07a from "../assets/acc07a.png";
+import img07b from "../assets/acc07b.png";
+import img08a from "../assets/acc08a.png";
+import img08b from "../assets/acc08b.png";
+import img09a from "../assets/acc09a.png";
+import img09b from "../assets/acc09b.png";
+
 import "./generalContent.css";
 const tema4Content = [
     {
@@ -26,34 +33,27 @@ const tema4Content = [
               casos que fuera de PVC, el empalme se hará mediante abrazadera de plástico
               reforzado, racord de bronce no incorporado y con sistema de ajuste tipo
               abulonado.</dd>
-              <div className="imagen-flotante">
-                <img src={img01a} /><img src={img01b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-flotante"><img src={img01a}/><img src={img01b}/></div>
           </li>
           <li className="hover-item">Racord de Conexión de bronce
             <dd>Se rosca a la zbrazadera para vincular la conexión domiciliaria y la red
               de distribución de agua.</dd>
-              <div className="imagen-flotante">
-                <img src={img03a} /><img src={img03b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-flotante"><img src={img03a}/><img src={img03b}/></div>
               </li>
-          <li>Caño PEAD PN10</li>
-          <li>Llave Maestra de bronce/Válv. Esférica + Vál. de Retención
-            <ul>
-              <li className="hover-item">Llave Maestra
-                <dd>La llave maestra es una válvula de corte general que es operada por
-                  la prestadora del servicio. Se instala sobre vereda o en pared sobre la
-                  línea municipal en forma vertical y tiene una única dirección de flujo.
-                  Es a válvula suelta, de tal forma la llave maestra es a válvula suelta,
-                  ello permite que actúe como válvula de retención impidiendo el retroceso
-                  del agua de la instalación a la red de distribución para evitar
-                  contaminaciones. Actualmente, en Salta, la llave maestra ha sido
-                  reemplazada por una válvula esférica de bronce y una válvula de
-                  retención a clapeta.</dd>
-                  <div className="imagen-flotante">
-                    <img src={img02a} /><img src={img02b} />
-                    <div className="texto-overlay">Abrazadera</div></div>
-              </li >
+          <li className="hover-item">Caño PEAD PN10
+            <div className="imagen-flotante"><img src={img09a}/><img src={img09b}/></div>
+          </li>
+          <li className="hover-item">Llave Maestra de Bronce
+            <dd>Es una válvula de corte general, operada por la prestadora del servicio.
+              Tiene una única dirección de flujo y es a válvula suelta, de forma que 
+              actúa como válvula de retención, impidiendo el retroceso del agua de la
+              instalación a la red de distribución para evitar contaminaciones.
+              Actualmente, ha sido reemplazada por una válvula esférica de bronce y una
+              válvula de retención de bronce.</dd>
+              <div className="imagen-flotante">
+                <img src={img02a} /><img src={img02b} />
+                <div className="texto-overlay">Abrazadera</div></div>
+          </li >
               <li className="hover-item">Válvula Esférica de Bronce
                 <dd>También llamadas de ¼ de vuelta, poseen una esfera perforada en su
                   interior, que de acuerdo a la posición que adopta al ser accionada por la
@@ -62,14 +62,7 @@ const tema4Content = [
                     <img src={img04a}/>  <img src={img04b} />
                     <div className="texto-overlay">Abrazadera</div></div>
               </li>
-              <li className="hover-item">Válvula de Retención a clapeta
-                <dd>Como su nombre lo indica, este tipo de válvulas permiten el flujo del
-                  fluido en un solo sentido, utilizando distintos mecanismos para evitar
-                  el reflujo.</dd>
-              </li>
-            </ul>
-          </li>
-          <li className="hover-item">Medidor de Consumo
+              <li className="hover-item">Medidor de Consumo
             <dd>Son instrumentos de medición del consumo del edificio y son provistos por
               la operadora del servicio. Son medidores totalizadores, el consumo se
               determina por la diferencia de mediciones. La prestadora especifica:
@@ -80,17 +73,35 @@ const tema4Content = [
                 <img src={img05a} /><img src={img05b} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li>
+              <li className="hover-item">Válvula de Retención de Bronce
+                <dd>Como su nombre lo indica, este tipo de válvulas permiten el flujo del
+                  fluido en un solo sentido, utilizando distintos mecanismos para evitar
+                  el reflujo.</dd>
+                  <div className="imagen-flotante">
+                    <img src={img08a}/>  <img src={img08b} />
+                    <div className="texto-overlay">Abrazadera</div></div>
+              </li>
+          
+
+
+
+
+
+
           <li className="hover-item">Caja para Medidor (vereda o pared sobre L.M.)
             <div className="imagen-flotante">
               <img src={img06a} /><div className="texto-overlay">Abrazadera</div>
               <img src={img06b} />
               <div className="texto-overlay">Abrazadera</div></div>
           </li>
-          <li className="hover-item">Soporte de acero inoxidable</li>
+          <li className="hover-item">Soporte de acero inoxidable
+            
+            <div className="imagen-flotante">
+              <img src={img07a}/>  <img src={img07b} />
+              <div className="texto-overlay">Abrazadera</div></div>
+          </li>
         </ol>
       </div>,
-      images: ["../assets/img-abrazadera.png"],
-      video: "/assets/video1.mp4"
     },
     {
       id: "section2",
