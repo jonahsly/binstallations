@@ -1,0 +1,44 @@
+/* Estilo general del li */
+.hover-item {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* Imagen flotante oculta por defecto */
+  .imagen-flotante {
+    position: fixed;
+    bottom: 65%;       /* Altura flotante deseada */
+    right: 70px;     /* A la derecha de la pantalla */
+    height: 200px;
+    display: none;   /* Oculta inicialmente */
+    z-index: 1000;
+  }
+  
+  /* Mostrar la imagen cuando se hace hover sobre el concepto */
+  .hover-item:hover .imagen-flotante {
+    display: block;
+  }
+  
+  /* Imagen ajustada */
+  .imagen-flotante img {
+    margin-left: 1rem;
+    padding: 10px;
+    background-color: white;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Texto superpuesto encima de la imagen */
+  .texto-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(214, 28, 28);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
