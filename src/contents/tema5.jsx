@@ -31,8 +31,6 @@ const ecuacionEjemplo = {
   },
 };
 
-
-
 const tema5Content = [
     {
       id: "section1",
