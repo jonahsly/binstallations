@@ -1,52 +1,4 @@
-import img01a from "../assets/img.af/acc01a.png";
-import img01b from "../assets/img.af/acc01b.png";
-import img02a from "../assets/img.af/acc02a.png";
-import img02b from "../assets/img.af/acc02b.png";
-import img03a from "../assets/img.af/acc03a.png";
-import img03b from "../assets/img.af/acc03b.png";
-import img04a from "../assets/img.af/acc04a.png";
-import img04b from "../assets/img.af/acc04b.png";
-import img05a from "../assets/img.af/acc05a.png";
-import img05b from "../assets/img.af/acc05b.png";
-import img06a from "../assets/img.af/acc06a.png";
-import img06b from "../assets/img.af/acc06b.png";
-import img07a from "../assets/img.af/acc07a.png";
-import img07b from "../assets/img.af/acc07b.png";
-import img08a from "../assets/img.af/acc08a.png";
-import img08b from "../assets/img.af/acc08b.png";
-import img09a from "../assets/img.af/acc09a.png";
-import img09b from "../assets/img.af/acc09b.png";
-import img10a from "../assets/img.af/acc10a.png";
-import img10b from "../assets/img.af/acc10b.png";
-import img11a from "../assets/img.af/acc11a.png";
-import img11b from "../assets/img.af/acc11b.png";
-import img11c from "../assets/img.af/acc11c.png";
-import img11d from "../assets/img.af/acc11d.png";
-import img12a from "../assets/img.af/acc12a.png";
-import img12b from "../assets/img.af/acc12b.png";
-import img13a from "../assets/img.af/acc13a.png";
-import img13b from "../assets/img.af/acc13b.png";
-import img13c from "../assets/img.af/acc13a.png";
-import img14a from "../assets/img.af/acc14a.png";
-import img14b from "../assets/img.af/acc14b.png";
-import img14c from "../assets/img.af/acc14c.png";
-import img14d from "../assets/img.af/acc14d.png";
-import img15a from "../assets/img.af/acc15a.png";
-import img15b from "../assets/img.af/acc15b.png";
-import img16a from "../assets/img.af/acc16a.png";
-import img16b from "../assets/img.af/acc16b.png";
-import img17a from "../assets/img.af/acc17a.png";
-import img17b from "../assets/img.af/acc17b.png";
-import img17c from "../assets/img.af/acc17c.png";
-import img18a from "../assets/img.af/acc18a.png";
-import img18b from "../assets/img.af/acc18b.png";
-import img18c from "../assets/img.af/acc18c.png";
-import img19a from "../assets/img.af/acc19a.png";
-import img19b from "../assets/img.af/acc19b.png";
-import img19c from "../assets/img.af/acc19c.png";
-import img20a from "../assets/img.af/acc20a.png";
-import img20b from "../assets/img.af/acc20b.png";
-import img21a from "../assets/img.af/acc21a.png";
+import imageLibrary from "../librarys/imageLibrary";
 
 import "./generalContent.css";
 const tema4Content = [
@@ -64,15 +16,17 @@ const tema4Content = [
               casos que fuera de PVC, el empalme se hará mediante abrazadera de plástico
               reforzado, racord de bronce no incorporado y con sistema de ajuste tipo
               abulonado.</dd>
-              <div className="imagen-flotante"><img src={img01a}/><img src={img01b}/></div>
+              <div className="imagen-flotante">
+                <img src={imageLibrary.img01a}/>
+                <img src={imageLibrary.img01b}/></div>
           </li>
           <li className="hover-item">Racord de Conexión de bronce
             <dd>Se rosca a la zbrazadera para vincular la conexión domiciliaria y la red
               de distribución de agua.</dd>
-              <div className="imagen-flotante"><img src={img03a}/><img src={img03b}/></div>
+              <div className="imagen-flotante"><img src={imageLibrary.img03a}/><img src={imageLibrary.img03b}/></div>
               </li>
           <li className="hover-item">Caño PEAD PN10
-            <div className="imagen-flotante"><img src={img09a}/><img src={img09b}/></div>
+            <div className="imagen-flotante"><img src={imageLibrary.img09a}/><img src={imageLibrary.img09b}/></div>
           </li>
           <li className="hover-item">Llave Maestra de Bronce
             <dd>Es una válvula de corte general, operada por la prestadora del servicio.
@@ -82,7 +36,7 @@ const tema4Content = [
               Actualmente, ha sido reemplazada por una válvula esférica de bronce y una
               válvula de retención de bronce.</dd>
               <div className="imagen-flotante">
-                <img src={img02a} /><img src={img02b} />
+                <img src={imageLibrary.img02a} /><img src={imageLibrary.img02b} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li >
           <li className="hover-item">Válvula Esférica de Bronce
@@ -90,7 +44,7 @@ const tema4Content = [
               interior, que de acuerdo a la posición que adopta al ser accionada por la
               palanca, permite o no el paso del fluido.</dd>
               <div className="imagen-flotante">
-                <img src={img04a}/>  <img src={img04b} />
+                <img src={imageLibrary.img04a}/>  <img src={imageLibrary.img04b} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li className="hover-item">Medidor de Consumo
@@ -101,7 +55,7 @@ const tema4Content = [
               magnética, lectura directa, cuadrante seco. Caudales nominales (Qn)
               m3/h: 1,5 - 2,5 - 3,5 - 5 - 10 </dd>
               <div className="imagen-flotante">
-                <img src={img05a} /><img src={img05b} />
+                <img src={imageLibrary.img05a} /><img src={imageLibrary.img05b} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li className="hover-item">Válvula de Retención de Bronce
@@ -109,18 +63,18 @@ const tema4Content = [
               fluido en un solo sentido, utilizando distintos mecanismos para evitar
               el reflujo.</dd>
               <div className="imagen-flotante">
-                <img src={img08a}/>  <img src={img08b} />
+                <img src={imageLibrary.img08a}/>  <img src={imageLibrary.img08b} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li className="hover-item">Caja para Medidor (vereda o pared sobre L.M.)
             <div className="imagen-flotante">
-              <img src={img06a} /><div className="texto-overlay">Abrazadera</div>
-              <img src={img06b} />
+              <img src={imageLibrary.img06a} /><div className="texto-overlay">Abrazadera</div>
+              <img src={imageLibrary.img06b} />
               <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li className="hover-item">Soporte de acero inoxidable  
             <div className="imagen-flotante">
-              <img src={img07a}/>  <img src={img07b} />
+              <img src={imageLibrary.img07a}/>  <img src={imageLibrary.img07b} />
               <div className="texto-overlay">Abrazadera</div></div>
           </li>
         </ol>
@@ -144,10 +98,10 @@ const tema4Content = [
               de retención impidiendo el retroceso del agua. Tiene una única dirección de flujo
               y se instala en forma horizontal. Actualmente, se la reemplaza por una válvula
               esférica de ¼ de vuelta.</dd>
-              <div className="imagen-flotante"><img src={img10a}/><img src={img10b}/></div>
+              <div className="imagen-flotante"><img src={imageLibrary.img10a}/><img src={imageLibrary.img10b}/></div>
           </li>
           <li className="hover-item">Caño PPH/PPCR
-            <div className="imagen-flotante"><img src={img16a}/><img src={img16b}/></div>
+            <div className="imagen-flotante"><img src={imageLibrary.img16a}/><img src={imageLibrary.img16b}/></div>
           </li>
           <li className="hover-item">Válvula Esférica de Bronce/Plástico
             <dd>También llamadas de ¼ de vuelta, poseen una esfera perforada en su interior, que
@@ -155,7 +109,7 @@ const tema4Content = [
               el paso del fluido. La esfera, como el cuerpo de la válvula pueden ser de bronce o
               plástico (Rosca H-H, con 1 media unión, con 2 medias uniones, desde 1/2" hasta 4").</dd>
               <div className="imagen-flotante">
-                <img src={img14a}/><img src={img14b}/><img src={img14c}/><img src={img14d}/>
+                <img src={imageLibrary.img14a}/><img src={imageLibrary.img14b}/><img src={imageLibrary.img14c}/><img src={imageLibrary.img14d}/>
               </div>
           </li>
           <li className="hover-item">Válvula Esclusa
@@ -164,13 +118,13 @@ const tema4Content = [
               es que la apertura o cierre de las mismas se realiza en forma lenta, evitando de
               el fenómeno denominado golpe de ariete.</dd>
               <div className="imagen-flotante">
-                <img src={img13a} /><img src={img13b} /><img src={img13c} />
+                <img src={imageLibrary.img13a} /><img src={imageLibrary.img13b} /><img src={imageLibrary.img13c} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li >
           <li className="hover-item">Válvula de Bronce Cuarto de Vuelta:
             <dd>Se utiliza como válvula de limpieza de tanques. Son llaves de cierre rápido.</dd>
               <div className="imagen-flotante">
-                <img src={img12a}/>  <img src={img12b} />
+                <img src={imageLibrary.img12a}/>  <img src={imageLibrary.img12b} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li className="hover-item">Válvula de Retención de Pie de Bomba
@@ -179,14 +133,14 @@ const tema4Content = [
               ocurre, puede que la bomba no aspire y deba cargarse (cebado) la cañería con agua
               por el tapón que tiene la bomba en el cuerpo de la turbina.</dd>
               <div className="imagen-flotante">
-                <img src={img11a} /><img src={img11b} /><img src={img11c} /><img src={img11d} />
+                <img src={imageLibrary.img11a} /><img src={imageLibrary.img11b} /><img src={imageLibrary.img11c} /><img src={imageLibrary.img11d} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li className="hover-item">Válvula a Flotante
             <dd>Se instala en la entrada de agua en el tanque de bombeo; en la entrada de agua
               en el tanque de reserva cuando está alimentado en forma directa.</dd>
               <div className="imagen-flotante">
-                <img src={img15a}/>  <img src={img15b} />
+                <img src={imageLibrary.img15a}/>  <img src={imageLibrary.img15b} />
                 <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li className="hover-item">Bomba de Impulsión
@@ -210,8 +164,8 @@ const tema4Content = [
               </ul>
               Cada bomba tiene su Curva de Funcionamiento especificada por el fabricante.</p>
             <div className="imagen-flotante">
-              <img src={img17a} /><div className="texto-overlay">Abrazadera</div>
-              <img src={img17b} /><img src={img17c} />
+              <img src={imageLibrary.img17a} /><div className="texto-overlay">Abrazadera</div>
+              <img src={imageLibrary.img17b} /><img src={imageLibrary.img17c} />
               <div className="texto-overlay">Abrazadera</div></div>
           </li>
           <li>Control de Nivel de Líquido
@@ -231,17 +185,17 @@ const tema4Content = [
                 <ul>
                   <li className="hover-item">Tipo boya deslizante
                   <div className="imagen-flotante">
-              <img src={img18a}/>  <img src={img18b} /><img src={img18c} />
+              <img src={imageLibrary.img18a}/>  <img src={imageLibrary.img18b} /><img src={imageLibrary.img18c} />
               <div className="texto-overlay">Abrazadera</div></div>
                   </li>
                   <li className="hover-item">Tipo boya hermético
                   <div className="imagen-flotante">
-              <img src={img19a}/>  <img src={img19b} /><img src={img19c} />
+              <img src={imageLibrary.img19a}/>  <img src={imageLibrary.img19b} /><img src={imageLibrary.img19c} />
               <div className="texto-overlay">Abrazadera</div></div>
                   </li>
                   <li className="hover-item">A tanza
                   <div className="imagen-flotante">
-              <img src={img20a}/>  <img src={img20b} />
+              <img src={imageLibrary.img20a}/>  <img src={imageLibrary.img20b} />
               <div className="texto-overlay">Abrazadera</div></div>
                   </li>
                 </ul>
@@ -251,7 +205,7 @@ const tema4Content = [
                   combinado con un dispositivo electrónico, actúa sobre la bobina de mando del
                   contactor.
                   <div className="imagen-flotante">
-              <img src={img21a}/>
+              <img src={imageLibrary.img21a}/>
               <div className="texto-overlay">Abrazadera</div></div></li>
               </ul>
           </p>

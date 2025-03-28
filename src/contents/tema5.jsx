@@ -1,7 +1,7 @@
 import EquationRender from '../components/EquationRender/EquationRender';
-import {equations} from "../library/equations";
+import { equationsLibrary } from "../librarys/equationsLibrary";
 import 'katex/dist/katex.min.css';
-import { TableRenderer, tablesLibrary } from '../library/tables';
+import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
 
 const tema5Content = [
     {
@@ -76,29 +76,24 @@ const tema5Content = [
         </ul>
         <h3>Valores mínimos de Reserva en T.B. y T.R.</h3>
         <p>La Norma OSN establece el volumen de los tanques en base a las siguientes relaciones:</p>
-        <EquationRender equation={equations.volTR} />
-        <EquationRender equation={equations.volTB} />
+        <EquationRender equation={equationsLibrary.volRTD}/>
       </div>,
     },
-
     {
       id: "section2",
-      title: "Detalles Técnicos del Tema 1",
-      content: 
-      <div>
-        <h2>Visualización de Ecuaciones</h2>
-        <EquationRender equation={equations.darcyWeisbach} />
-        <TableRenderer table={tablesLibrary.flowRates} />
-      </div>,
+      title: "Parámetros de Diseño de la Instalación",
+      content: '',
       images: [],
       video: null
     },
     {
       id: "section3",
-      title: "Ejemplos Prácticos del Tema 1",
-      content: "",
-      images: [],
-      video: null
+      title: "Pérdidas de Carga de la Instalación",
+      content:  
+      <div>
+        <h2>Visualización de Ecuaciones</h2>
+        <EquationRender equation={equationsLibrary.darcyWeisbach}/>
+      </div>,
     }
   ];
   
