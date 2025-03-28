@@ -1,9 +1,9 @@
-// VolRTDStructure.jsx
 import React, { useState } from "react";
+import "./calculateLibrary.css";
 
 export function VolRTDCalculate() {
-  const [result, setResult] = useState({ RTD: "", VTR: "", VTB: "" });
 
+  const [result, setResult] = useState({ RTD: "", VTR: "", VTB: "" });
   const handleCalcular = () => {
     const case1 = document.getElementById("case1").value;
     const case2 = document.getElementById("case2").value;
@@ -13,60 +13,64 @@ export function VolRTDCalculate() {
     const quan4 = parseFloat(document.getElementById("input4").value) || 0;
 
     let RTD = 0;
-    if (case1 === "opcion1") {
-      RTD = case2 === "opcionA" ? 850 * quan1 : 600 * quan1;
-    } else if (case1 === "opcion2") {
-      RTD =
-        case2 === "opcionA"
-          ? 350 * quan2 + 250 * quan3 + 150 * quan4
-          : 250 * quan2 + 150 * quan3 + 100 * quan4;
-    }
 
+    if (case1 === "option1") {
+      // Selecciona el multiplicador según la opción
+      const multiplier = case2 === "optionA" ? 850 : case2 === "optionB" ? 600 : 0;
+      RTD = multiplier * quan1;
+    } else if (case1 === "option2") {
+      RTD =
+        case2 === "optionA"
+          ? 350 * quan2 + 250 * quan3 + 150 * quan4
+          : case2 === "optionB"
+          ? 250 * quan2 + 150 * quan3 + 100 * quan4
+          : 0;
+    };
     const VTR = RTD * (1 / 3);
     const VTB = RTD * (1 / 5);
 
-    setResult({ RTD, VTR: VTR.toFixed(2), VTB: VTB.toFixed(2) });
+    setResult({ RTD, VTR: VTR.toFixed(0), VTB: VTB.toFixed(0) });
   };
 
   return (<>
-      <h4>Calcular la RTD y los volúmenes de los tanques</h4>
-      <div>
+      <h4>Calcular la RTD y los Volúmenes mínimos</h4>
+      <div className="select-container">
         <select id="case1">
-          <option value="">Caso</option>
-          <option value="opcion1">Viviendas</option>
-          <option value="opcion2">Oficinas</option>
+          <option value="0">Caso</option>
+          <option value="option1">Viviendas</option>
+          <option value="option2">Oficinas</option>
         </select>
-        <select id="case2" className="hidden">
-          <option value="">Provisión</option>
-          <option value="opcionA">Directa</option>
-          <option value="opcionB">Bombeo</option>
+        <select id="case2">
+          <option value="0">Provisión</option>
+          <option value="optionA">Directa</option>
+          <option value="optionB">Bombeo</option>
         </select>
       </div>
-      <div id="inputs-container" className="hidden">
-        <label>Cantidad de Viviendas</label>
-        <input id="input1" type="text" placeholder="0" />
-        <input id="input2" type="text" placeholder="0" />
-        <input id="input3" type="text" placeholder="0" />
-        <input id="input4" type="text" placeholder="0" />
+      <div className="input-container">
+          <label>N° de Viviendas:</label>
+          <input id="input1" placeholder="0"/>
+          <label>Cant. Baños/Toillete:</label>
+          <input type="text" id="input2" placeholder="0"/>
+          <label>Cant. Mingitorios:</label>
+          <input type="text" id="input3" placeholder="0"/>
+          <label>Cant. Lav./Piletas</label>
+          <input id="input4" placeholder="0"/>
       </div>
-      <div>
-        <span
-          style={{ cursor: "pointer", color: "blue" }}
-          onClick={handleCalcular}
-        >
+      <div className="calculate-container">
+        <span style={{ cursor: "pointer", color: "blue" }} onClick={handleCalcular}>
           Calcular
         </span>
-        <div>RTD: {result.RTD}</div>
-        <div>VTR: {result.VTR}</div>
-        <div>VTB: {result.VTB}</div>
-      </div>
+        <div>RTD = {result.RTD} lts.</div>
+        <div>Vol<sub>TR</sub> ≥ {result.VTR} lts.</div>
+        <div>Vol<sub>TB</sub> ≥ {result.VTB} lts.</div>
+        </div>
       </>
   );
 }
 
 export function DarcyWeisbachCalculate() {
     const [result, setResult] = useState({ dhf: "" });
-  
+ 
     const handleCalcular = () => {
       const quan1 = parseFloat(document.getElementById("input1").value) || 0;
       const quan2 = parseFloat(document.getElementById("input2").value) || 0;

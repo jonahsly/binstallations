@@ -1,7 +1,7 @@
 import EquationRender from '../components/EquationRender/EquationRender';
 import { equationsLibrary } from "../librarys/equationsLibrary";
-import 'katex/dist/katex.min.css';
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
+import 'katex/dist/katex.min.css';
 
 const tema5Content = [
     {
@@ -90,10 +90,10 @@ const tema5Content = [
       id: "section3",
       title: "Pérdidas de Carga de la Instalación",
       content:  
-      <div>
+      <>
         <h2>Visualización de Ecuaciones</h2>
         <EquationRender equation={equationsLibrary.darcyWeisbach}/>
-      </div>,
+      </>,
     }
   ];
   

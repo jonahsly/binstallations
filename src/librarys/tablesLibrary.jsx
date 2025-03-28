@@ -5,7 +5,7 @@ import React from 'react';
 const tablesLibrary = {
 
     rtdVivienda: {
-        title: "RTD Vivienda Completa",
+        title: "Vivienda Completa",
         // Definición de dos filas de encabezados:
         // La primera fila agrupa las columnas, la segunda muestra los subencabezados.
         headers: ["Provisión", "Vol. de Reserva"],
@@ -15,7 +15,7 @@ const tablesLibrary = {
         ]
     },
     rtdOficinas: {
-        title: "RTD Oficinas, negoción, depósitos, etc.",
+        title: "Oficinas, negoción, depósitos, etc.",
         // Definición de dos filas de encabezados:
         // La primera fila agrupa las columnas, la segunda muestra los subencabezados.
         headers: ["Provisión", "Baño o Toillet", "Mingitorio", "Lavatorio o Pileta de cocina/lavar"],
@@ -61,28 +61,26 @@ const tablesLibrary = {
           { header: { primary: "Grupo B", secondary: "Sub B2" }, data: ["45", "55", "65"] }
         ]
       },
-
-
-  // Tabla de propiedades del agua
-  waterProperties: {
-    title: "Propiedades del agua",
-    headers: ["Propiedad", "Valor"],
-    data: [
-      ["Densidad", "1000 kg/m³"],
-      ["Viscosidad", "1 cP"],
-      ["Tensión superficial", "72 mN/m"]
-    ]
-  },
-  // Tabla de valores de caudales de referencia
-  flowRates: {
-    title: "Valores de referencia de caudales",
-    headers: ["Diámetro", "Caudal máximo (m³/h)"],
-    data: [
-      ["100 mm", "300"],
-      ["150 mm", "500"],
-      ["200 mm", "800"]
-    ]
-  }
+      // Tabla de propiedades del agua
+      waterProperties: {
+        title: "Propiedades del agua",
+        headers: ["Propiedad", "Valor"],
+        data: [
+          ["Densidad", "1000 kg/m³"],
+          ["Viscosidad", "1 cP"],
+          ["Tensión superficial", "72 mN/m"]
+        ]
+      },
+      // Tabla de valores de caudales de referencia
+      flowRates: {
+        title: "Valores de referencia de caudales",
+        headers: ["Diámetro", "Caudal máximo (m³/h)"],
+        data: [
+          ["100 mm", "300"],
+          ["150 mm", "500"],
+          ["200 mm", "800"]
+        ]
+      }
 };
 
 // Componente que renderiza una tabla individual
@@ -93,7 +91,7 @@ const TableRenderer = ({ table }) => {
     return (
       <div style={{ marginBottom: '2rem' }}>
         <h3>{table.title}</h3>
-        <table border="1" cellPadding="5" style={{ borderCollapse: 'collapse', width: '100%' }}>
+        <table border="1" cellPadding="5" style={{ borderCollapse: 'collapse', width: '100%', maxWidth:'600px' }}>
           <thead>
             <tr>
               {/* Columna para los encabezados laterales */}
@@ -125,7 +123,7 @@ const TableRenderer = ({ table }) => {
     return (
       <div style={{ marginBottom: '2rem' }}>
         <h3>{table.title}</h3>
-        <table border="1" cellPadding="5" style={{ borderCollapse: 'collapse', width: '100%' }}>
+        <table border="1" cellPadding="5" style={{ borderCollapse: 'collapse', width: '100%', maxWidth:'600px'  }}>
           <thead>
             {table.headers.map((headerRow, rowIndex) => (
               <tr key={rowIndex}>
@@ -155,7 +153,7 @@ const TableRenderer = ({ table }) => {
     return (
       <div style={{ marginBottom: '2rem' }}>
         <h3>{table.title}</h3>
-        <table border="1" cellPadding="5" style={{ borderCollapse: 'collapse', width: '100%' }}>
+        <table border="1" cellPadding="5" style={{ borderCollapse: 'collapse', width: '100%', maxWidth:'600px'  }}>
           <thead>
             <tr>
               {table.headers.map((header, index) => (
@@ -178,7 +176,6 @@ const TableRenderer = ({ table }) => {
     }
 };
 
-// Componente que muestra todas las tablas de la librería
 const TablesLibrary = () => {
   return (
     <div>

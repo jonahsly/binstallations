@@ -8,7 +8,7 @@ const equationsLibrary = {
             "\Vol_{TR} \\geq  \\frac{1}{3} \\cdot RTD",
             "\Vol_{TB} \\geq  \\frac{1}{5} \\cdot RTD",],
         variables: [
-            "RTD: Reserva total diaria",
+            "RTD: reserva total diaria",
             <div>Vol<sub>TR</sub>: volumen del tanque de reserva</div>,
             <div>Vol<sub>TB</sub>: volumen del tanque de bombeo</div>],
         constants: [],
@@ -62,35 +62,6 @@ const equationsLibrary = {
         constants: {},
         calculate: '',
     },
-    
 };
 
 export {equationsLibrary};
-  
-
-
-
-
-
-
-
-
-const equations = {
-    
-    
-    
-  
-  
-  
-  };
-  
-  // Componente que exporta el objeto de ecuaciones
-  // Este componente no renderiza nada en la interfaz, pero actúa como contenedor central
-  // que puede ser importado en otros componentes para renderizar, editar y calcular
-  // cualquiera de sus parámetros.
-  const EquationLibrary = () => {
-    return null;
-  };
-  
-  export { equations, EquationLibrary };
-  

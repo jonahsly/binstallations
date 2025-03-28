@@ -9,12 +9,6 @@ import tema3Content from '../../contents/tema3';
 import tema4Content from '../../contents/tema4';
 import tema5Content from '../../contents/tema5';
 //import tema6Content from '../../contents/tema6';
-//import tema7Content from '../../contents/tema7';
-//import tema8Content from '../../contents/tema8';
-//import tema9Content from '../../contents/tema9';
-//import tema10Content from '../../contents/tema10';
-//import tema11Content from '../../contents/tema11';
-//import tema12Content from '../../contents/tema12';
 
 const getSectionsByTheme = (theme) => {
   switch (theme) {

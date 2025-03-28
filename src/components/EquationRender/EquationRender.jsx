@@ -4,7 +4,6 @@ import MathRenderer from './MathRenderer';
 import "./EquationRender.css"
 
 const EquationRenderer = ({ equation }) => {
-  
   return (
     <>
       <div className='equation-container'>
