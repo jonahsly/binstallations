@@ -1,13 +1,9 @@
-// tablesLibrary.jsx
 import React from 'react';
 
-// Definición de las tablas de referencia
 const tablesLibrary = {
 
     rtdVivienda: {
         title: "Vivienda Completa",
-        // Definición de dos filas de encabezados:
-        // La primera fila agrupa las columnas, la segunda muestra los subencabezados.
         headers: ["Provisión", "Vol. de Reserva"],
         data: [
             ["Directa", "850 lts."],
@@ -16,14 +12,79 @@ const tablesLibrary = {
     },
     rtdOficinas: {
         title: "Oficinas, negoción, depósitos, etc.",
-        // Definición de dos filas de encabezados:
-        // La primera fila agrupa las columnas, la segunda muestra los subencabezados.
         headers: ["Provisión", "Baño o Toillet", "Mingitorio", "Lavatorio o Pileta de cocina/lavar"],
         data: [
             ["Directa", "350 lts.", "250 lts.", "150 lts."],
             ["Bombeo", "250 lts.", "150 lts.", "100 lts."]
         ]
     },
+    minPresp: {
+      title: "Cargas Piezométricas Mínimas (Reglamento CABA)",
+      headers: ["Artefactos", "Presión residual mínima"],
+      data: [
+        ["I.P./L./Be./P.C./P.L./Du.", "6 mca."],
+        ["Ming. c/v.a.", "10 mca."],
+        ["I.P. c/v.a.", "10 mca."]
+    ]
+    },
+    minPrese: {
+      title: "Cargas Estáticas Mínimas (Norma OSN)",
+      headers: ["Designación de la Bajada", "Presión estática mínima"],
+      data: [
+        ["alimenta más de 1 U.Loc., por azotea.", "4 mca."],
+        ["d = 50 mm. alimenta a válv. automáticas/más de 1 U.Loc, por azotea.", "2,5 mca."],
+        ["bajada mixta a artefactos y calefones a gas", "4 mca."],
+        ["d = 19 exclusiva a calefón a gas", "2 mca."],
+        ["alimenta 1 solo artefacto o recinto con artefactos.", "0,5 mca."],
+        ["alimenta artefactos de una misma U.Loc. en la misma planta, pero en distintos ambientes.", "2 mca."],
+        ["d = 25 mm. a válv. automáticas.", "5,5 mca."],
+        ["d = 32 mm. a válv. automáticas.", "3,5 mca."],
+        ["d = 32 mm. a válv. automáticas.", "2,5 mca."],
+        ["d = 50 mm. a válv. automáticas.", "2,5 mca."],
+        ["Canilla de servicio de uso poco frecuente (azotea, terraza, etc.).", "---"],
+    ]
+    },
+    caudalMedio1: {
+      title: "Consumo Medio de Artefactos Sanitarios (Díaz Dorado, M.)",
+      headers: ["Artefacto", "Caudal [lts/s]"],
+      data: [
+        ["Canilla de Servicio", "0,13"],
+        ["Lavatorio", "0,10"],
+        ["Bañera", "0,20 - 0,30"],
+        ["Ducha", "0,15"],
+        ["Inodoro c/Depósito", "0,10"],
+        ["Inodoro c/Válv. Automática", "1,50 - 2,00"],
+        ["Bidé", "0,10"],
+        ["Pileta de Cocina", "0,15"],
+        ["Pileta de Cocina (restaurante)", "0,30"],
+        ["Pileta de Lavar", "0,30"],
+        ["Máquina de Lavar", "0,20"],
+        ["Mingitorio", "0,10"],
+    ]
+    },
+    caudalMedio2: {
+      title: "Consumo Medio de Artefactos Sanitarios (Reglamento CABA)",
+      headers: ["Artefacto", "Caudal [lts/s]"],
+      data: [
+        ["Canilla de Servicio", "0,13"],
+        ["Lavatorio", "0,20"],
+        ["Bañera", "0,30"],
+        ["Ducha", "0,30"],
+        ["Inodoro c/Depósito", "0,20"],
+        ["Inodoro c/Válv. Automática", "1,50"],
+        ["Bidé", "0,20"],
+        ["Pileta de Cocina", "0,20"],
+        ["Pileta de Cocina (restaurante)", "0,30"],
+        ["Pileta de Lavar", "0,20"],
+        ["Máquina de Lavar", "0,20"],
+        ["Mingitorio", "0,20"],
+    ]
+    },
+
+
+
+
+
 
     doubleHeaderTable: {
         title: "Tabla con doble encabezado superior",

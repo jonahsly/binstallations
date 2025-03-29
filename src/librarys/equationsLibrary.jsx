@@ -14,6 +14,17 @@ const equationsLibrary = {
         constants: [],
         calculate: <VolRTDCalculate/>,
     },
+    //Presión Disponible
+    presDisp: {
+        expressions: [
+            "\P_{disp} = \\Delta H_{top} \\geqslant Σ (\\Delta H_{f} + \\Delta H_{l}) + H_{r}",],
+        variables: [
+            <>∆H<sub>top</sub>: presión estática disponible </>,
+            <>∆H<sub>f</sub>: pérdida de carga por fricción </>,
+            <>∆H<sub>l</sub>: pérdida de carga localizada </>,
+            <>H<sub>r</sub>: resión residual</>],
+        constants: [],
+    },
     // Darcy-Weisbach
     darcyWeisbach: {
         expressions: ["\\Delta h_f = f \\cdot \\frac{L}{D} \\cdot \\frac{V^2}{2g}"],
