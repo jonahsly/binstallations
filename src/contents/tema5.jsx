@@ -76,34 +76,40 @@ const tema5Content = [
     },
     {
       id: "section2",
-      title: "Parámetros de Diseño de la Instalación",
+      title: "Dimensionamiento de la Instalación",
       content: <>
-      <h2>Presiones mínimas de trabajo de los Artefactos Sanitarios</h2>
-      <h3>Presión Residual o Piezométrica</h3>
-      <p>Cada artefacto sanitario funciona adecuadamente dentro de un rango de presiones, definido por un umbral que es la presión
-mínima que asegure el caudal requerido por el artefacto. Se denotará HrIng. Gustavo L. Lazarte-Ing. Viviana B. Sánchez 41 /63
-La presión mínima Hr se denomina “presión residual”, “presión piezométrica”, “presión dinámica”, “presión mínima” o
-“carga mínima” y puede aceptarse la siguiente definición –entre otras-:
-“Es la Presión resultante en la válvula del artefacto, 
-cuando circula en ese punto, el caudal requerido por el artefacto”.</p>
-      <EquationRender equation={equationsLibrary.presDisp}/>
-      <TableRenderer table={tablesLibrary.minPresp} />
-      <h3>Presión mínima estática</h3>
-      <TableRenderer table={tablesLibrary.minPrese} />
-      <h3>Casos particulares</h3>
-      <h2>Caudales Medios de los Artefactos Sanitarios</h2>
-      <TableRenderer table={tablesLibrary.caudalMedio1} />
-      <TableRenderer table={tablesLibrary.caudalMedio2} />
-
-      <h2>Velocidad de circulación del agua</h2>
+        <h2>Presiones mínimas de trabajo de los Artefactos Sanitarios</h2>
+        <h3>Presión Residual o Piezométrica</h3>
+        <p>Cada artefacto sanitario funciona adecuadamente dentro de un rango de
+          presiones, definido por un umbral que es la presión mínima que asegure
+          el caudal requerido por el artefacto. La presión mínima Hr se denomina
+          “presión residual”, “presión piezométrica”, “presión dinámica”,
+          “presión mínima” o “carga mínima” y puede aceptarse la siguiente
+          definición –entre otras-: “Es la Presión resultante en la válvula del
+          artefacto, cuando circula en ese punto, el caudal requerido por el
+          artefacto”.</p>
+        <EquationRender equation={equationsLibrary.presDisp}/>
+        <TableRenderer table={tablesLibrary.minPresp} />
+        <h3>Presión mínima estática</h3>
+        <TableRenderer table={tablesLibrary.minPrese} />
+        <h3>Casos particulares</h3>
+        <h2>Caudales Medios de los Artefactos Sanitarios</h2>
+        <TableRenderer table={tablesLibrary.caudalMedio1} />
+        <TableRenderer table={tablesLibrary.caudalMedio2} />
+        <h2>Velocidad de circulación del agua</h2>
+        <TableRenderer table={tablesLibrary.velocRuido} />
+        <TableRenderer table={tablesLibrary.velocRecom} />
       </>,
     },
     {
       id: "section3",
-      title: "Pérdidas de Carga de la Instalación",
-      content:  
+      title: "Dimensionamiento Simplificado (Norma OSN)",
+      content:
       <>
         <h2>Visualización de Ecuaciones</h2>
+        <TableRenderer table={tablesLibrary.diamPyQ} />
+        <TableRenderer table={tablesLibrary.seccNec} />
+        <TableRenderer table={tablesLibrary.seccLim} />
         <EquationRender equation={equationsLibrary.darcyWeisbach}/>
       </>,
     }
