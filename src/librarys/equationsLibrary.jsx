@@ -27,7 +27,7 @@ const equationsLibrary = {
     },
     // Darcy-Weisbach
     darcyWeisbach: {
-        expressions: ["\\Delta h_f = f \\cdot \\frac{L}{D} \\cdot \\frac{V^2}{2g}"],
+        expressions: ["\\Delta H_f = f \\cdot \\frac{L}{D} \\cdot \\frac{V^2}{2g}"],
         variables: [
             <>∆h<sub>f</sub>: pérdida de carga</>,
             "f: factor de fricción",
@@ -40,24 +40,28 @@ const equationsLibrary = {
     },
     // Colebrook-White
     colebrookWhite: {
-        expression: "\\frac{1}{\\sqrt{f}} = -2 \\log_{10}\\left(\\frac{\\varepsilon}{3.7\\,D} + \\frac{2.51}{Re\\,\\sqrt{f}}\\right)",
-        variables: ["Re", "ε", "D"],
-        constants: {coef1: 3.7, coef2: 2.51},
-        calculate: '',
+        expressions: ["\\frac{1}{\\sqrt{f}} = -2 \\log_{10}\\left(\\frac{\\varepsilon}{3.7\\,D} + \\frac{2.51}{Re\\,\\sqrt{f}}\\right)"],
+        variables: ["f", "Re", "ε", "D"],
+        constants: [],
+    },
+    // Reynolds
+   reyNolds: {
+        expressions: ["\Re  = \\frac{ V \\cdot d }{ υ }"],
+        variables: ["V", "d", "υ"],
+        constants: [],
     },
     // Hazen-Williams
     hazenWilliams: {
-        expression: "h_f = 10.67 \\frac{L\\,Q^{1.852}}{C^{1.852}\\,D^{4.87}}",
+        expressions: ["\\Delta H_f = 10.61 \\frac{L}{D^{4.87}} \\cdot \\,(\\frac{Q}{C})^{1.85} "],
         variables: ["L", "Q", "D", "C"],
-        constants: {coef: 10.67, exponentQ: 1.852, exponentD: 4.87},
-        calculate: '',
+        constants: [],
     },
+
     // Ecuación de Continuidad
     continuity: {
         expression: "$Q = A \\cdot V$",
         variables: ["A", "V"],
-        constants: {},
-        calculate: '',
+        constants: [],
     },
     // Ecuación de Bernoulli
     bernoulli: {

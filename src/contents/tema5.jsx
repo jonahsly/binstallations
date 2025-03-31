@@ -80,25 +80,116 @@ const tema5Content = [
       content: <>
         <h2>Presiones mínimas de trabajo de los Artefactos Sanitarios</h2>
         <h3>Presión Residual o Piezométrica</h3>
-        <p>Cada artefacto sanitario funciona adecuadamente dentro de un rango de
-          presiones, definido por un umbral que es la presión mínima que asegure
-          el caudal requerido por el artefacto. La presión mínima Hr se denomina
-          “presión residual”, “presión piezométrica”, “presión dinámica”,
-          “presión mínima” o “carga mínima” y puede aceptarse la siguiente
-          definición –entre otras-: “Es la Presión resultante en la válvula del
-          artefacto, cuando circula en ese punto, el caudal requerido por el
-          artefacto”.</p>
+        <p>Cada artefacto sanitario funciona adecuadamente dentro de un rango de presiones,
+          definido por un umbral que es la presión mínima que asegure el caudal requerido
+          por el artefacto. La presión residual (también llamada presión dinámica)
+          H<sub>r</sub> es la Presión resultante en la válvula del artefacto, cuando circula
+          en ese punto, el caudal requerido por el artefacto.</p>
         <EquationRender equation={equationsLibrary.presDisp}/>
+        <p>En aquellos artefactos en que la grifería se conecta a la cañería mediante la
+          conexión flexible, se considerará la toma del artefacto, definida como el extremo
+          de la instalación (normalmente un codo o la salida a 90° de una te) desde donde
+          parte la conexión flexible a la válvula del artefacto. En el caso de la ducha, la
+          salida del agua se produce por sobre la válvula, a una altura sobre esta de
+          1,20 m. aproximadamente, entonces debemos considerar en ese punto la carga mínima.
+        </p>
+        <p> El calefón a gas instantáneo, requiere de un caudal mínimo para que se produzca
+          la apertura de la válvula de gas del quemador. El caudal mínimo es asegurado por
+          la presión mínima en el punto de consumo de agua caliente(la ducha). Este consumo
+          será en la generalidad de los casos, el más comprometido hidráulicamente.</p>
         <TableRenderer table={tablesLibrary.minPresp} />
         <h3>Presión mínima estática</h3>
+        <p>La Norma OSN no establece presiones mínimas piezométricas sino presiones mínimas
+          estáticas. Desde el punto de vista hidráulico, para dimensionar la instalación se
+          requiere fijar únicamente las cargas mínimas piezométricas en los artefactos, no
+          teniendo mayor sentido fijar cargas estáticas mínimas mientras la presión estática
+          diponible permita asegurar las cargas piezométricas.</p>
+        <p>Cuando la alimentación de agua a la instalación se hace mediante tanque de reserva,
+          este provee la presión necesaria para la distribución de agua en el edificio. Dado
+          que las presiones residuales dependen de los caudales instantáneos, la Normas OSN,
+          para asegurar el funcionamiento eficiente de la instalación, establece presiones
+          mínimas que denominamos estáticas pues se refieren a la diferencia de cota entre el
+          nivel de pelo libre del tanque de reserva y el artefacto considerado. En ciertos
+          casos y con el mismo objeto, fija también diámetros mínimos. Dado que el nivel de
+          pelo libre del tanque de reserva es variable, la carga mínima estática se mide desde
+          el fondo del tanque de reserva, es la cota más desfavorable y segura para la carga.
+          En el caso de tanques alimentados por bombeo, puede considerarse como cota segura
+          el nivel en el cual arranca el equipo de bombeo, normalmente unos 20 cm. por sobre
+          la base del tanque</p>
         <TableRenderer table={tablesLibrary.minPrese} />
+        <p>
+          <ul>El Reglamento CABA exige:
+            <li>6 mca. para bajadas en columna</li>
+            <li>10 mca. para válvulas y calderas duales</li>
+            <li>6 mca. para bajadas mixtas a artefactos y calefones o termotanques a gas únicamente</li>
+            <li>No habiendo 6,00 m. de carga, el calentador más elevado tendrá bajada independiente de 4 mca.</li>
+            <li>Para carga menor de 4,00 m. no pueden instalarse calefones o termotanques a gas.</li>
+          </ul>
+          Se consideran bajadas en columna aquellas que surtiendo más de una unidad locativa
+          se deriven de una cañería de agua corriente que corra a lo largo de una azotea.</p>
         <h3>Casos particulares</h3>
+        <ul><li>Calefón</li>
+            <dd>La Norma NAG 200 exige que la presión mínima de alimentación de agua fría para calefones debe ser
+              la equivalente a una columna de agua de 2 m por encima de la salida más alta (comúnmente la ducha)
+              (Capítulo VI, 6.7.3.1 inciso e, página 139).</dd>
+          <li>Válvulas Automáticas</li>
+            <dd>De la tabla anterior debe entenderse el valor dado de carga mínima para la válvula más comprometida
+              hidráulicamente. En cualquier caso, deberá verificarse el valor mínimo de la carga de acuerdo a lo
+              exigido por el fabricante para su producto.</dd>
+        </ul>
+        <h3>Presiones Máximas de Trabajo de Artefactos Sanitarios</h3>
+        <p>La presión de trabajo de los artefactos sanitarios se limita superiormente a un valor máximo que la
+          Norma OSN establece en 45 m, ello tiene que ver fundamentalmente con que los artefactos están diseñados
+          para presiones menores. Por otro lado debe observarse que una pérdida de agua por goteo en una cañilla
+          que no obtura completamente, incrementa su caudal en función de la presión. Asimismo, deberán atenderse
+          siempre las especificaciones del fabricante en cuanto a la presión máxima, por ejemplo la firma FV,
+          para la válvula automática de inodoro indica no sobrepasar los 4.5 kg/cm<sup>2</sup>.</p>
         <h2>Caudales Medios de los Artefactos Sanitarios</h2>
+        <p>Cada artefacto sanitario tiene un consumo de agua sanitaria definido de acuerdo a su uso.
+        Se han establecidos consumos medios para artefactos y grupos de artefactos.</p>
         <TableRenderer table={tablesLibrary.caudalMedio1} />
         <TableRenderer table={tablesLibrary.caudalMedio2} />
         <h2>Velocidad de circulación del agua</h2>
+        <p>La velocidad del agua dentro de la cañería de distribución debe mantenerse dentro de límites acotados.
+          El rango de velocidades aconsejadas es de 0,5 m/s a 2 m/s aunque algunos autores extienden el límite
+          superior a 2,5 m/s y el CTE de España a 3,5 m/s para tuberías termoplásticas y multicapa.</p>
+        <ul>Velocidades menores a 0,5 m/s:
+          <li>Facilitan la sedimentación en las tuberías que pueden ocasionar obstrucciones.</li>
+          <li>Diámetros antieconómicos.</li>
+        </ul>
+        <ul>Velocidades mayores a 2 m/s:
+          <li>Producen gran rozamiento y ruido en las tuberías.</li>
+          <li>Excesivas pérdidas de carga.</li>
+          <li>Erosión en la tubería.</li>
+        </ul>
+        <p>No debe perderse de vista que la pérdida de carga en una tubería y sus accesorios es función del
+          cuadrado de la velocidad, por lo que valores elevados de velocidad implican valores elevados de pérdidas
+          de carga. En cualquier caso, tratándose de artefactos particulares deberá verificarse si el fabricante
+          especifica una velocidad máxima, que en general tiene que ver con la posibilidad de erosión de los
+          asientos de válvulas. En la siguiente tabla se indica el nivel de ruido en función de la velocidad.</p>
         <TableRenderer table={tablesLibrary.velocRuido} />
+        <p>En el proceso de diseño de una instalación, la adopción de un cierto valor de la velocidad, dentro del
+          rango recomendado, tiene consideraciones técnico-económicas. Para instalaciones de edificios en altura
+          que se alimentan desde un tanque de reserva, en aquellos pisos con mayor carga estática disponible, la
+          adopción de velocidades mayores supone diámetros menores y la mayor pérdida de carga que ello significa
+          no afecta las presiones mínimas requeridas,</p>
         <TableRenderer table={tablesLibrary.velocRecom} />
+        <h2>Pérdidas de Carga en La Instalación</h2>
+        <h3>Pérdidas por Fricción</h3>
+        <p>La Hidráulica provee distintas fórmulas matemáticas para el cálculo de pérdidas de carga, fórmulas
+          empíricas, semi-empíricas, que son función de la velocidad de circulación, del diámetro y de las
+          características de rugosidad del material, cada una de ellas indicadas para las condiciones de trabajo
+          en las que han sido establecidas. Entre las fórmulas más usadas para el cálculo de las pérdidas por
+          rozamiento, vamos a citar:</p>
+        <EquationRender equation={equationsLibrary.darcyWeisbach}/>
+        <EquationRender equation={equationsLibrary.colebrookWhite}/>
+        <EquationRender equation={equationsLibrary.reyNolds}/>
+        <EquationRender equation={equationsLibrary.hazenWilliams}/>
+        <h3>Pérdidas Localizadas</h3>
+
+
+
+
       </>,
     },
     {
@@ -110,7 +201,6 @@ const tema5Content = [
         <TableRenderer table={tablesLibrary.diamPyQ} />
         <TableRenderer table={tablesLibrary.seccNec} />
         <TableRenderer table={tablesLibrary.seccLim} />
-        <EquationRender equation={equationsLibrary.darcyWeisbach}/>
       </>,
     }
   ];
