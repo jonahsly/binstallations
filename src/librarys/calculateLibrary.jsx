@@ -84,9 +84,9 @@ export function DarcyWeisbachCalculate() {
   
     return (<>
         <h4>Calcular Pérdida de Carga por Fricción</h4>
-        <div id="inputs-container" className="hidden">
+        <div className="input-container">
           <label>factor de fricción</label>
-          <input id="input1" type="text" placeholder="0" />
+          <input id="input1" placeholder="0"/>
           <label>longitud</label>
           <input id="input2" type="text" placeholder="0" />
           <label>dipametro</label>
@@ -94,14 +94,147 @@ export function DarcyWeisbachCalculate() {
           <label>velocidad</label>
           <input id="input4" type="text" placeholder="0" />
         </div>
-        <div>
-          <span
-            style={{ cursor: "pointer", color: "blue" }}
-            onClick={handleCalcular}
-          >
+        <div className="calculate-container">
+          <span style={{ cursor: "pointer", color: "blue" }} onClick={handleCalcular}>
             Calcular
-          </span>∆h<sub>f</sub> ={result.dhf}
+          </span>
+          <div>∆h<sub>f</sub> ={result.dhf}</div>
         </div>
         </>
     );
 }
+
+export function ColebrookWhiteCalculate() {
+  const [result, setResult] = useState({ f: "" });
+
+  const handleCalcular = () => {
+    // Se obtienen los valores de las entradas
+    const epsilon = parseFloat(document.getElementById("input1").value) || 0;
+    const D = parseFloat(document.getElementById("input2").value) || 0;
+    const Re = parseFloat(document.getElementById("input3").value) || 0;
+
+    // Valor inicial para f y configuración de tolerancia para la convergencia
+    let f = 0.02;
+    const tol = 1e-6;
+    let error = Infinity;
+
+    // Se itera hasta alcanzar la convergencia
+    while (error > tol) {
+      const f_old = f;
+      const rhs = -2 * Math.log10((epsilon / (3.7 * D)) + (2.51 / (Re * Math.sqrt(f))));
+      f = 1 / (rhs * rhs);
+      error = Math.abs(f - f_old);
+    }
+
+    setResult({ f: f.toFixed(5) });
+  };
+
+  return (
+    <>
+      <h4>Calcular Factor de Fricción (Colebrook-White)</h4>
+      <div className="input-container">
+        <label>Rugosidad (ε)</label>
+        <input id="input1" type="text" placeholder="0" />
+        <label>Diámetro (D)</label>
+        <input id="input2" type="text" placeholder="0" />
+        <label>Número de Reynolds (Re)</label>
+        <input id="input3" type="text" placeholder="0" />
+      </div>
+      <div className="calculate-container">
+        <span
+          style={{ cursor: "pointer", color: "blue" }}
+          onClick={handleCalcular}
+        >
+          Calcular
+        </span>
+        <br />
+        f = {result.f}
+      </div>
+    </>
+  );
+}
+
+export function ReynoldsCalculate() {
+  const [result, setResult] = useState({ Re: "" });
+
+  const handleCalcular = () => {
+    const rho = parseFloat(document.getElementById("input1").value) || 0;
+    const V = parseFloat(document.getElementById("input2").value) || 0;
+    const D = parseFloat(document.getElementById("input3").value) || 0;
+    // Se asigna 1 por defecto para evitar división por cero
+    const mu = parseFloat(document.getElementById("input4").value) || 1;
+
+    const Re = (rho * V * D) / mu;
+    setResult({ Re: Re.toFixed(0) });
+  };
+
+  return (
+    <>
+      <h4>Calcular Número de Reynolds</h4>
+      <div className="input-container">
+        <label>Densidad (ρ): </label>
+        <input id="input1" type="text" placeholder="0" />
+        <label>Velocidad (V): </label>
+        <input id="input2" type="text" placeholder="0" />
+        <label>Diámetro (D): </label>
+        <input id="input3" type="text" placeholder="0" />
+        <label>Viscosidad (μ): </label>
+        <input id="input4" type="text" placeholder="0" />
+      </div>
+      <div className="calculate-container">
+        <span
+          style={{ cursor: "pointer", color: "blue" }}
+          onClick={handleCalcular}
+        >
+          Calcular
+        </span>{" "}
+        Re = {result.Re}
+      </div>
+    </>
+  );
+}
+
+export function HazenWilliamsCalculate() {
+  const [result, setResult] = useState({ hf: "" });
+
+  const handleCalcular = () => {
+    const L = parseFloat(document.getElementById("input1").value) || 0;
+    const Q = parseFloat(document.getElementById("input2").value) || 0;
+    const C = parseFloat(document.getElementById("input3").value) || 0;
+    const D = parseFloat(document.getElementById("input4").value) || 0;
+
+    if (C === 0 || D === 0) {
+      setResult({ hf: "Valores no válidos" });
+      return;
+    }
+
+    const hf = 10.67 * L * Math.pow(Q, 1.852) / (Math.pow(C, 1.852) * Math.pow(D, 4.87));
+    setResult({ hf: hf.toFixed(5) });
+  };
+
+  return (
+    <>
+      <h4>Calcular Pérdida de Carga (Hazen-Williams)</h4>
+      <div className="input-container">
+        <label>Longitud (L): </label>
+        <input id="input1" type="text" placeholder="0" />
+        <label>Caudal (Q): </label>
+        <input id="input2" type="text" placeholder="0" />
+        <label>Coeficiente (C): </label>
+        <input id="input3" type="text" placeholder="0" />
+        <label>Diámetro (D): </label>
+        <input id="input4" type="text" placeholder="0" />
+      </div>
+      <div className="calculate-container">
+        <span
+          style={{ cursor: "pointer", color: "blue" }}
+          onClick={handleCalcular}
+        >
+          Calcular
+        </span>{" "}
+        hf = {result.hf}
+      </div>
+    </>
+  );
+}
+

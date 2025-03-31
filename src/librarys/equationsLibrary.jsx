@@ -1,5 +1,11 @@
 import React from "react";
-import { VolRTDCalculate, DarcyWeisbachCalculate } from "./calculateLibrary";
+import { 
+    VolRTDCalculate, 
+    DarcyWeisbachCalculate, 
+    ColebrookWhiteCalculate , 
+    ReynoldsCalculate, 
+    HazenWilliamsCalculate 
+} from "./calculateLibrary";
 
 const equationsLibrary = {
     //Reserva Total Diaria
@@ -43,23 +49,35 @@ const equationsLibrary = {
         expressions: ["\\frac{1}{\\sqrt{f}} = -2 \\log_{10}\\left(\\frac{\\varepsilon}{3.7\\,D} + \\frac{2.51}{Re\\,\\sqrt{f}}\\right)"],
         variables: ["f", "Re", "ε", "D"],
         constants: [],
+        calculate: <ColebrookWhiteCalculate/>,
     },
     // Reynolds
    reyNolds: {
         expressions: ["\Re  = \\frac{ V \\cdot d }{ υ }"],
         variables: ["V", "d", "υ"],
         constants: [],
+        calculate: <ReynoldsCalculate/>,
     },
     // Hazen-Williams
     hazenWilliams: {
         expressions: ["\\Delta H_f = 10.61 \\frac{L}{D^{4.87}} \\cdot \\,(\\frac{Q}{C})^{1.85} "],
         variables: ["L", "Q", "D", "C"],
         constants: [],
+        calculate: <HazenWilliamsCalculate/>,
     },
+    /*// Coeficiente de Resitencia Kp
+    coefKp: {
+        expressions: ["\\Delta H_l = H_p \\frac{V^{2}}{2g}"],
+        variables: ["L", "Q", "D", "C"],
+        constants: [],
+    },*/
+
+
+
 
     // Ecuación de Continuidad
     continuity: {
-        expression: "$Q = A \\cdot V$",
+        expression: "\Q = A \\cdot V",
         variables: ["A", "V"],
         constants: [],
     },
