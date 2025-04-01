@@ -181,15 +181,17 @@ const tema5Content = [
           características de rugosidad del material, cada una de ellas indicadas para las condiciones de trabajo
           en las que han sido establecidas. Entre las fórmulas más usadas para el cálculo de las pérdidas por
           rozamiento, vamos a citar:</p>
+        <h4>Darcy-Weisbach</h4>
         <EquationRender equation={equationsLibrary.darcyWeisbach}/>
+        <h4>Colebrook-White:</h4>
         <EquationRender equation={equationsLibrary.colebrookWhite}/>
+        <h4>N° de Reynolds:</h4>
         <EquationRender equation={equationsLibrary.reyNolds}/>
+        <h4>Hazen-Williams:</h4>
         <EquationRender equation={equationsLibrary.hazenWilliams}/>
-        <h3>Pérdidas Localizadas</h3>
-
-
-
-
+        <h3>Pérdidas Localizadas:</h3>
+        <h4>Coeficiente de Resistencia K<sub>P</sub>:</h4>
+        <EquationRender equation={equationsLibrary.coefKp}/>
       </>,
     },
     {

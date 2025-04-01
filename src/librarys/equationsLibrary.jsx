@@ -14,9 +14,9 @@ const equationsLibrary = {
             "\Vol_{TR} \\geq  \\frac{1}{3} \\cdot RTD",
             "\Vol_{TB} \\geq  \\frac{1}{5} \\cdot RTD",],
         variables: [
-            "RTD: reserva total diaria",
-            <div>Vol<sub>TR</sub>: volumen del tanque de reserva</div>,
-            <div>Vol<sub>TB</sub>: volumen del tanque de bombeo</div>],
+            "RTD: reserva total diaria [lts]",
+            <div>Vol<sub>TR</sub>: volumen del tanque de reserva [lts]</div>,
+            <div>Vol<sub>TB</sub>: volumen del tanque de bombeo [lts]</div>],
         constants: [],
         calculate: <VolRTDCalculate/>,
     },
@@ -25,52 +25,71 @@ const equationsLibrary = {
         expressions: [
             "\P_{disp} = \\Delta H_{top} \\geqslant Σ (\\Delta H_{f} + \\Delta H_{l}) + H_{r}",],
         variables: [
-            <>∆H<sub>top</sub>: presión estática disponible </>,
-            <>∆H<sub>f</sub>: pérdida de carga por fricción </>,
-            <>∆H<sub>l</sub>: pérdida de carga localizada </>,
-            <>H<sub>r</sub>: resión residual</>],
+            <>P<sub>disp</sub>: presión estática disponible [mca]</>,
+            <>∆H<sub>top</sub>: desnivel topográfico [m]</>,
+            <>∆H<sub>f</sub>: pérdida de carga por fricción [m]</>,
+            <>∆H<sub>l</sub>: pérdida de carga localizada [m]</>,
+            <>H<sub>r</sub>: resión residual [m]</>],
         constants: [],
     },
     // Darcy-Weisbach
     darcyWeisbach: {
         expressions: ["\\Delta H_f = f \\cdot \\frac{L}{D} \\cdot \\frac{V^2}{2g}"],
         variables: [
-            <>∆h<sub>f</sub>: pérdida de carga</>,
-            "f: factor de fricción",
-            "L: longitud de la tubería",
-            "D: diámetro de la tubería",
-            "V: velocidad media del agua",
+            <>∆h<sub>f</sub>: pérdida de carga [m]</>,
+            "f: factor de fricción [adimensional]",
+            "L: longitud de la tubería [m]",
+            "D: diámetro de la tubería [m]",
+            "V: velocidad media del agua [m/s]",
             ],
-        constants: ["g: aceleración de l gravedad"],
+        constants: ["g: aceleración de la gravedad [m/s2]"],
         calculate: <DarcyWeisbachCalculate/>,
     },
     // Colebrook-White
     colebrookWhite: {
         expressions: ["\\frac{1}{\\sqrt{f}} = -2 \\log_{10}\\left(\\frac{\\varepsilon}{3.7\\,D} + \\frac{2.51}{Re\\,\\sqrt{f}}\\right)"],
-        variables: ["f", "Re", "ε", "D"],
+        variables: [
+            "f: factor de fricción [adimensional]",
+            "Re: número de Reynolds",
+            "ε: rugosidad absoluta [m]",
+            "D: diámetro de la tubería"
+        ],
         constants: [],
         calculate: <ColebrookWhiteCalculate/>,
     },
     // Reynolds
    reyNolds: {
         expressions: ["\Re  = \\frac{ V \\cdot d }{ υ }"],
-        variables: ["V", "d", "υ"],
+        variables: [
+            "V: velocidad media del agua [m/s]",
+            "d: síametro de la tubería [m]",
+            "υ: vizcosidad cinemática del agua [m2/s]"],
         constants: [],
         calculate: <ReynoldsCalculate/>,
     },
     // Hazen-Williams
     hazenWilliams: {
         expressions: ["\\Delta H_f = 10.61 \\frac{L}{D^{4.87}} \\cdot \\,(\\frac{Q}{C})^{1.85} "],
-        variables: ["L", "Q", "D", "C"],
+        variables: [
+            <>∆H<sub>f</sub>: pérdida de carga por fricción [m] </>,
+            "L: longitud de la tubería [m]",
+            "Q: caudal de la conducción [m3/s]",
+            "D: diámetro de la tubería [m]",
+            "C: factor adimensional según el tipo de material"
+        ],
         constants: [],
         calculate: <HazenWilliamsCalculate/>,
     },
-    /*// Coeficiente de Resitencia Kp
+    // Coeficiente de Resitencia Kp
     coefKp: {
-        expressions: ["\\Delta H_l = H_p \\frac{V^{2}}{2g}"],
-        variables: ["L", "Q", "D", "C"],
-        constants: [],
-    },*/
+        expressions: ["\\Delta H_l = K_p \\frac{V^{2}}{2g}"],
+        variables: [
+            <>∆H<sub>l</sub>: pérdidas localizadas [m]</>,
+            <>K<sub>p</sub>: coeficiente adim. que depende del accesorio </>,
+            <>V: velocidad media del agua [m/s] </>
+        ],
+        constants: ["g: aceleración de la gravedad [m/s2]"],
+    },
 
 
 
