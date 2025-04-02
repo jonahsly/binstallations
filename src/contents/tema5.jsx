@@ -162,36 +162,74 @@ const tema5Content = [
           <li>Excesivas pérdidas de carga.</li>
           <li>Erosión en la tubería.</li>
         </ul>
-        <p>No debe perderse de vista que la pérdida de carga en una tubería y sus accesorios es función del
+        No debe perderse de vista que la pérdida de carga en una tubería y sus accesorios es función del
           cuadrado de la velocidad, por lo que valores elevados de velocidad implican valores elevados de pérdidas
           de carga. En cualquier caso, tratándose de artefactos particulares deberá verificarse si el fabricante
           especifica una velocidad máxima, que en general tiene que ver con la posibilidad de erosión de los
-          asientos de válvulas. En la siguiente tabla se indica el nivel de ruido en función de la velocidad.</p>
+          asientos de válvulas. En la siguiente tabla se indica el nivel de ruido en función de la velocidad.
         <TableRenderer table={tablesLibrary.velocRuido} />
-        <p>En el proceso de diseño de una instalación, la adopción de un cierto valor de la velocidad, dentro del
+          En el proceso de diseño de una instalación, la adopción de un cierto valor de la velocidad, dentro del
           rango recomendado, tiene consideraciones técnico-económicas. Para instalaciones de edificios en altura
           que se alimentan desde un tanque de reserva, en aquellos pisos con mayor carga estática disponible, la
           adopción de velocidades mayores supone diámetros menores y la mayor pérdida de carga que ello significa
-          no afecta las presiones mínimas requeridas,</p>
+          no afecta las presiones mínimas requeridas.
         <TableRenderer table={tablesLibrary.velocRecom} />
         <h2>Pérdidas de Carga en La Instalación</h2>
         <h3>Pérdidas por Fricción</h3>
-        <p>La Hidráulica provee distintas fórmulas matemáticas para el cálculo de pérdidas de carga, fórmulas
+        La Hidráulica provee distintas fórmulas matemáticas para el cálculo de pérdidas de carga, fórmulas
           empíricas, semi-empíricas, que son función de la velocidad de circulación, del diámetro y de las
           características de rugosidad del material, cada una de ellas indicadas para las condiciones de trabajo
           en las que han sido establecidas. Entre las fórmulas más usadas para el cálculo de las pérdidas por
-          rozamiento, vamos a citar:</p>
-        <h4>Darcy-Weisbach</h4>
+          rozamiento, vamos a citar:
+        <h4>Darcy-Weisbach:</h4>
         <EquationRender equation={equationsLibrary.darcyWeisbach}/>
+        Para régimen turbulento, el cual es el caso típico de la conducción de agua en la instalación, el factor
+        de fricción se puede calcular mediante la expresión de
         <h4>Colebrook-White:</h4>
         <EquationRender equation={equationsLibrary.colebrookWhite}/>
         <h4>N° de Reynolds:</h4>
         <EquationRender equation={equationsLibrary.reyNolds}/>
         <h4>Hazen-Williams:</h4>
         <EquationRender equation={equationsLibrary.hazenWilliams}/>
+        Las fórmulas anteriormente citadas, se aplican a una parte elemental de la instalación, que
+        denominaremos “tramo” (ver 0) y cuyas características principales son:
+        <ol>
+          <li>El diámetro es constante.</li>
+          <li>El caudal circolante es constante.</li>
+          <li>La velocidad es constante, por aplicación de la ecuación de continuidad.</li>
+        </ol>
         <h3>Pérdidas Localizadas:</h3>
+        A efectos del dimensionado de la instalación, consideramos accesorio a todo elemento que produzca una
+        pérdida de carga localizada en la instalación. A continuación se tratarán los métodos para cuantificar
+        las pérdidas de carga localizadas.
+        <h4>Método Individual</h4>
+        Este método se aplica a ciertos accesorios, como por ejemplo el medidor, que cuya pérdida de carga es
+        función del caudal de agua. En estos casos, hay que recurrir a las especificaciones del fabricante.
         <h4>Coeficiente de Resistencia K<sub>P</sub>:</h4>
+        Con este método, las pérdidas localizadas se calculan como fracción de la energía cinética,
+        inmediatamente aguas abajo del punto donde se producen. De la hidráulica se sabe que las pérdidas
+        localizadas se pueden determinar con la expresión:
         <EquationRender equation={equationsLibrary.coefKp}/>
+        <h4>Longitud Equivalente L<sub>e</sub>:</h4>
+        Otra forma menos exacta aunque más práctica de calcular las pérdidas localizadas, es mediante el
+        método de las longitudes equivalentes. Conceptualmente se entiende como el reemplazo del accesorio –en
+        el esquema matemático de cálculo- por un tramo de cañería de igual diámetro al de la conducción y con
+        una longitud llamada equivalente que provoca la misma pérdida de carga que el accesorio.
+        La relación entre ambos métodos, a partir de la ecuación de Darcy Weisbach es:
+        <EquationRender equation={equationsLibrary.longEq}/>
+        Por lo tanto se entiende que la asimilación del factor 𝐾𝑝/𝑓 como constante, es una ponderación, puesto
+        que f depende del número de Reynolds y este a su vez de la velocidad del flujo.
+        Se utilizan tablas en las que longitudes equivalentes se expresan en función del diámetro del accesorio.
+        O bien directamente se da la longitud equivalente para el accesorio de acuerdo a su diámetro.
+        Como aproximación también, la longitud equivalente de los accesorios puede calcularse directamente como
+        un porcentaje de la longitud de la cañería. Este porcentaje depende fundamentalmente de la cantidad de
+        accesorios que posea la instalación.
+        El Documento Básico HS Salubridad del Código Técnico de Edificación de España, indica que se puede
+        considerar como longitud equivalente entre un 20% y un 30% de la longitud real de la cañería. Dado que
+        la pérdida de carga por fricción es función lineal de la longitud, entonces la pérdida carga localizada
+        será este porcentaje de la pérdida de carga por fricción. La Norma UNE 149201 - 2008 aconseja que cuando
+        la instalación tiene válvulas de retención, contadores, filtros, se deben determinar las pérdidas de
+        carga de estos accesorios en forma individual.
       </>,
     },
     {

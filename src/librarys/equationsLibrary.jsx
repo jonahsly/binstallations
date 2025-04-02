@@ -90,6 +90,51 @@ const equationsLibrary = {
         ],
         constants: ["g: aceleración de la gravedad [m/s2]"],
     },
+    // Longitud Equivalente Le
+    longEq: {
+        expressions: [
+            "\\Delta H_f=f\\cdot\\frac{L}{D}\\frac{V^2}{2g}=K_p \\frac{V^{2}}{2g}",
+            "\K_p=f\\cdot\\frac{L_e}{d}\\Longrightarrow L_e=\\frac{K_p}{f}\\cdot d"],
+        variables: [
+            <>L<sub>e</sub>: longitud equivalente [m]</>,
+            <>K<sub>p</sub>: coef. adimensional de resistencia</>,
+            <>f: factor de fricción adimensional </>,
+            <>d: diámetro de la tubería [m] </>
+        ],
+        constants: [],
+    },
+    // Caudal Instalado Qt
+    caudalIns: {
+        expressions: [
+            "\\Delta H_f=f\\cdot\\frac{L}{D}\\frac{V^2}{2g}=K_p \\frac{V^{2}}{2g}",
+            "\K_p=f\\cdot\\frac{L_e}{d}\\Longrightarrow L_e=\\frac{K_p}{f}\\cdot d"],
+        variables: [
+            <>L<sub>e</sub>: longitud equivalente [m]</>,
+            <>K<sub>p</sub>: coef. adimensional de resistencia</>,
+            <>f: factor de fricción adimensional </>,
+            <>d: diámetro de la tubería [m] </>
+        ],
+        constants: [],
+    },
+    // Caudal Simultáneo Qc
+    caudalSim: {
+        expressions: [
+            "\\Delta H_f=f\\cdot\\frac{L}{D}\\frac{V^2}{2g}=K_p \\frac{V^{2}}{2g}",
+            "\K_p=f\\cdot\\frac{L_e}{d}\\Longrightarrow L_e=\\frac{K_p}{f}\\cdot d"],
+        variables: [
+            <>L<sub>e</sub>: longitud equivalente [m]</>,
+            <>K<sub>p</sub>: coef. adimensional de resistencia</>,
+            <>f: factor de fricción adimensional </>,
+            <>d: diámetro de la tubería [m] </>
+        ],
+        constants: [],
+    },
+
+
+
+
+
+
 
 
 
