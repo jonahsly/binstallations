@@ -230,6 +230,15 @@ const tema5Content = [
         será este porcentaje de la pérdida de carga por fricción. La Norma UNE 149201 - 2008 aconseja que cuando
         la instalación tiene válvulas de retención, contadores, filtros, se deben determinar las pérdidas de
         carga de estos accesorios en forma individual.
+        <h3>Caudales de Cálculo de la Instalación:</h3>
+        <h4>Caudal Instalado Q<sub>t</sub></h4>
+        <h4>Caudal Simultáneo Q<sub>c</sub></h4>
+        <h3>Simultaneidad de Uso de los Artefactos Sanitarios</h3>
+        <h3>Cálculo de Caudales Simultaneos</h3>
+        <h4>Método para Provisión por Servicio Directo (Normas OSN)</h4>
+        <h4>Método del Factor de Simultaneidad K<sub>1</sub></h4>
+        <h4>Método del Factor de Simultaneidad K<sub>2</sub></h4>
+
       </>,
     },
     {
