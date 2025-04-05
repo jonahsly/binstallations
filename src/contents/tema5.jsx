@@ -235,12 +235,13 @@ const tema5Content = [
         Se define como Caudal Instalado a la sumatoria de los consumos asignados a los artefactos sanitarios,
         que son alimentados por el tramo que se considere.
 
-
+        <EquationRender equation={equationsLibrary.caudalIns}/>
 
         <h4>Caudal Simultáneo Q<sub>c</sub></h4>
         Se define como Caudal Simultáneo al CAUDAL MÁXIMO PROBABLE que circula por un dado tramo de la
         instalación, bajo una cierta simultaneidad en el uso de los artefactos que son alimentados por dicho
         tramo.
+        <EquationRender equation={equationsLibrary.caudalSim}/>
         <h3>Simultaneidad de Uso de los Artefactos Sanitarios</h3>
         En una vivienda o edificio de viviendas, es muy baja la probabilidad de que todos los artefactos
         instalados, estén en funcionamiento simultáneamente. Un ejemplo de esto, aunque siendo simple es
