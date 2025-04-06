@@ -76,7 +76,7 @@ const tema5Content = [
     },
     {
       id: "section2",
-      title: "Dimensionamiento de la Instalación",
+      title: "Parámetros de Diseño de la Instalación",
       content: <>
         <h2>Presiones mínimas de trabajo de los Artefactos Sanitarios</h2>
         <h3>Presión Residual o Piezométrica</h3>
@@ -174,6 +174,13 @@ const tema5Content = [
           adopción de velocidades mayores supone diámetros menores y la mayor pérdida de carga que ello significa
           no afecta las presiones mínimas requeridas.
         <TableRenderer table={tablesLibrary.velocRecom} />
+      </>,
+    },
+    {
+      id: "section3",
+      title: "Pérdidas de Carga",
+      content:
+      <>
         <h2>Pérdidas de Carga en La Instalación</h2>
         <h3>Pérdidas por Fricción</h3>
         La Hidráulica provee distintas fórmulas matemáticas para el cálculo de pérdidas de carga, fórmulas
@@ -182,15 +189,15 @@ const tema5Content = [
           en las que han sido establecidas. Entre las fórmulas más usadas para el cálculo de las pérdidas por
           rozamiento, vamos a citar:
         <h4>Darcy-Weisbach:</h4>
-        <EquationRender equation={equationsLibrary.darcyWeisbach}/>
+        <EquationRender equation={equationsLibrary.darcyWeisbach}/><br/>
         Para régimen turbulento, el cual es el caso típico de la conducción de agua en la instalación, el factor
         de fricción se puede calcular mediante la expresión de
         <h4>Colebrook-White:</h4>
-        <EquationRender equation={equationsLibrary.colebrookWhite}/>
+        <EquationRender equation={equationsLibrary.colebrookWhite}/><br/>
         <h4>N° de Reynolds:</h4>
-        <EquationRender equation={equationsLibrary.reyNolds}/>
+        <EquationRender equation={equationsLibrary.reyNolds}/><br/>
         <h4>Hazen-Williams:</h4>
-        <EquationRender equation={equationsLibrary.hazenWilliams}/>
+        <EquationRender equation={equationsLibrary.hazenWilliams}/><br/>
         Las fórmulas anteriormente citadas, se aplican a una parte elemental de la instalación, que
         denominaremos “tramo” (ver 0) y cuyas características principales son:
         <ol>
@@ -208,15 +215,15 @@ const tema5Content = [
         <h4>Coeficiente de Resistencia K<sub>P</sub>:</h4>
         Con este método, las pérdidas localizadas se calculan como fracción de la energía cinética,
         inmediatamente aguas abajo del punto donde se producen. De la hidráulica se sabe que las pérdidas
-        localizadas se pueden determinar con la expresión:
-        <EquationRender equation={equationsLibrary.coefKp}/>
+        localizadas se pueden determinar con la expresión:<br/>
+        <br/><EquationRender equation={equationsLibrary.coefKp}/><br/>
         <h4>Longitud Equivalente L<sub>e</sub>:</h4>
         Otra forma menos exacta aunque más práctica de calcular las pérdidas localizadas, es mediante el
         método de las longitudes equivalentes. Conceptualmente se entiende como el reemplazo del accesorio –en
         el esquema matemático de cálculo- por un tramo de cañería de igual diámetro al de la conducción y con
         una longitud llamada equivalente que provoca la misma pérdida de carga que el accesorio.
         La relación entre ambos métodos, a partir de la ecuación de Darcy Weisbach es:
-        <EquationRender equation={equationsLibrary.longEq}/>
+        <EquationRender equation={equationsLibrary.longEq}/><br/>
         Por lo tanto se entiende que la asimilación del factor 𝐾𝑝/𝑓 como constante, es una ponderación, puesto
         que f depende del número de Reynolds y este a su vez de la velocidad del flujo.
         Se utilizan tablas en las que longitudes equivalentes se expresan en función del diámetro del accesorio.
@@ -230,13 +237,18 @@ const tema5Content = [
         será este porcentaje de la pérdida de carga por fricción. La Norma UNE 149201 - 2008 aconseja que cuando
         la instalación tiene válvulas de retención, contadores, filtros, se deben determinar las pérdidas de
         carga de estos accesorios en forma individual.
+      </>,
+    },
+    {
+      id: "section4",
+      title: "Caudales de Cálculo",
+      content:
+      <>
         <h3>Caudales de Cálculo de la Instalación:</h3>
         <h4>Caudal Instalado Q<sub>t</sub></h4>
         Se define como Caudal Instalado a la sumatoria de los consumos asignados a los artefactos sanitarios,
         que son alimentados por el tramo que se considere.
-
         <EquationRender equation={equationsLibrary.caudalIns}/>
-
         <h4>Caudal Simultáneo Q<sub>c</sub></h4>
         Se define como Caudal Simultáneo al CAUDAL MÁXIMO PROBABLE que circula por un dado tramo de la
         instalación, bajo una cierta simultaneidad en el uso de los artefactos que son alimentados por dicho
@@ -263,86 +275,66 @@ const tema5Content = [
           <li>Métodos Empíricos</li>
           <li>Métodos Semi-empíricos</li>
         </ul>
-         
-El lector interesado puede ampliar conceptos sobre los métodos probabilísticos en la Referencia 7
-1
-Se deberá considerar el mayor caudal de los cuatros instaladosIng. Gustavo L. Lazarte-Ing. Viviana B. Sánchez 48 /63
-Cabe aclarar que, siendo las Normas OSN, normas de carácter empírico, no tratan analíticamente el problema de la
-simultaneidad en distribución de agua.
-No obstante, dada la complejidad del problema cuando se trata de alimentar muchos artefactos, quedará a responsabilidad
-del proyectista, la utilización de uno u otro método conjuntamente con su criterio profesional y experiencia. En este sentido,
-el Código Técnico de la Edificación de España (Documento Básico HS4, 4.21. Dimensionado de los tramos), prescribe
-que el establecimiento de los coeficientes de simultaneidad de cada tramo debe hacerse de acuerdo con un criterio
-adecuado, sin indicar uno en particular, por lo tanto, es el proyectista quien debe decidir sobre este tema. Por otro lado,
-“Crear un modelo exacto para predecir la demanda de una edificación es imposible y estudios finales que consideren el
-impacto de la conservación en la demanda del agua no están completos todavía”. (Código Internacional de Instalaciones
-Hidráulicas y Sanitarias, 2006).
-Entre los métodos semi-empíricos utilizados, particularmente en España y con antecedentes en normativa francesa, nos
-referiremos al Método del Factor de Simultaneidad, también llamado Método Racional y que ha sido recogido por el
-Reglamento de Instalaciones Sanitarias de la Ciudad Autónoma de Buenos Aires, para su aplicación en dimensionamiento
-de la instalación por métodos racionales.
+        Cabe aclarar que, siendo las Normas OSN, normas de carácter empírico, no tratan analíticamente el problema
+        de la simultaneidad en distribución de agua. No obstante, dada la complejidad del problema cuando se trata
+        de alimentar muchos artefactos, quedará a responsabilidad del proyectista, la utilización de uno u otro
+        método conjuntamente con su criterio profesional y experiencia. En este sentido, el Código Técnico de la
+        Edificación de España (Documento Básico HS4, 4.21. Dimensionado de los tramos), prescribe que el
+        establecimiento de los coeficientes de simultaneidad de cada tramo debe hacerse de acuerdo con un criterio
+        adecuado, sin indicar uno en particular, por lo tanto, es el proyectista quien debe decidir sobre este
+        tema. Por otro lado, “Crear un modelo exacto para predecir la demanda de una edificación es imposible y
+        estudios finales que consideren el impacto de la conservación en la demanda del agua no están completos
+        todavía”. (Código Internacional de Instalaciones Hidráulicas y Sanitarias, 2006).
+        Entre los métodos semi-empíricos utilizados, particularmente en España y con antecedentes en normativa
+        francesa, nos referiremos al Método del Factor de Simultaneidad, también llamado Método Racional y que ha
+        sido recogido por el Reglamento de Instalaciones Sanitarias de la Ciudad Autónoma de Buenos Aires, para
+        su aplicación en dimensionamiento de la instalación por métodos racionales.<br/>
         <h3>Cálculo de Caudales Simultaneos</h3>
         <h4>Método para Provisión por Servicio Directo (Normas OSN)</h4>
         Para la determinación se distinguen dos casos:
-Viviendas o departamentos:
-Se adopta como Caudal Simultáneo (Qc), el correspondiente a una vez y medio el caudal de la canilla de servicio, esto es:
-𝑄𝑐 = 1.5𝑥0.13 𝑙𝑡𝑠
-𝑠
-0.20𝑙𝑡𝑠
-𝑠
-(39)
-Edificios de oficina, negocios y fábricas:
-𝑄𝑐 =
-𝑁 2
-0.13
-𝑙𝑡𝑠
-𝑠
-(40)
-Siendo N es el número de artefactos instalados. Conjuntos de artefactos de baños y toilette, se consideran un solo
-artefacto.
+        -Viviendas o departamentos: Se adopta como Caudal Simultáneo (Qc), el correspondiente a una vez y medio el
+        caudal de la canilla de servicio, esto es:<br/>
+        "Q<sub>c</sub> = 1.5x0.13 𝑠 0.20𝑙𝑡𝑠 𝑠 (39)
+        -Edificios de oficina, negocios y fábricas:
+        𝑄𝑐 = 𝑁 2 0.13 𝑙𝑡𝑠 𝑠 (40)
+        Siendo N es el número de artefactos instalados. Conjuntos de artefactos de baños y toilette, se consideran
+        un solo artefacto.
         <h4>Método del Factor de Simultaneidad K<sub>1</sub></h4>
         Es un método semi-empírico, el Caudal Simultáneo se determina con la expresión (Díaz Dorado, 2005):
-𝑄𝑐 = 𝐾1𝑄𝑡 (41)
-Donde:
-Qc=Caudal Simultáneo en [lts/s]
-K1= Factor de Simultaneidad, adimensional
-Qt= Caudal Instalado en [lts/s]
-El factor de simultaneidad es menor que la unidad y se calcula con la siguiente expresión:
-𝐾1 =
-1
-√𝑛 − 1
-(42)
-Donde n es el número de artefactos aguas abajo del tramo de cañería considerado y que definen el caudal instalado.
-Se recomienda no considerar factores de simultaneidad menores a 0.20. Cabe acotar que este método requiere que los
-caudales unitarios asignados a los artefactos de consumo, numéricamente posean el mismo orden de magnitud.
-Para los tramos de la instalación que alimenten baños, se considerará un solo artefacto y será el de mayor caudal instalado.
-
+        𝑄𝑐 = 𝐾1𝑄𝑡 (41)
+        Donde:
+        Qc=Caudal Simultáneo en [lts/s]
+        K1= Factor de Simultaneidad, adimensional
+        Qt= Caudal Instalado en [lts/s]
+        El factor de simultaneidad es menor que la unidad y se calcula con la siguiente expresión:
+        𝐾1 = 1 √𝑛 − 1 (42)
+        Donde n es el número de artefactos aguas abajo del tramo de cañería considerado y que definen el caudal
+        instalado. Se recomienda no considerar factores de simultaneidad menores a 0.20. Cabe acotar que este
+        método requiere que los caudales unitarios asignados a los artefactos de consumo, numéricamente posean
+        el mismo orden de magnitud. Para los tramos de la instalación que alimenten baños, se considerará un
+        solo artefacto y será el de mayor caudal instalado.
         <h4>Método del Factor de Simultaneidad K<sub>2</sub></h4>
         Según el número de unidades locativas o viviendas
-Cuando se distribuye agua a un conjunto de viviendas o unidades locativas, es de esperar que los hábitos de consumo no
-sean iguales en cada una de ellas.
-Un edificio de departamentos, por ejemplo, puede tener la misma dotación sanitaria en todas las unidades locativas, sin
-embargo los usos pueden no coincidir en el tiempo, pues son distintas las costumbres de las personas que las habitan. Una
-forma de tener en cuenta la no simultaneidad de los consumos de agua en este tipo de edificios, es mediante la introducción
-de otro coeficiente, que indicaremos como K2, que afecta a los caudales simultáneos determinados mediante el coeficiente
-K1
-El coeficiente K2 se aplica a los tramos troncales de la instalación que alimentan a las unidades locativas o viviendas y a
-los tramos de bajada en un edificio en altura.
-Se determina con la expresión:
-𝐾2 =
-19 + 𝑁
-10(𝑁 + 1)
-(43)
-Donde N es el número de unidades locativas o viviendas que alimenta el tramo que se está dimensionando.
-
-<h4>Método de la Norma UNE 149.201-08</h4> 
-Es un método para calcular caudales simultáneos en función del caudal instalado y del destino del edificio. A continuación
-transcribimos la formulación del caudal simultáneo, para dos destinos particulares:
-Edificios de Viviendas
-Para 𝑄𝑡 > 20 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
-Para 𝑄𝑡 ≤ 20 𝑙𝑡𝑠/𝑠 dependiendo de los caudales instantáneos mínimos:
-Si todo 𝑄𝑚í𝑛 < 0.5 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.682𝑥 (𝑄𝑇)0.45 − 0.14 𝑙𝑡𝑠/𝑠
-𝑄𝑡 ≤ 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 𝑄𝑡 𝑁𝑜 𝑠𝑖𝑚𝑢𝑙𝑡𝑎𝑛𝑒𝑖𝑑𝑎𝑑
+        Cuando se distribuye agua a un conjunto de viviendas o unidades locativas, es de esperar que los hábitos
+        de consumo no sean iguales en cada una de ellas. Un edificio de departamentos, por ejemplo, puede tener
+        la misma dotación sanitaria en todas las unidades locativas, sin embargo los usos pueden no coincidir en
+        el tiempo, pues son distintas las costumbres de las personas que las habitan. Una forma de tener en cuenta
+        la no simultaneidad de los consumos de agua en este tipo de edificios, es mediante la introducción de
+        otro coeficiente, que indicaremos como K2, que afecta a los caudales simultáneos determinados mediante
+        el coeficiente K1, El coeficiente K2 se aplica a los tramos troncales de la instalación que alimentan a
+        las unidades locativas o viviendas y a los tramos de bajada en un edificio en altura.
+        Se determina con la expresión:
+        𝐾2 = 19 + 𝑁 10(𝑁 + 1) (43)
+        Donde N es el número de unidades locativas o viviendas que alimenta el tramo que se está dimensionando.
+        <h4>Método de la Norma UNE 149.201-08</h4>
+        Es un método para calcular caudales simultáneos en función del caudal instalado y del destino del
+        edificio. A continuación transcribimos la formulación del caudal simultáneo, para dos destinos particulares:
+        -Edificios de Viviendas:<br/>
+        
+        Para 𝑄𝑡 mayor a 20 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
+        Para 𝑄𝑡 ≤ 20 𝑙𝑡𝑠/𝑠 dependiendo de los caudales instantáneos mínimos:
+        Si todo 𝑄𝑚í𝑛 es menor a 0,5 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.682𝑥 (𝑄𝑇)0.45 − 0.14 𝑙𝑡𝑠/𝑠
+        𝑄𝑡 ≤ 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 𝑄𝑡 𝑁𝑜 𝑠𝑖𝑚𝑢𝑙𝑡𝑎𝑛𝑒𝑖𝑑𝑎𝑑
 Si algún 𝑄𝑚í𝑛 ≥ 0.5 𝑙𝑡𝑠/𝑠
 Qt=1.75 lts/s
 n=12
@@ -379,15 +371,15 @@ Qc=0.53 lts/s
 N=1
 K2=1
 Qc=0.53 lts/sIng. Gustavo L. Lazarte-Ing. Viviana B. Sánchez 52 /63
-𝑄𝑡 > 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
+𝑄𝑡 mayor que 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
 Qmín en [lts/s], es el caudal asignado a cada artefacto de consumo.
 Edificios de Oficinas, Estaciones, Aeropuertos, Etc.
-Para 𝑄𝑡 > 20 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.4𝑥 (𝑄𝑡)0.54 + 0.48 𝑙𝑡𝑠/𝑠
+Para 𝑄𝑡 mayor que 20 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.4𝑥 (𝑄𝑡)0.54 + 0.48 𝑙𝑡𝑠/𝑠
 Para 𝑄𝑡 ≤ 20 𝑙𝑡𝑠/𝑠 dependiendo de los caudales instantáneos mínimos:
-Si todo 𝑄𝑚í𝑛 < 0.5 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.682𝑥 (𝑄𝑇)0.45 − 0.14 𝑙𝑡𝑠/𝑠
+Si todo 𝑄𝑚í𝑛 menor que 0.5 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.682𝑥 (𝑄𝑇)0.45 − 0.14 𝑙𝑡𝑠/𝑠
 𝑄𝑡 ≤ 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 𝑄𝑡 𝑁𝑜 𝑠𝑖𝑚𝑢𝑙𝑡𝑎𝑛𝑒𝑖𝑑𝑎𝑑
 Si algún 𝑄𝑚í𝑛 ≥ 0.5 𝑙𝑡𝑠/𝑠
-𝑄𝑡 > 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
+𝑄𝑡 mayor que 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
 
 <h4>Método de la Norma Chilena NCH-2.485-00</h4>
 La Norma Chilena NCh2485.Of2000, establece el siguiente procedimiento para la determinación de caudales instantáneos:
@@ -414,20 +406,13 @@ Otro criterio aceptado es (Carnicer Royo, 1998):
 2 Válvulas automáticas si la instalación tiene un número entre 3 y 12
 3 Válvulas automáticas si la instalación tiene un número entre 12 y 24.
 4 Válvulas automáticas si la instalación tiene un número mayor a 24
-
-
-
       </>,
     },
     {
-      id: "section3",
+      id: "section5",
       title: "Dimensionamiento Simplificado (Norma OSN)",
       content:
       <>
-        <h2>Visualización de Ecuaciones</h2>
-        <TableRenderer table={tablesLibrary.diamPyQ} />
-        <TableRenderer table={tablesLibrary.seccNec} />
-        <TableRenderer table={tablesLibrary.seccLim} />
       </>,
     }
   ];
