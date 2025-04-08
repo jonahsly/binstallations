@@ -1,6 +1,7 @@
 import EquationRender from '../components/EquationRender/EquationRender';
-import { ColebrookWhiteCalculate } from '../librarys/calculateLibrary';
-import ColebrookWhiteEq from '../librarys/colebrookWhiteEq.jsx';
+
+import VolumenRTD from '../librarys/volumenRTD.jsx';
+import ColebrookWhite from '../librarys/colebrookWhite.jsx';
 import { equationsLibrary } from "../librarys/equationsLibrary";
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
 import 'katex/dist/katex.min.css';
@@ -421,7 +422,8 @@ Otro criterio aceptado es (Carnicer Royo, 1998):
       title: "Dimensionamiento Simplificado (Norma OSN)",
       content:
       <>
-        <ColebrookWhiteEq/>
+        <ColebrookWhite/>
+        <VolumenRTD/>
       </>,
     }
   ];
