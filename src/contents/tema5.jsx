@@ -1,4 +1,6 @@
 import EquationRender from '../components/EquationRender/EquationRender';
+import { ColebrookWhiteCalculate } from '../librarys/calculateLibrary';
+import ColebrookWhiteEq from '../librarys/colebrookWhiteEq.jsx';
 import { equationsLibrary } from "../librarys/equationsLibrary";
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
 import 'katex/dist/katex.min.css';
@@ -80,11 +82,11 @@ const tema5Content = [
       content: <>
         <h2>Presiones mínimas de trabajo de los Artefactos Sanitarios</h2>
         <h3>Presión Residual o Piezométrica</h3>
-        <p>Cada artefacto sanitario funciona adecuadamente dentro de un rango de presiones,
+          Cada artefacto sanitario funciona adecuadamente dentro de un rango de presiones,
           definido por un umbral que es la presión mínima que asegure el caudal requerido
           por el artefacto. La presión residual (también llamada presión dinámica)
           H<sub>r</sub> es la Presión resultante en la válvula del artefacto, cuando circula
-          en ese punto, el caudal requerido por el artefacto.</p>
+          en ese punto, el caudal requerido por el artefacto.<br/><br/>
         <EquationRender equation={equationsLibrary.presDisp}/>
         <p>En aquellos artefactos en que la grifería se conecta a la cañería mediante la
           conexión flexible, se considerará la toma del artefacto, definida como el extremo
@@ -193,7 +195,6 @@ const tema5Content = [
         Para régimen turbulento, el cual es el caso típico de la conducción de agua en la instalación, el factor
         de fricción se puede calcular mediante la expresión de
         <h4>Colebrook-White:</h4>
-        <EquationRender equation={equationsLibrary.colebrookWhite}/><br/>
         <h4>N° de Reynolds:</h4>
         <EquationRender equation={equationsLibrary.reyNolds}/><br/>
         <h4>Hazen-Williams:</h4>
@@ -216,27 +217,27 @@ const tema5Content = [
         Con este método, las pérdidas localizadas se calculan como fracción de la energía cinética,
         inmediatamente aguas abajo del punto donde se producen. De la hidráulica se sabe que las pérdidas
         localizadas se pueden determinar con la expresión:<br/>
-        <br/><EquationRender equation={equationsLibrary.coefKp}/><br/>
+        <br/><EquationRender equation={equationsLibrary.coefKp}/>
         <h4>Longitud Equivalente L<sub>e</sub>:</h4>
         Otra forma menos exacta aunque más práctica de calcular las pérdidas localizadas, es mediante el
         método de las longitudes equivalentes. Conceptualmente se entiende como el reemplazo del accesorio –en
         el esquema matemático de cálculo- por un tramo de cañería de igual diámetro al de la conducción y con
         una longitud llamada equivalente que provoca la misma pérdida de carga que el accesorio.
-        La relación entre ambos métodos, a partir de la ecuación de Darcy Weisbach es:
+        La relación entre ambos métodos, a partir de la ecuación de Darcy Weisbach es:<br/><br/>
         <EquationRender equation={equationsLibrary.longEq}/><br/>
         Por lo tanto se entiende que la asimilación del factor 𝐾𝑝/𝑓 como constante, es una ponderación, puesto
         que f depende del número de Reynolds y este a su vez de la velocidad del flujo.
-        Se utilizan tablas en las que longitudes equivalentes se expresan en función del diámetro del accesorio.
-        O bien directamente se da la longitud equivalente para el accesorio de acuerdo a su diámetro.
+        Se utilizan tablas en las que longitudes equivalentes se expresan en función del diámetro del accesorio,
+        o bien directamente se da la longitud equivalente para el accesorio de acuerdo a su diámetro.<br/><br/>
         Como aproximación también, la longitud equivalente de los accesorios puede calcularse directamente como
         un porcentaje de la longitud de la cañería. Este porcentaje depende fundamentalmente de la cantidad de
         accesorios que posea la instalación.
         El Documento Básico HS Salubridad del Código Técnico de Edificación de España, indica que se puede
         considerar como longitud equivalente entre un 20% y un 30% de la longitud real de la cañería. Dado que
         la pérdida de carga por fricción es función lineal de la longitud, entonces la pérdida carga localizada
-        será este porcentaje de la pérdida de carga por fricción. La Norma UNE 149201 - 2008 aconseja que cuando
-        la instalación tiene válvulas de retención, contadores, filtros, se deben determinar las pérdidas de
-        carga de estos accesorios en forma individual.
+        será este porcentaje de la pérdida de carga por fricción. <br/><br/> La Norma UNE 149201 - 2008 aconseja
+        que cuando la instalación tiene válvulas de retención, contadores, filtros, se deben determinar las
+        pérdidas de carga de estos accesorios en forma individual.
       </>,
     },
     {
@@ -256,17 +257,18 @@ const tema5Content = [
         <EquationRender equation={equationsLibrary.caudalSim}/>
         <h3>Simultaneidad de Uso de los Artefactos Sanitarios</h3>
         En una vivienda o edificio de viviendas, es muy baja la probabilidad de que todos los artefactos
-        instalados, estén en funcionamiento simultáneamente. Un ejemplo de esto, aunque siendo simple es
-        clarificador, es el del baño completo, que posee cuatro artefactos instalados, ducha, inodoro, bidé y
-        lavatorio, de los cuales, - en la generalidad de los casos-, solamente uno estará en funcionamiento.
-        Es decir, habrá un artefacto en funcionamiento sobre cuatro instalados. Si ampliamos la instalación a
-        un departamento completo, puede existir la probabilidad de que además del funcionamiento de un
-        artefacto de baño, también se use la pileta de cocina o la pileta de lavar o bien ambas simultáneamente.
-        Si seguimos ampliando la instalación al edificio de departamentos, el problema de determinar cuáles y
-        cuantos artefactos y en que períodos de tiempo se usan simultáneamente, se torna complejo. Y como
-        consecuencia de ello, es también compleja la determinación de los caudales circulantes por la instalación.
-        Existirán edificios con destinos particulares, donde se tendrá certeza, en algunos casos total, sobre
-        el uso simultáneo de los artefactos y el tiempo de duración de este uso. Por ejemplo, edificios como
+        instalados, estén en funcionamiento simultáneamente. Un ejemplo de esto es el del baño completo, que
+        posee cuatro artefactos instalados, ducha, inodoro, bidé y lavatorio, de los cuales, (en la generalidad
+        de los casos), solamente uno estará en funcionamiento. Es decir, habrá un artefacto en funcionamiento
+        sobre cuatro instalados.<br/><br/>
+        Si ampliamos la instalación a un departamento completo, puede existir la probabilidad de que además del
+        funcionamiento de un artefacto de baño, también se use la pileta de cocina o la pileta de lavar o bien
+        ambas simultáneamente. Si seguimos ampliando la instalación al edificio de departamentos, el problema
+        de determinar cuáles y cuantos artefactos, y en que períodos de tiempo se usan simultáneamente, se torna
+        complejo. Y como consecuencia de ello, es también compleja la determinación de los caudales circulantes
+        por la instalación.<br/><br/>
+        Existirán edificios con destinos particulares, donde se tendrá certeza, en algunos casos, sobre
+        el uso simultáneo de los artefactos y el tiempo de duración. Por ejemplo, edificios como
         escuelas y cuarteles suponen un uso intensivo de las instalaciones en ciertos períodos de tiempo, por
         lo cual el caudal instantáneo puede ser igual al caudal instalado. Existen varios métodos para considerar
         la simultaneidad de los consumos que se pueden agrupar de la siguiente manera:
@@ -282,9 +284,10 @@ const tema5Content = [
         Edificación de España (Documento Básico HS4, 4.21. Dimensionado de los tramos), prescribe que el
         establecimiento de los coeficientes de simultaneidad de cada tramo debe hacerse de acuerdo con un criterio
         adecuado, sin indicar uno en particular, por lo tanto, es el proyectista quien debe decidir sobre este
-        tema. Por otro lado, “Crear un modelo exacto para predecir la demanda de una edificación es imposible y
+        tema.<br/><br/>
+        Por otro lado, “Crear un modelo exacto para predecir la demanda de una edificación es imposible y
         estudios finales que consideren el impacto de la conservación en la demanda del agua no están completos
-        todavía”. (Código Internacional de Instalaciones Hidráulicas y Sanitarias, 2006).
+        todavía”. (Código Internacional de Instalaciones Hidráulicas y Sanitarias, 2006).<br/><br/>
         Entre los métodos semi-empíricos utilizados, particularmente en España y con antecedentes en normativa
         francesa, nos referiremos al Método del Factor de Simultaneidad, también llamado Método Racional y que ha
         sido recogido por el Reglamento de Instalaciones Sanitarias de la Ciudad Autónoma de Buenos Aires, para
@@ -292,13 +295,18 @@ const tema5Content = [
         <h3>Cálculo de Caudales Simultaneos</h3>
         <h4>Método para Provisión por Servicio Directo (Normas OSN)</h4>
         Para la determinación se distinguen dos casos:
-        -Viviendas o departamentos: Se adopta como Caudal Simultáneo (Qc), el correspondiente a una vez y medio el
-        caudal de la canilla de servicio, esto es:<br/>
-        "Q<sub>c</sub> = 1.5x0.13 𝑠 0.20𝑙𝑡𝑠 𝑠 (39)
-        -Edificios de oficina, negocios y fábricas:
-        𝑄𝑐 = 𝑁 2 0.13 𝑙𝑡𝑠 𝑠 (40)
-        Siendo N es el número de artefactos instalados. Conjuntos de artefactos de baños y toilette, se consideran
-        un solo artefacto.
+        <ul>
+          <li>Viviendas o departamentos(1): Se adopta como caudal simultáneo (Q<sub>c</sub>), el correspondiente a
+          una vez y medio el caudal de la canilla de servicio, esto es</li>
+          <dd>Q<sub>c</sub> = 1.5x0.13 𝑠 0.20𝑙𝑡𝑠 𝑠</dd>
+          <li>Edificios de oficina, negocios y fábricas: Siendo N es el número de artefactos instalados. Conjuntos
+            de artefactos de baños y toilette, se consideran un solo artefacto</li>
+          <dd>𝑄𝑐 = 𝑁 2 0.13 𝑙𝑡𝑠 𝑠</dd>
+        </ul>
+        
+        
+        
+        
         <h4>Método del Factor de Simultaneidad K<sub>1</sub></h4>
         Es un método semi-empírico, el Caudal Simultáneo se determina con la expresión (Díaz Dorado, 2005):
         𝑄𝑐 = 𝐾1𝑄𝑡 (41)
@@ -413,6 +421,7 @@ Otro criterio aceptado es (Carnicer Royo, 1998):
       title: "Dimensionamiento Simplificado (Norma OSN)",
       content:
       <>
+        <ColebrookWhiteEq/>
       </>,
     }
   ];

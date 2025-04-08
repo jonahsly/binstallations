@@ -1,8 +1,7 @@
 import React from "react";
 import { 
     VolRTDCalculate, 
-    DarcyWeisbachCalculate, 
-    ColebrookWhiteCalculate , 
+    DarcyWeisbachCalculate,  
     ReynoldsCalculate, 
     HazenWilliamsCalculate 
 } from "./calculateLibrary";
@@ -55,7 +54,7 @@ const equationsLibrary = {
             "D: diámetro de la tubería"
         ],
         constants: [],
-        calculate: <ColebrookWhiteCalculate/>,
+        calculate: [],
     },
     // Reynolds
    reyNolds: {

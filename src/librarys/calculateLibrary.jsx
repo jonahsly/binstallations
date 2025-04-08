@@ -89,7 +89,7 @@ export function DarcyWeisbachCalculate() {
           <input id="input1" placeholder="0"/>
           <label>longitud</label>
           <input id="input2" type="text" placeholder="0" />
-          <label>dipametro</label>
+          <label>diámetro</label>
           <input id="input3" type="text" placeholder="0" />
           <label>velocidad</label>
           <input id="input4" type="text" placeholder="0" />
@@ -107,26 +107,46 @@ export function DarcyWeisbachCalculate() {
 export function ColebrookWhiteCalculate() {
   const [result, setResult] = useState({ f: "" });
 
-  const handleCalcular = () => {
+    const handleCalcular = () => {
     // Se obtienen los valores de las entradas
-    const epsilon = parseFloat(document.getElementById("input1").value) || 0;
-    const D = parseFloat(document.getElementById("input2").value) || 0;
-    const Re = parseFloat(document.getElementById("input3").value) || 0;
+    const epsilon = parseFloat(document.getElementById("input1").value);
+    const ε = epsilon;
+    const D = parseFloat(document.getElementById("input2").value);
+    const d = D;
+    const Re = parseFloat(document.getElementById("input3").value);
+    const re = Re;
+
+    console.log(ε);
+    console.log(d);
+    console.log(re);
 
     // Valor inicial para f y configuración de tolerancia para la convergencia
-    let f = 0.02;
-    const tol = 1e-6;
-    let error = Infinity;
+    let f = 0.001;
+    let a = 1;
+    let b = 0.001;
+    let error = 1;
+    let iterCount = 1;
 
     // Se itera hasta alcanzar la convergencia
-    while (error > tol) {
-      const f_old = f;
-      const rhs = -2 * Math.log10((epsilon / (3.7 * D)) + (2.51 / (Re * Math.sqrt(f))));
-      f = 1 / (rhs * rhs);
-      error = Math.abs(f - f_old);
+    while (error > 0.00001) {
+      
+      console.log(iterCount);
+      let c = (a + b) / 2;
+      let fa = 1 / Math.sqrt(c);
+      console.log(fa);
+      let fb = -2 * Math.log10((ε / (3.7 * d)) + (2.51 / (re * Math.sqrt(c))));
+      console.log(fb);
+      if ((fa - fb) > 0) {
+        b = c
+      } else {
+        a = c
+      };
+      f = c;
+      console.log(f);
+      error = Math.abs(fa - fb);
+      iterCount = iterCount + 1;
     }
-
-    setResult({ f: f.toFixed(5) });
+    setResult({ f: f.toFixed(4) });
   };
 
   return (
@@ -134,11 +154,11 @@ export function ColebrookWhiteCalculate() {
       <h4>Calcular Factor de Fricción (Colebrook-White)</h4>
       <div className="input-container">
         <label>Rugosidad (ε)</label>
-        <input id="input1" type="text" placeholder="0" />
+        <input id="input1"  placeholder="0" />
         <label>Diámetro (D)</label>
-        <input id="input2" type="text" placeholder="0" />
+        <input id="input2"  placeholder="0" />
         <label>Número de Reynolds (Re)</label>
-        <input id="input3" type="text" placeholder="0" />
+        <input id="input3"  placeholder="0" />
       </div>
       <div className="calculate-container">
         <span
