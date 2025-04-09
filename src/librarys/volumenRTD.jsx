@@ -1,26 +1,25 @@
 import React, { useState } from "react";
 import MathRenderer from "../components/EquationRender/MathRenderer";
-import "./calculateLibrary.css";
+import "../styles/equations.css";
 
 const VolumenRTD = () => {
     const [result, setResult] = useState({ RTD: "", VTR: "", VTB: "" });
     const handleCalcular = () => {
         const case1 = document.getElementById("case1").value;
         const case2 = document.getElementById("case2").value;
-        const quan1 = parseFloat(document.getElementById("input1").value) || 0;
-        const quan2 = parseFloat(document.getElementById("input2").value) || 0;
-        const quan3 = parseFloat(document.getElementById("input3").value) || 0;
-        const quan4 = parseFloat(document.getElementById("input4").value) || 0;
+        const quan1 = parseFloat(document.getElementById("cant1").value) || 0;
+        const quan2 = parseFloat(document.getElementById("cant2").value) || 0;
+        const quan3 = parseFloat(document.getElementById("cant3").value) || 0;
+        const quan4 = parseFloat(document.getElementById("cant4").value) || 0;
 
-        console.log(case1);
-        let RTD = 0;
+        console.log(quan1);
+        let RTD;
 
-        if (case1 === "viviend") {
+        if (case1 === "viviendas") {
             const multiplier = case2 === "directa" ? 850 : case2 === "bombeo" ? 600 : 0;
-
-        console.log(multiplier);
-
             RTD = multiplier * quan1;
+            
+        console.log(multiplier);
         } else if (case1 === "oficinas") {
             RTD =
                 case2 === "directa"
@@ -32,12 +31,14 @@ const VolumenRTD = () => {
         const VTR = RTD * (1 / 3);
         const VTB = RTD * (1 / 5);
 
+        
         setResult({ RTD, VTR: VTR.toFixed(0), VTB: VTB.toFixed(0) });
     };
     
     return (
     <>
         <h3>Valores mínimos de Reserva en T.B. y T.R.</h3>
+        <p>La Norma OSN establece el volumen de los tanques en base a las siguientes relaciones:</p>
         <div className='equation-container'>
             <MathRenderer math={"\Vol_{TB} \\geq  \\frac{1}{5} \\cdot RTD"}/>
             <MathRenderer math={"\Vol_{TR} \\geq  \\frac{1}{3} \\cdot RTD"}/>
@@ -69,16 +70,16 @@ const VolumenRTD = () => {
             </div>
             <div className="input-container">
                 <label>N° de Viviendas:</label>
-                    <input id="input1" placeholder="0"/>
+                    <input id="cant1" placeholder="0"/>
                 <label>Cant. Baños/Toillete:</label>
-                    <input id="input2" placeholder="0"/>
+                    <input id="cant2" placeholder="0"/>
                 <label>Cant. Mingitorios:</label>
-                    <input id="input3" placeholder="0"/>
+                    <input id="cant3" placeholder="0"/>
                 <label>Cant. Lav./Piletas</label>
-                    <input id="input4" placeholder="0"/>
+                    <input id="cant4" placeholder="0"/>
             </div>
             <div className="calculate-container">
-                <span onClick={handleCalcular}>
+                <span style={{ cursor: "pointer", color: "blue" }} onClick={handleCalcular}>
                     Calcular
                 </span>
                 <div>RTD = {result.RTD} lts.</div>

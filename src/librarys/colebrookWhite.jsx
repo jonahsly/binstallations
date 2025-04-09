@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import MathRenderer from "../components/EquationRender/MathRenderer";
-import "./calculateLibrary.css";
+import "../styles/equations.css";
 
 const ColebrookWhite = () => {
     const [result, setResult] = useState({  V: "", re: "", f: "" });
 
     const handleCalcular = () => {
-        const Q = parseFloat(document.getElementById("input1").value);
-        const ε = parseFloat(document.getElementById("input2").value);
-        const D = parseFloat(document.getElementById("input3").value);
+        const Q = parseFloat(document.getElementById("caudal").value);
+        const ε = parseFloat(document.getElementById("rugosidad").value);
+        const D = parseFloat(document.getElementById("diámetro").value);
         
         let V = (1000 * (4 * Q) /(Math.PI * D * D) );
         let re = (V * D / (0.000001004 * 1000) );
@@ -68,14 +68,14 @@ const ColebrookWhite = () => {
             <h4>Calcular el Factor de Fricción</h4>
             <div className="input-container">
                 <label>Caudal (lts/s):</label>
-                    <input id="input1" placeholder="0"/>
+                    <input id="caudal" placeholder="0"/>
                 <label>Rugosidad (mm):</label>
-                    <input id="input2" placeholder="0" />
+                    <input id="rugosidad" placeholder="0" />
                 <label>Diámetro (mm):</label>
-                    <input id="input3" placeholder="0" />
+                    <input id="diámetro" placeholder="0" />
             </div>
             <div className="calculate-container">
-                <span className="calculate" onClick={handleCalcular}>
+                <span style={{ cursor: "pointer", color: "blue" }} onClick={handleCalcular}>
                     Calcular
                 </span>
                 <div>Velocidad: <MathRenderer math={"\V"}/> = {result.V} (m/s)</div>

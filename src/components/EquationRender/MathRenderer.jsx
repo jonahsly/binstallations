@@ -5,7 +5,7 @@ import 'katex/dist/katex.min.css';
 
 const MathRenderer = ({ math }) => {
   const html = katex.renderToString(math, {
-    throwOnError: false, // Evita errores en caso de que la expresión tenga algún inconveniente
+    throwOnError: false,
   });
   return <span dangerouslySetInnerHTML={{ __html: html }} />;
 };

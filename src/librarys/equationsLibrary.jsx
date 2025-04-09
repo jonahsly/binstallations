@@ -6,19 +6,9 @@ import {
     HazenWilliamsCalculate 
 } from "./calculateLibrary";
 
+
 const equationsLibrary = {
-    //Reserva Total Diaria
-    volRTD: {
-        expressions: [
-            "\Vol_{TR} \\geq  \\frac{1}{3} \\cdot RTD",
-            "\Vol_{TB} \\geq  \\frac{1}{5} \\cdot RTD",],
-        variables: [
-            "RTD: reserva total diaria [lts]",
-            <div>Vol<sub>TR</sub>: volumen del tanque de reserva [lts]</div>,
-            <div>Vol<sub>TB</sub>: volumen del tanque de bombeo [lts]</div>],
-        constants: [],
-        calculate: <VolRTDCalculate/>,
-    },
+   
     //Presión Disponible
     presDisp: {
         expressions: [

@@ -1,6 +1,7 @@
 import EquationRender from '../components/EquationRender/EquationRender';
 
 import VolumenRTD from '../librarys/volumenRTD.jsx';
+import PresionRes from '../librarys/presiónResidual.jsx';
 import ColebrookWhite from '../librarys/colebrookWhite.jsx';
 import { equationsLibrary } from "../librarys/equationsLibrary";
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
@@ -60,7 +61,7 @@ const tema5Content = [
         </ul>
         <h3>Calculo Simplificado de la Reserva de Agua Potable</h3>
         <p>La Normas OSN prescriben valores unitarios para la reserva de agua potable según el
-          destino del edificio. Se distinguen dos casos, el primero sse trata de una Unidad de
+          destino del edificio. Se distinguen dos casos, el primero se trata de una Unidad de
           Vivienda completa, compuesta por baño principal, baño de servicio, pileta de cocina,
           pileta de lavar y pileta lavacopas. El segundo caso, se trata de Oficinas, negocios,
           depósitos, etc.</p>
@@ -72,9 +73,7 @@ const tema5Content = [
           destino y uso del agua, como pueden ser edificios deportivos o de recreación,
           cuarteles, que poseen instalaciones con duchas, donde la utilización suele estar muy
           definida en ciertos períodos de tiempo.</p>
-        <h3>Valores mínimos de Reserva en T.B. y T.R.</h3>
-        <p>La Norma OSN establece el volumen de los tanques en base a las siguientes relaciones:</p>
-        <EquationRender equation={equationsLibrary.volRTD}/>
+        <VolumenRTD/>
       </>,
     },
     {
@@ -82,13 +81,7 @@ const tema5Content = [
       title: "Parámetros de Diseño de la Instalación",
       content: <>
         <h2>Presiones mínimas de trabajo de los Artefactos Sanitarios</h2>
-        <h3>Presión Residual o Piezométrica</h3>
-          Cada artefacto sanitario funciona adecuadamente dentro de un rango de presiones,
-          definido por un umbral que es la presión mínima que asegure el caudal requerido
-          por el artefacto. La presión residual (también llamada presión dinámica)
-          H<sub>r</sub> es la Presión resultante en la válvula del artefacto, cuando circula
-          en ese punto, el caudal requerido por el artefacto.<br/><br/>
-        <EquationRender equation={equationsLibrary.presDisp}/>
+        <PresionRes />
         <p>En aquellos artefactos en que la grifería se conecta a la cañería mediante la
           conexión flexible, se considerará la toma del artefacto, definida como el extremo
           de la instalación (normalmente un codo o la salida a 90° de una te) desde donde
@@ -423,7 +416,6 @@ Otro criterio aceptado es (Carnicer Royo, 1998):
       content:
       <>
         <ColebrookWhite/>
-        <VolumenRTD/>
       </>,
     }
   ];
