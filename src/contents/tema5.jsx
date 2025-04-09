@@ -1,8 +1,10 @@
 import EquationRender from '../components/EquationRender/EquationRender';
-
 import VolumenRTD from '../librarys/volumenRTD.jsx';
 import PresionRes from '../librarys/presiónResidual.jsx';
+import DarcyWeisbach from '../librarys/darcyWeisbach.jsx';
 import ColebrookWhite from '../librarys/colebrookWhite.jsx';
+
+
 import { equationsLibrary } from "../librarys/equationsLibrary";
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
 import 'katex/dist/katex.min.css';
@@ -184,13 +186,11 @@ const tema5Content = [
           características de rugosidad del material, cada una de ellas indicadas para las condiciones de trabajo
           en las que han sido establecidas. Entre las fórmulas más usadas para el cálculo de las pérdidas por
           rozamiento, vamos a citar:
-        <h4>Darcy-Weisbach:</h4>
-        <EquationRender equation={equationsLibrary.darcyWeisbach}/><br/>
+        <DarcyWeisbach />
         Para régimen turbulento, el cual es el caso típico de la conducción de agua en la instalación, el factor
-        de fricción se puede calcular mediante la expresión de
+        de fricción se puede calcular mediante la expresión de:
         <h4>Colebrook-White:</h4>
-        <h4>N° de Reynolds:</h4>
-        <EquationRender equation={equationsLibrary.reyNolds}/><br/>
+        <ColebrookWhite/>
         <h4>Hazen-Williams:</h4>
         <EquationRender equation={equationsLibrary.hazenWilliams}/><br/>
         Las fórmulas anteriormente citadas, se aplican a una parte elemental de la instalación, que
@@ -415,7 +415,7 @@ Otro criterio aceptado es (Carnicer Royo, 1998):
       title: "Dimensionamiento Simplificado (Norma OSN)",
       content:
       <>
-        <ColebrookWhite/>
+        
       </>,
     }
   ];

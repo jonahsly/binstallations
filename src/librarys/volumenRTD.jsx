@@ -7,34 +7,27 @@ const VolumenRTD = () => {
     const handleCalcular = () => {
         const case1 = document.getElementById("case1").value;
         const case2 = document.getElementById("case2").value;
-        const quan1 = parseFloat(document.getElementById("cant1").value) || 0;
-        const quan2 = parseFloat(document.getElementById("cant2").value) || 0;
-        const quan3 = parseFloat(document.getElementById("cant3").value) || 0;
-        const quan4 = parseFloat(document.getElementById("cant4").value) || 0;
-
-        console.log(quan1);
+        const q1 = parseFloat(document.getElementById("cant1").value) || 0;
+        const q2 = parseFloat(document.getElementById("cant2").value) || 0;
+        const q3 = parseFloat(document.getElementById("cant3").value) || 0;
+        const q4 = parseFloat(document.getElementById("cant4").value) || 0;
+        
         let RTD;
-
         if (case1 === "viviendas") {
             const multiplier = case2 === "directa" ? 850 : case2 === "bombeo" ? 600 : 0;
-            RTD = multiplier * quan1;
-            
-        console.log(multiplier);
+            RTD = multiplier * q1;
         } else if (case1 === "oficinas") {
             RTD =
                 case2 === "directa"
-                ? 350 * quan2 + 250 * quan3 + 150 * quan4
+                ? 350 * q2 + 250 * q3 + 150 * q4
                 : case2 === "bombeo"
-                ? 250 * quan2 + 150 * quan3 + 100 * quan4
+                ? 250 * q2 + 150 * q3 + 100 * q4
                 : 0;
         };
         const VTR = RTD * (1 / 3);
         const VTB = RTD * (1 / 5);
-
-        
         setResult({ RTD, VTR: VTR.toFixed(0), VTB: VTB.toFixed(0) });
     };
-    
     return (
     <>
         <h3>Valores mínimos de Reserva en T.B. y T.R.</h3>
