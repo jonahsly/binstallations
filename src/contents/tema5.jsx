@@ -1,13 +1,9 @@
-import EquationRender from '../components/EquationRender/EquationRender';
 import VolumenRTD from '../librarys/volumenRTD.jsx';
 import PresionRes from '../librarys/presiónResidual.jsx';
 import DarcyWeisbach from '../librarys/darcyWeisbach.jsx';
 import ColebrookWhite from '../librarys/colebrookWhite.jsx';
-
-
-import { equationsLibrary } from "../librarys/equationsLibrary";
+import HazenWilliams from '../librarys/hazenWilliams.jsx';
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
-import 'katex/dist/katex.min.css';
 
 const tema5Content = [
     {
@@ -189,10 +185,8 @@ const tema5Content = [
         <DarcyWeisbach />
         Para régimen turbulento, el cual es el caso típico de la conducción de agua en la instalación, el factor
         de fricción se puede calcular mediante la expresión de:
-        <h4>Colebrook-White:</h4>
         <ColebrookWhite/>
-        <h4>Hazen-Williams:</h4>
-        <EquationRender equation={equationsLibrary.hazenWilliams}/><br/>
+        <HazenWilliams/>
         Las fórmulas anteriormente citadas, se aplican a una parte elemental de la instalación, que
         denominaremos “tramo” (ver 0) y cuyas características principales son:
         <ol>
@@ -211,14 +205,12 @@ const tema5Content = [
         Con este método, las pérdidas localizadas se calculan como fracción de la energía cinética,
         inmediatamente aguas abajo del punto donde se producen. De la hidráulica se sabe que las pérdidas
         localizadas se pueden determinar con la expresión:<br/>
-        <br/><EquationRender equation={equationsLibrary.coefKp}/>
         <h4>Longitud Equivalente L<sub>e</sub>:</h4>
         Otra forma menos exacta aunque más práctica de calcular las pérdidas localizadas, es mediante el
         método de las longitudes equivalentes. Conceptualmente se entiende como el reemplazo del accesorio –en
         el esquema matemático de cálculo- por un tramo de cañería de igual diámetro al de la conducción y con
         una longitud llamada equivalente que provoca la misma pérdida de carga que el accesorio.
         La relación entre ambos métodos, a partir de la ecuación de Darcy Weisbach es:<br/><br/>
-        <EquationRender equation={equationsLibrary.longEq}/><br/>
         Por lo tanto se entiende que la asimilación del factor 𝐾𝑝/𝑓 como constante, es una ponderación, puesto
         que f depende del número de Reynolds y este a su vez de la velocidad del flujo.
         Se utilizan tablas en las que longitudes equivalentes se expresan en función del diámetro del accesorio,
@@ -243,12 +235,10 @@ const tema5Content = [
         <h4>Caudal Instalado Q<sub>t</sub></h4>
         Se define como Caudal Instalado a la sumatoria de los consumos asignados a los artefactos sanitarios,
         que son alimentados por el tramo que se considere.
-        <EquationRender equation={equationsLibrary.caudalIns}/>
         <h4>Caudal Simultáneo Q<sub>c</sub></h4>
         Se define como Caudal Simultáneo al CAUDAL MÁXIMO PROBABLE que circula por un dado tramo de la
         instalación, bajo una cierta simultaneidad en el uso de los artefactos que son alimentados por dicho
         tramo.
-        <EquationRender equation={equationsLibrary.caudalSim}/>
         <h3>Simultaneidad de Uso de los Artefactos Sanitarios</h3>
         En una vivienda o edificio de viviendas, es muy baja la probabilidad de que todos los artefactos
         instalados, estén en funcionamiento simultáneamente. Un ejemplo de esto es el del baño completo, que

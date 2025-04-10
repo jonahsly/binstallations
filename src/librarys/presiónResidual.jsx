@@ -1,5 +1,5 @@
 import React from "react";
-import MathRenderer from "../components/EquationRender/MathRenderer";
+import MathRenderer from "./MathRenderer";
 import "../styles/equations.css";
 
 const PresionRes = () => {

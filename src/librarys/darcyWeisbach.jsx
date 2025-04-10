@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MathRenderer from "../components/EquationRender/MathRenderer";
+import MathRenderer from "./MathRenderer";
 import "../styles/equations.css";
 
 const DarcyWeisbach = () => {
@@ -50,7 +50,7 @@ const DarcyWeisbach = () => {
                 <span style={{ cursor: "pointer", color: "blue" }} onClick={handleCalcular}>
                     Calcular
                 </span>
-                <div>Pérdida de carga: <MathRenderer math={"\Re"}/> = {result.dhf} (mca)</div>
+                <div>Pérdida de carga: <MathRenderer math={"\\Delta H_f"}/> = {result.dhf} (mca)</div>
             </div>
         </div>
     </>
