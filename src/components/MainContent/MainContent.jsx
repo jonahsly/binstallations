@@ -20,7 +20,7 @@ const getSectionsByTheme = (theme) => {
       return tema3Content;
     case 'tema4':
       return tema4Content;
-      case 'tema5':
+    case 'tema5':
         return tema5Content;
     default:
       return [];
