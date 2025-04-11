@@ -3,6 +3,8 @@ import PresionRes from '../librarys/presiónResidual.jsx';
 import DarcyWeisbach from '../librarys/darcyWeisbach.jsx';
 import ColebrookWhite from '../librarys/colebrookWhite.jsx';
 import HazenWilliams from '../librarys/hazenWilliams.jsx';
+import CoeficienteKp from '../librarys/coeficienteKp.jsx';
+import LongitudEq from '../librarys/longitudEq.jsx';
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
 
 const tema5Content = [
@@ -201,16 +203,8 @@ const tema5Content = [
         <h4>Método Individual</h4>
         Este método se aplica a ciertos accesorios, como por ejemplo el medidor, que cuya pérdida de carga es
         función del caudal de agua. En estos casos, hay que recurrir a las especificaciones del fabricante.
-        <h4>Coeficiente de Resistencia K<sub>P</sub>:</h4>
-        Con este método, las pérdidas localizadas se calculan como fracción de la energía cinética,
-        inmediatamente aguas abajo del punto donde se producen. De la hidráulica se sabe que las pérdidas
-        localizadas se pueden determinar con la expresión:<br/>
-        <h4>Longitud Equivalente L<sub>e</sub>:</h4>
-        Otra forma menos exacta aunque más práctica de calcular las pérdidas localizadas, es mediante el
-        método de las longitudes equivalentes. Conceptualmente se entiende como el reemplazo del accesorio –en
-        el esquema matemático de cálculo- por un tramo de cañería de igual diámetro al de la conducción y con
-        una longitud llamada equivalente que provoca la misma pérdida de carga que el accesorio.
-        La relación entre ambos métodos, a partir de la ecuación de Darcy Weisbach es:<br/><br/>
+        <CoeficienteKp />
+        <LongitudEq />
         Por lo tanto se entiende que la asimilación del factor 𝐾𝑝/𝑓 como constante, es una ponderación, puesto
         que f depende del número de Reynolds y este a su vez de la velocidad del flujo.
         Se utilizan tablas en las que longitudes equivalentes se expresan en función del diámetro del accesorio,

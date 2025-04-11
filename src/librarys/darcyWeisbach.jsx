@@ -12,7 +12,7 @@ const DarcyWeisbach = () => {
     
         let dhf = A * B * D * D / ( C * 2 * 9.81 );
         setResult({ dhf: dhf.toFixed(2) });
-      };
+    };
     return (
     <>
         <h3>Ecuación de Darcy-Weisbach</h3>
