@@ -20,8 +20,7 @@ const tema1Content = [
               y los Órganos de Contralor.</li>
           </ol>
         </div>,
-      images: ["/assets/img1.jpg", "/assets/img2.jpg"],
-      video: "/assets/video1.mp4"
+      images: ["/assets/img1.jpg", "/assets/img2.jpg"]
     },
     {
       id: "section2",
@@ -79,9 +78,7 @@ const tema1Content = [
               red de distribución.</dd>
           </li>
         </ol>
-      </div>,
-      images: [],
-      video: null
+      </div>
     },
     {
       id: "section3",
@@ -92,9 +89,7 @@ const tema1Content = [
           presión, por lo tanto, la forma en que se reseulve
           la instalación interna del edificio depende de la
           presión disponible en lared pública de agua potable.
-        </p>,
-      images: [],
-      video: null
+        </p>
     },
     {
       id: "section4",
@@ -109,9 +104,7 @@ const tema1Content = [
             <p>Código de Edificación de la Ciudad de Buenos Aires:
               Anexo Reglamento sobre Instalaciones Sanitarias</p>
           </li>
-        </ul>,
-      images: [],
-      video: null
+        </ul>
     }
   ];
   

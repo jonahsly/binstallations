@@ -6,6 +6,8 @@ import HazenWilliams from '../librarys/hazenWilliams.jsx';
 import CoeficienteKp from '../librarys/coeficienteKp.jsx';
 import LongitudEq from '../librarys/longitudEq.jsx';
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
+import CaudalInst from '../librarys/caudalIns.jsx';
+import CaudalSim from '../librarys/caudalSim.jsx';
 
 const tema5Content = [
     {
@@ -74,7 +76,7 @@ const tema5Content = [
           cuarteles, que poseen instalaciones con duchas, donde la utilización suele estar muy
           definida en ciertos períodos de tiempo.</p>
         <VolumenRTD/>
-      </>,
+      </>
     },
     {
       id: "section2",
@@ -170,7 +172,7 @@ const tema5Content = [
           adopción de velocidades mayores supone diámetros menores y la mayor pérdida de carga que ello significa
           no afecta las presiones mínimas requeridas.
         <TableRenderer table={tablesLibrary.velocRecom} />
-      </>,
+      </>
     },
     {
       id: "section3",
@@ -218,100 +220,16 @@ const tema5Content = [
         será este porcentaje de la pérdida de carga por fricción. <br/><br/> La Norma UNE 149201 - 2008 aconseja
         que cuando la instalación tiene válvulas de retención, contadores, filtros, se deben determinar las
         pérdidas de carga de estos accesorios en forma individual.
-      </>,
+      </>
     },
     {
       id: "section4",
-      title: "Caudales de Cálculo",
+      title: "Caudales de Cálculo de la Instalación",
       content:
       <>
-        <h3>Caudales de Cálculo de la Instalación:</h3>
-        <h4>Caudal Instalado Q<sub>t</sub></h4>
-        Se define como Caudal Instalado a la sumatoria de los consumos asignados a los artefactos sanitarios,
-        que son alimentados por el tramo que se considere.
-        <h4>Caudal Simultáneo Q<sub>c</sub></h4>
-        Se define como Caudal Simultáneo al CAUDAL MÁXIMO PROBABLE que circula por un dado tramo de la
-        instalación, bajo una cierta simultaneidad en el uso de los artefactos que son alimentados por dicho
-        tramo.
-        <h3>Simultaneidad de Uso de los Artefactos Sanitarios</h3>
-        En una vivienda o edificio de viviendas, es muy baja la probabilidad de que todos los artefactos
-        instalados, estén en funcionamiento simultáneamente. Un ejemplo de esto es el del baño completo, que
-        posee cuatro artefactos instalados, ducha, inodoro, bidé y lavatorio, de los cuales, (en la generalidad
-        de los casos), solamente uno estará en funcionamiento. Es decir, habrá un artefacto en funcionamiento
-        sobre cuatro instalados.<br/><br/>
-        Si ampliamos la instalación a un departamento completo, puede existir la probabilidad de que además del
-        funcionamiento de un artefacto de baño, también se use la pileta de cocina o la pileta de lavar o bien
-        ambas simultáneamente. Si seguimos ampliando la instalación al edificio de departamentos, el problema
-        de determinar cuáles y cuantos artefactos, y en que períodos de tiempo se usan simultáneamente, se torna
-        complejo. Y como consecuencia de ello, es también compleja la determinación de los caudales circulantes
-        por la instalación.<br/><br/>
-        Existirán edificios con destinos particulares, donde se tendrá certeza, en algunos casos, sobre
-        el uso simultáneo de los artefactos y el tiempo de duración. Por ejemplo, edificios como
-        escuelas y cuarteles suponen un uso intensivo de las instalaciones en ciertos períodos de tiempo, por
-        lo cual el caudal instantáneo puede ser igual al caudal instalado. Existen varios métodos para considerar
-        la simultaneidad de los consumos que se pueden agrupar de la siguiente manera:
-        <ul>
-          <li>Métodos Probabilísticos</li>
-          <li>Métodos Empíricos</li>
-          <li>Métodos Semi-empíricos</li>
-        </ul>
-        Cabe aclarar que, siendo las Normas OSN, normas de carácter empírico, no tratan analíticamente el problema
-        de la simultaneidad en distribución de agua. No obstante, dada la complejidad del problema cuando se trata
-        de alimentar muchos artefactos, quedará a responsabilidad del proyectista, la utilización de uno u otro
-        método conjuntamente con su criterio profesional y experiencia. En este sentido, el Código Técnico de la
-        Edificación de España (Documento Básico HS4, 4.21. Dimensionado de los tramos), prescribe que el
-        establecimiento de los coeficientes de simultaneidad de cada tramo debe hacerse de acuerdo con un criterio
-        adecuado, sin indicar uno en particular, por lo tanto, es el proyectista quien debe decidir sobre este
-        tema.<br/><br/>
-        Por otro lado, “Crear un modelo exacto para predecir la demanda de una edificación es imposible y
-        estudios finales que consideren el impacto de la conservación en la demanda del agua no están completos
-        todavía”. (Código Internacional de Instalaciones Hidráulicas y Sanitarias, 2006).<br/><br/>
-        Entre los métodos semi-empíricos utilizados, particularmente en España y con antecedentes en normativa
-        francesa, nos referiremos al Método del Factor de Simultaneidad, también llamado Método Racional y que ha
-        sido recogido por el Reglamento de Instalaciones Sanitarias de la Ciudad Autónoma de Buenos Aires, para
-        su aplicación en dimensionamiento de la instalación por métodos racionales.<br/>
-        <h3>Cálculo de Caudales Simultaneos</h3>
-        <h4>Método para Provisión por Servicio Directo (Normas OSN)</h4>
-        Para la determinación se distinguen dos casos:
-        <ul>
-          <li>Viviendas o departamentos(1): Se adopta como caudal simultáneo (Q<sub>c</sub>), el correspondiente a
-          una vez y medio el caudal de la canilla de servicio, esto es</li>
-          <dd>Q<sub>c</sub> = 1.5x0.13 𝑠 0.20𝑙𝑡𝑠 𝑠</dd>
-          <li>Edificios de oficina, negocios y fábricas: Siendo N es el número de artefactos instalados. Conjuntos
-            de artefactos de baños y toilette, se consideran un solo artefacto</li>
-          <dd>𝑄𝑐 = 𝑁 2 0.13 𝑙𝑡𝑠 𝑠</dd>
-        </ul>
-        
-        
-        
-        
-        <h4>Método del Factor de Simultaneidad K<sub>1</sub></h4>
-        Es un método semi-empírico, el Caudal Simultáneo se determina con la expresión (Díaz Dorado, 2005):
-        𝑄𝑐 = 𝐾1𝑄𝑡 (41)
-        Donde:
-        Qc=Caudal Simultáneo en [lts/s]
-        K1= Factor de Simultaneidad, adimensional
-        Qt= Caudal Instalado en [lts/s]
-        El factor de simultaneidad es menor que la unidad y se calcula con la siguiente expresión:
-        𝐾1 = 1 √𝑛 − 1 (42)
-        Donde n es el número de artefactos aguas abajo del tramo de cañería considerado y que definen el caudal
-        instalado. Se recomienda no considerar factores de simultaneidad menores a 0.20. Cabe acotar que este
-        método requiere que los caudales unitarios asignados a los artefactos de consumo, numéricamente posean
-        el mismo orden de magnitud. Para los tramos de la instalación que alimenten baños, se considerará un
-        solo artefacto y será el de mayor caudal instalado.
-        <h4>Método del Factor de Simultaneidad K<sub>2</sub></h4>
-        Según el número de unidades locativas o viviendas
-        Cuando se distribuye agua a un conjunto de viviendas o unidades locativas, es de esperar que los hábitos
-        de consumo no sean iguales en cada una de ellas. Un edificio de departamentos, por ejemplo, puede tener
-        la misma dotación sanitaria en todas las unidades locativas, sin embargo los usos pueden no coincidir en
-        el tiempo, pues son distintas las costumbres de las personas que las habitan. Una forma de tener en cuenta
-        la no simultaneidad de los consumos de agua en este tipo de edificios, es mediante la introducción de
-        otro coeficiente, que indicaremos como K2, que afecta a los caudales simultáneos determinados mediante
-        el coeficiente K1, El coeficiente K2 se aplica a los tramos troncales de la instalación que alimentan a
-        las unidades locativas o viviendas y a los tramos de bajada en un edificio en altura.
-        Se determina con la expresión:
-        𝐾2 = 19 + 𝑁 10(𝑁 + 1) (43)
-        Donde N es el número de unidades locativas o viviendas que alimenta el tramo que se está dimensionando.
+        <CaudalInst />
+        <CaudalSim />
+
         <h4>Método de la Norma UNE 149.201-08</h4>
         Es un método para calcular caudales simultáneos en función del caudal instalado y del destino del
         edificio. A continuación transcribimos la formulación del caudal simultáneo, para dos destinos particulares:
@@ -392,7 +310,7 @@ Otro criterio aceptado es (Carnicer Royo, 1998):
 2 Válvulas automáticas si la instalación tiene un número entre 3 y 12
 3 Válvulas automáticas si la instalación tiene un número entre 12 y 24.
 4 Válvulas automáticas si la instalación tiene un número mayor a 24
-      </>,
+      </>
     },
     {
       id: "section5",
@@ -400,7 +318,7 @@ Otro criterio aceptado es (Carnicer Royo, 1998):
       content:
       <>
         
-      </>,
+      </>
     }
   ];
   

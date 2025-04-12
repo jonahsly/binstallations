@@ -42,9 +42,7 @@ const tema2Content = [
       <p>La mínima presión en este punto se denomina Presión de Servicio o Presión
         sobre Nivel de Acera. La determinación del Nivel Piezométrico es importante
         y es información que debe suministrar la Empresa Prestadora del Servicio.</p>
-    </div>,
-    images: ["/assets/img1.jpg", "/assets/img2.jpg"],
-    video: "/assets/video1.mp4"
+    </div>
   },
   {
     id: "section2",
@@ -189,9 +187,7 @@ const tema2Content = [
           </li>
         </ul>
       </p>
-    </div>,
-    images: [],
-    video: null
+    </div>
   },
   {
     id: "section3",
@@ -218,9 +214,7 @@ const tema2Content = [
             en el Tanque de Reserva y en el Tanque de Bombeo, en ausencia de este se almacena en el
             Tanque de Reserva</p>
         </p>
-      </div>,
-      images: [],
-    video: null
+      </div>
   }
 ];
 

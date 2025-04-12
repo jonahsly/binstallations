@@ -17,9 +17,6 @@ const tema3Content = [
             hidráulicas de la instalación.
           </p>
         </div>
-      ,
-      images: ["/assets/img1.jpg", "/assets/img2.jpg"],
-      video: "/assets/video1.mp4"
     },
     {
       id: "section2",
@@ -108,9 +105,6 @@ const tema3Content = [
           hasta 22 kg/cm2 (DN 100mm). El tipo de Unión es por soldadura capilar con aporte de una
           aleación de estaño y plomo.</p>
       </div>
-    ,
-      images: [],
-      video: null
     },
     {
       id: "section3",
@@ -163,9 +157,6 @@ const tema3Content = [
                 fabricante.</dd></li>
           </ul>
         </div>
-      ,
-      images: [],
-      video: null
     }
   ];
   

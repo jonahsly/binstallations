@@ -78,7 +78,7 @@ const tema4Content = [
               <div className="texto-overlay">Abrazadera</div></div>
           </li>
         </ol>
-      </div>,
+      </div>
     },
     {
       id: "section2",
@@ -211,9 +211,7 @@ const tema4Content = [
           </p>
           </li>
         </ul>
-      </div>,
-      images: [],
-      video: null
+      </div>
     },
     {
       id: "section3",
@@ -265,9 +263,7 @@ const tema4Content = [
         <p>El tanque de reserva tiene que cumplir, además, con una serie de disposiciones
           constructivas que están claramente especificadas por la Norma (páginas 21 y 121)</p>
         </ul>
-      </div>,
-      images: [],
-      video: null
+      </div>
     },
     {
       id: "section4",
@@ -303,9 +299,7 @@ const tema4Content = [
           edificio a proteger o en <dd>“salas que conformen un sector de incendios, con una resistencia
           mínima al fuego de 120 minutos (RF120), en paredes y techos”</dd> *(Norma IRAM 3597-2013,
           página 14)-(ACI 216.1-97 / TMS 0216.1-97).
-        </p></div>,
-      images: [],
-      video: null
+        </p></div>
     },
     {
       id: "section5",
@@ -317,9 +311,7 @@ const tema4Content = [
         directa con la brida para permitir la rápida salida del agua cuando se limpia el tanque.</p>
         <p>Posee además una válvula de corte general que independiza toda la instalación de distribución,
         siendo conveniente que se prevea el desarmado y su independización a partir de la llave de corte
-        general, mediante uniones dobles o uniones bridadas.</p></div>,
-      images: [],
-      video: null
+        general, mediante uniones dobles o uniones bridadas.</p></div>
     },
     {
       id: "section6",
@@ -330,9 +322,7 @@ const tema4Content = [
         puente de empalme. El puente de empalme posee válvulas de corte en cada extremo, que permiten la
         limpieza o reparación de los compartimientos, sin suprimir la alimentación a la instalación. Al
         igual que el colector, su construcción debe prever el desarme mediante uniones dobles o bridadas.
-        </p></div>,
-      images: [],
-      video: null
+        </p></div>
     },
     {
       id: "section7",
@@ -360,9 +350,7 @@ const tema4Content = [
           cuando la llave de paso de cierra, para mantener a presión atmósfera la cañería de bajada 
           (por arriba del nivel de pelo libre), evitando de esta forma la succión del agua contaminada
           contenida en el artefacto peligroso.</p>
-        <p>El ramal así conformado se denomina Ruptor de Vacío.</p></p></div>,
-      images: [],
-      video: null
+        <p>El ramal así conformado se denomina Ruptor de Vacío.</p></p></div>
     }
   ];
   
