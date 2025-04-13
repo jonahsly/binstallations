@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #111111;
+  background-color: #eeeeee;
   padding: 10px 20px;
   border-radius: 8px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .language-selector {
@@ -17,8 +17,8 @@
 
 .navbar-title {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: white;
+  font-weight: 700;
+  color: rgb(32, 32, 32);
 
 }
 

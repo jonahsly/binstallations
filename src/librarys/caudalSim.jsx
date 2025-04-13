@@ -104,73 +104,83 @@ const CaudalSim = () => {
         Es un método para calcular caudales simultáneos en función del caudal instalado y del destino del
         edificio. A continuación transcribimos la formulación del caudal simultáneo, para dos destinos particulares:
         <p>- Edificios de Viviendas:</p>
+        Para: <MathRenderer math={"Q_t>20\\frac{lts}{s}"}/>
+        <ul><li><MathRenderer math={"Q_c=1.7Q_t^{0.21}-0.7\\frac{lts}{s}"}/></li></ul>
+        Para: <MathRenderer math={"Q_t\\leqslant20\\frac{lts}{s}"}/><br/>
+        Depende de los caudales instantáneos mínimos (los asignados a cada artefacto de consumo):
+        <ul>
+            <li><MathRenderer math={"Q_{min}<0.5\\frac{lts}{s}"}/>
+                <dd><MathRenderer math={"Q_{c}=0.685\\cdot Q_t^{0.45} - 0.14\\frac{lts}{s}"}/></dd>
+            </li><br/>
+            <li>
+                <MathRenderer math={"Q_{min}\\geqslant0.5\\frac{lts}{s}"}/>
+                <dd><MathRenderer math={"Q_{t}\\leqslant 1\\frac{lts}{s}\\Longrightarrow Q_{c}=Q_{t}"}/></dd><br/>
+                <dd><MathRenderer math={"Q_{t}>0.5\\frac{lts}{s}\\Longrightarrow Q_c=1.7Q_t^{0.21}-0.7\\frac{lts}{s}"}/></dd>
+            </li>
+        </ul>
+        <p>- Edificios de Oficinas, Estaciones, Aeropuertos, Etc.:</p>
+        Para: <MathRenderer math={"Q_t>20\\frac{lts}{s}"}/>
+        <ul><li><MathRenderer math={"Q_c=0.4Q_t^{0.54}+0.48\\frac{lts}{s}"}/></li></ul>
+        Para: <MathRenderer math={"Q_t\\leqslant20\\frac{lts}{s}"}/><br/>
+        <ul>
+            <li><MathRenderer math={"Q_{min}<0.5\\frac{lts}{s}"}/>
+                <dd><MathRenderer math={"Q_{c}=0.685\\cdot Q_t^{0.45} - 0.14\\frac{lts}{s}"}/></dd>
+            </li><br/>
+            <li>
+                <MathRenderer math={"Q_{min}\\geqslant0.5\\frac{lts}{s}"}/>
+                <dd><MathRenderer math={"Q_{t}\\leqslant 1\\frac{lts}{s}\\Longrightarrow Q_{c}=Q_{t}"}/></dd><br/>
+                <dd><MathRenderer math={"Q_{t}>0.5\\frac{lts}{s}\\Longrightarrow Q_c=1.7Q_t^{0.21}-0.7\\frac{lts}{s}"}/></dd>
+            </li>
+        </ul>
+        <h4>Método de la Norma Chilena NCH-2.485-00</h4>
+        Esta norma establece el siguiente procedimiento para la determinación de caudales instantáneos:
         <div className='equation-container'>
-            <MathRenderer math={"Q_t>20\\frac{lts}{s}\\Longrightarrow Q_c=1.7Q_t^{0.21}-0.7\\frac{lts}{s}"}/>
+            <MathRenderer math={"Q_c=1.7391\\cdot{Q_t}^{0.6891}"}/>
+        </div>
+        <div className='variables-container'>
+            <p>Donde:</p>
+            <ul>
+                <li><MathRenderer math={"Q_t"}/>: es el caudal instalado (lts/min)</li>
+                <li><MathRenderer math={"Q_c"}/>: el caudal máximo probable (lts/min)</li>
+            </ul>
+        </div>
+        Para aplicación de la fórmula la Norma prescribe que, para “los dos últimos artefactos de un tramo de
+        ramal, el caudal máximo probable debe ser la suma de los caudales instalados de ambos”, y el “caudal
+        máximo probable de un tramo de ramal en que existen tres o más artefactos debe ser, como mínimo la suma
+        de los dos de mayor consumo”.
+        <h4>Caudales Simultáneos cuando la instalación posee Válvulas Automáticas para inodoros</h4>
+        <p>Las válvulas automáticas para inodoros descargan un gran caudal instantáneamente, puesto que al no
+        disponerse de depósito, el agua se almacena en la propia cañería que alimenta la válvula. Se usan
+        particularmente en sanitarios de uso público, y es recomendable que sean alimentadas por una instalación
+        independiente de otros artefactos, como son inodoros con depósito, lavatorios, mingitorios, etc., en
+        razón de que el caudal de desacarga de la válvula automática puede perturbar el uso de otros artefactos.
+        La alimentación independiente debe hacerse desde el colector o puente de empalme del tanque de reserva.</p>
+        <p>Dado el corto tiempo de funcionamiento de la válvula, en el orden de los 30 segundos, es muy baja la
+        probabilidad de uso simultaneo de varias válvulas, es por ello que las Normas OSN consideran una
+        válvula en funcionamiento por cada cuatro válvulas instaladas. Este criterio ha sido adoptado en
+        general, por los fabricantes nacionales de válvulas automáticas.</p>
+        Otro criterio aceptado es (Carnicer Royo, 1998):<br/>
+        Para:
+        <div className='equation-container'>
+            <MathRenderer math={"n<3\\Longrightarrow Q_c=Q_{va}"}/>
         </div>
         <div className='equation-container'>
-            <MathRenderer math={"Q_t\\leqslant20\\frac{lts}{s}\\Longrightarrow"}/>
+            <MathRenderer math={"3\\leqslant n<12\\Longrightarrow Q_c=2\\cdot Q_{va}"}/>
         </div>
         <div className='equation-container'>
-            <MathRenderer math={"Q_t > 20\\frac{lts}{s} \Longrightarrow"}/>
+            <MathRenderer math={"12\\leqslant n<24\\Longrightarrow Q_c=3\\cdot Q_{va}"}/>
         </div>
         <div className='equation-container'>
-            <MathRenderer math={""}/>
+            <MathRenderer math={"24\\leqslant n\\Longrightarrow Q_c=4\\cdot Q_{va}"}/>
         </div>
-
-        
-        Para 𝑄𝑡 mayor a 20 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
-        Para 𝑄𝑡 ≤ 20 𝑙𝑡𝑠/𝑠 dependiendo de los caudales instantáneos mínimos:
-        Si todo 𝑄𝑚í𝑛 es menor a 0,5 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.682𝑥 (𝑄𝑇)0.45 − 0.14 𝑙𝑡𝑠/𝑠
-        𝑄𝑡 ≤ 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 𝑄𝑡 𝑁𝑜 𝑠𝑖𝑚𝑢𝑙𝑡𝑎𝑛𝑒𝑖𝑑𝑎𝑑
-Si algún 𝑄𝑚í𝑛 ≥ 0.5 𝑙𝑡𝑠/𝑠
-Qt=1.75 lts/s
-n=12
-K1=0.302
-Qc=0.53 lts/s
-2º P
-N=2
-K
-2=0.70
-Qc=0.74 lts/s
-N=4
-K
-2=0.46
-Qc=0.97 lts/s
-1º P
-Qt=1.75 lts/s
-n=12
-K1=0.302
-Qc=0.53 lts/s
-4º P
-Qt=1.75 lts/s
-n=12
-K1=0.302
-Qc=0.53 lts/s
-N=3
-K2=0.55
-Qc=0.87 lts/s
-3º P
-TANQUE DE RESERVA
-Qt=1.75 lts/s
-n=12
-K1=0.302
-Qc=0.53 lts/s
-N=1
-K2=1
-Qc=0.53 lts/sIng. Gustavo L. Lazarte-Ing. Viviana B. Sánchez 52 /63
-𝑄𝑡 mayor que 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
-Qmín en [lts/s], es el caudal asignado a cada artefacto de consumo.
-Edificios de Oficinas, Estaciones, Aeropuertos, Etc.
-Para 𝑄𝑡 mayor que 20 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.4𝑥 (𝑄𝑡)0.54 + 0.48 𝑙𝑡𝑠/𝑠
-Para 𝑄𝑡 ≤ 20 𝑙𝑡𝑠/𝑠 dependiendo de los caudales instantáneos mínimos:
-Si todo 𝑄𝑚í𝑛 menor que 0.5 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 0.682𝑥 (𝑄𝑇)0.45 − 0.14 𝑙𝑡𝑠/𝑠
-𝑄𝑡 ≤ 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 𝑄𝑡 𝑁𝑜 𝑠𝑖𝑚𝑢𝑙𝑡𝑎𝑛𝑒𝑖𝑑𝑎𝑑
-Si algún 𝑄𝑚í𝑛 ≥ 0.5 𝑙𝑡𝑠/𝑠
-𝑄𝑡 mayor que 1 𝑙𝑡𝑠/𝑠 𝑄𝑐 = 1.7𝑥 (𝑄𝑡)0.21 − 0.7 𝑙𝑡𝑠/𝑠
-        
-        
-        
-        
+        <div className='variables-container'>
+            <p>Donde:</p>
+            <ul>
+                <li><MathRenderer math={"n"}/>: es la cant. de válvulas instaladas</li>
+                <li><MathRenderer math={"Q_c"}/>: el caudal simultaneo</li>
+                <li><MathRenderer math={"Q_{va}"}/>: el caudal de una válv. automática</li>
+            </ul>
+        </div>
     </>
     );
 };
