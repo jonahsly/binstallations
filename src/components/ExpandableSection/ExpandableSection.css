@@ -22,7 +22,7 @@
   padding: 16px;
   background-color: #eeeeee;
   color: rgb(0, 0, 0);
-  max-height: 300px;
+  max-height: 600px;
   overflow-y: auto;
   border-radius: 0 0 8px 8px;
   animation: fadeIn 0.4s ease;

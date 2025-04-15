@@ -233,10 +233,55 @@ const tema5Content = [
     },
     {
       id: "section5",
-      title: "Dimensionamiento Simplificado (Norma OSN)",
+      title: "Dimensionamiento Hidráulico",
       content:
       <>
-        
+        <h3>Esquema de Cálculo para el Dimensionamiento Hidráulico de la Instalación</h3>
+        <p>Como en cualquier problema de ingeniería, el problema del dimensionamiento
+          hidráulico, se aborda mediante un “esquema de cálculo”, entendiéndose como tal
+          la idealización del problema, mediante la adopción de hipótesis de cálculo que
+          simplifican la búsqueda de la solución y que conducen a un modelo matemático.
+          El modelo matemático permitirá obtener la respuesta del esquema de cálculo, al
+          variar los parámetros de diseño de la instalación.</p>
+          <p>La instalación de distribución del agua en el edificio es una red hidráulica
+            abierta y alimentada por un solo punto. Pueden existir en el edificio redes
+            cerradas como por ejemplo la instalación de distribución de agua caliente
+            sanitaria con retorno y la instalación de distribución de agua caliente para
+            calefacción. Estas instalaciones no se tratan en este texto, sin embargo los
+            conceptos que aquí se verán son aplicables en todos los casos. Para el
+            dimensionado hidráulico se adopta un esquema de cálculo que supone la
+            instalación integrada por partes elementales denominadas “tramos” de la
+            instalación.</p>
+        Un tramo de la instalación cumple con las siguientes premisas:
+        <ol>
+          <li>El diámetro es constante.</li>
+          <li>El caudal circulante es constante.</li>
+          <li>La velocidad es constante, por aplicación de la Ecuación de Continuidad.</li>
+          <li>La pérdida de carga por fricción está uniformemente distribuida.</li>
+        </ol>
+      <h3>Definiciones</h3>
+      <h4>Nodo de la instalación</h4>
+      Denominamos NODO de la instalación al punto donde:
+      <ul>
+        <li>Se unen dos o más cañerías de igual o distinto diámetro.</li>
+        <li>Se suministra de agua a la instalación.</li>
+        <li>Se conecta un artefacto de consumo.</li>
+      </ul>
+      Los accesorios como: codos de 45º, 90º, curvas, válvulas y medidores, no generan nodos.
+      <h4>Tramo de la Instalación</h4>
+      Denominamos TRAMO de la instalación a la porción de cañería entre dos nodos de la instalación.
+      Por cada tramo tendremos:
+      <ul>
+        <li>Nodo 1: inicial o de suministro.</li>
+        <li>Nodo 2: final o de consumo.</li>
+      </ul>
+      </>
+    },
+    {
+      id: "section6",
+      title: "Dimensionamiento Simplificado (Norma OSN)",
+      content:
+      <>si fuera factible
       </>
     }
   ];
