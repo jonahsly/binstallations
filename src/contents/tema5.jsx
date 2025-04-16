@@ -275,6 +275,32 @@ const tema5Content = [
         <li>Nodo 1: inicial o de suministro.</li>
         <li>Nodo 2: final o de consumo.</li>
       </ul>
+      Las fórmulas de pérdida de carga vistas anteriormente, se aplican a cada tramo de la
+      instalación así definido. Las pérdidas de cargas localizadas debidas a los accesorios,
+      se consideran inmediatamente después del punto donde se han producido.<br/>
+      Para su cuantificación, se hace la siguiente clasificación de los tramos, según la
+      ubicación relativa en la instalación:
+      <ul>
+        <li>Tramo de Acometida.</li>
+          <dd>El nodo inicial es el punto de suministro de agua a la instalación y termina
+            en un extremo de cañería.</dd>
+        <li>Tramo intermedio.</li>
+          <dd>Comienza con un accesorio (normalemente una tee de derivación y/o una
+            reducción de diámetros), y termina en un extremo de cañería.</dd>
+        <li>Tramo Terminal.</li>
+          <dd>Comienza con un accesorio y termina con un accesorio, que es la toma del
+            artefacto de consumo. La toma del artefacto puede ser un codo o una curva.</dd>
+      </ul>
+
+
+
+
+
+
+
+
+
+
       </>
     },
     {
