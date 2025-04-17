@@ -291,6 +291,75 @@ const tema5Content = [
           <dd>Comienza con un accesorio y termina con un accesorio, que es la toma del
             artefacto de consumo. La toma del artefacto puede ser un codo o una curva.</dd>
       </ul>
+      Procedimiento de Cálculo
+Resulta conveniente realizar un esquema en tres dimensiones de la instalación con identificación del nodo de acometida o
+suministro, de los nodos intermedios y terminales o de consumo, indicando los gastos asignados a cada artefacto, con
+acotación de las longitudes reales de tramos e individualización de codos, curvas, tees de derivación, válvulas, etc.
+SE COMIENZA POR LOS TRAMOS TERMINALES DE LA INSTALACIÓN.
+Para cada tramo se seguirán los siguientes pasos:
+1. Cálculo del caudal instalado Qt, ecuación (38)
+2. Cálculo del caudal instantáneo Qc, ecuación (41)
+3. Predimensionado del tramo adoptando una velocidad del flujo v= 1 m/s:
+𝑑 = √4𝑄𝑐
+𝜋𝑣
+4. Se selecciona el diámetro normalizado inmediato verificando que la velocidad real esté dentro de los límites adoptados.
+5. Cálculo de las pérdidas de carga por fricción y localizadas del tramo:
+∆𝐻
+𝑓 y ∆𝐻𝐿
+6. Se repite el procedimiento tramo por tramo hasta el nodo de suministro a la instalación.
+7. Se determina la perdida de carga total de todos los circuitos, desde el nodo suministro de la instalación hasta el nodo
+terminal o de conexión al artefacto.
+Verificación de Presiones Mínimas en Consumos
+CASO 1: Provisión por Servicio Directo
+Para la verificación de presiones mínimas en consumo, se identifica el artefacto que tiene la menor presión disponible,
+respecto de la presión
+𝑃
+𝐷𝑖𝑠𝑝𝑜𝑛𝑖𝑏𝑙𝑒 ≥ ∓∆𝐻𝑡𝑜𝑝 + ∑(∆𝐻𝑓 + ∆𝐻𝐿) + 𝐻𝑟
+Donde Htop es la diferencia de altura entre el punto de suministro y el artefacto más comprometido hidraulicamente.
+Si el artefacto más comprometido está por debajo del punto de suministro, Htop se tomará como un valor negativo.
+H
+top
+Hr
+(H f+HL)
+P
+Disponible
+C.V
+Línea Piezométrica
+Artefacto más
+comprometidoIng. Gustavo L. Lazarte-Ing. Viviana B. Sánchez 56 /63Ing. Gustavo L. Lazarte-Ing. Viviana B. Sánchez 57 /63
+CASO 2: Provisión con Tanque Hidroneumático
+𝑃
+𝑎𝑟𝑟𝑎𝑛𝑞𝑢𝑒 𝑑𝑒 𝑙𝑎 𝑏𝑜𝑚𝑏𝑎 = ∆𝐻𝑡𝑜𝑝 + ∑(∆𝐻𝑓 + ∆𝐻𝐿) + 𝐻𝑟
+La presión de parada de la bomba se calcula con la ecuacion (8)
+H
+top
+B
+Hr
+(H f+HL)Montante+Distribucón
+(H f+HL)Aspiración
+Pmínima de la bomba
+Línea Piezométrica
+Línea Piezométrica
+TANQUE DE
+BOMBEO
+Artefacto más
+comprometido
+CASO 3: Provisión desde Tanque de Rerserva
+Se verifica que la presión estática disponible, desnivel topográfico entre la base del tanque y el artefacto, sea mayor o igual
+la pérdida de carga total del circuito más la carga mínima requerida en el artefacto, ecuación (29):
+𝑃𝑒𝑠𝑡á𝑡𝑖𝑐𝑎 𝑑𝑖𝑠𝑝𝑜𝑛𝑖𝑏𝑙𝑒 = ∆𝐻𝑡𝑜𝑝 ≥ ∑(∆𝐻𝑓 + ∆𝐻𝐿) + 𝐻𝑟
+Hr
+(H f+HL)
+TANQUE DE
+RESERVA
+H
+top
+Línea Piezométrica
+Artefacto más
+comprometido
+Si no verifica, se deben aumentar los diámetros, comenzando por el tramo inicial para disminuir las pérdidas de carga.
+Cuando la instalación se alimente desde tanque de reserva, se evaluará la opción de aumentar la presión disponible
+elevándolo si fuera factible
 
 
 
