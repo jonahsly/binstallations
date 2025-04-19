@@ -312,45 +312,21 @@ const tema5Content = [
       </ol>
       <h4>Presiones Mínimas en Consumos</h4>
       <ul>
-          <li>CASO 1 Provisión por Servicio Directo: Se identifica el artefacto que tiene la menor presión disponible</li>
-          <dd>𝑃 𝐷𝑖𝑠𝑝𝑜𝑛𝑖𝑏𝑙𝑒 ≥ ∓∆𝐻𝑡𝑜𝑝 + ∑(∆𝐻𝑓 + ∆𝐻𝐿) + 𝐻𝑟</dd>
-          Donde Htop es la diferencia de altura entre el punto de suministro y el artefacto más comprometido hidraulicamente.
-          Si el artefacto más comprometido está por debajo del punto de suministro, Htop se tomará como un valor negativo.
-
-          <li>CASO 2 Provisión con Tanque Hidroneumático:</li>
-          <dd>𝑃
-𝑎𝑟𝑟𝑎𝑛𝑞𝑢𝑒 𝑑𝑒 𝑙𝑎 𝑏𝑜𝑚𝑏𝑎 = ∆𝐻𝑡𝑜𝑝 + ∑(∆𝐻𝑓 + ∆𝐻𝐿) + 𝐻𝑟
-La presión de parada de la bomba se calcula con la ecuacion (8)
-H
-top
-B
-Hr
-(H f+HL)Montante+Distribucón
-(H f+HL)Aspiración
-Pmínima de la bomba
-Línea Piezométrica
-Línea Piezométrica
-TANQUE DE
-BOMBEO
-Artefacto más
-comprometido</dd>
-          <li>CASO 3 Provisión desde Tanque de Rerserva:</li>
-          <dd>Se verifica que la presión estática disponible, desnivel topográfico entre la base del tanque y el artefacto, sea mayor o igual
-la pérdida de carga total del circuito más la carga mínima requerida en el artefacto, ecuación (29):
-𝑃𝑒𝑠𝑡á𝑡𝑖𝑐𝑎 𝑑𝑖𝑠𝑝𝑜𝑛𝑖𝑏𝑙𝑒 = ∆𝐻𝑡𝑜𝑝 ≥ ∑(∆𝐻𝑓 + ∆𝐻𝐿) + 𝐻𝑟
-Hr
-(H f+HL)
-TANQUE DE
-RESERVA
-H
-top
-Línea Piezométrica
-Artefacto más
-comprometido
-Si no verifica, se deben aumentar los diámetros, comenzando por el tramo inicial para disminuir las pérdidas de carga.
-Cuando la instalación se alimente desde tanque de reserva, se evaluará la opción de aumentar la presión disponible
-elevándolo si fuera factible</dd>
+          <li>CASO 1 Provisión por Servicio Directo: Se identifica el artefacto que tiene la menor presión disponible.</li>
+          <dd> P<sub>disp</sub> ≥ ∓∆H<sub>top</sub> + ∑(∆H<sub>f</sub> + ∆H<sub>l</sub>) + H<sub>r</sub></dd>
+          Donde ∆H<sub>top</sub> es la diferencia de altura entre el punto de suministro y el artefacto
+          más comprometido hidraulicamente. Si el artefacto más comprometido está por debajo del punto
+          de suministro, ∆H<sub>top</sub> se tomará como un valor negativo.
+          <li>CASO 2 Provisión con Tanque Hidroneumático: Se calcula la presión de parada de la Bomba.</li>
+          <dd>P<sub>min.arrq</sub> = ∆H<sub>top</sub> + ∑(∆H<sub>f</sub> + ∆H<sub>l</sub>) + H<sub>r</sub></dd>
+          <li>CASO 3 Provisión desde Tanque de Rerserva: Se verifica que la presión estática disponible,
+            desnivel topográfico entre la base del tanque y el artefacto, sea mayor o igual la pérdida de
+            carga total del circuito más la carga mínima requerida en el artefacto.</li>
+          <dd>P<sub>estática.disp</sub> = ∆H<sub>top</sub> ≥ ∑(∆H<sub>f</sub> + ∆H<sub>l</sub>) + H<sub>r</sub></dd>
         </ul>
+        Si no verifica la presión, se deben aumentar los diámetros, comenzando por el tramo inicial para disminuir
+        las pérdidas de carga. Cuando la instalación se alimente desde tanque de reserva, se evaluará la
+        opción de aumentar la presión disponible elevándolo si fuera factible.
     </>
     },
     {
