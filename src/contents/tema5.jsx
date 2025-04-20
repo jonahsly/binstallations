@@ -8,6 +8,8 @@ import LongitudEq from '../librarys/longitudEq.jsx';
 import { TableRenderer, tablesLibrary } from '../librarys/tablesLibrary';
 import CaudalInst from '../librarys/caudalIns.jsx';
 import CaudalSim from '../librarys/caudalSim.jsx';
+import SeccionN1 from '../librarys/seccionN1.jsx';
+import SeccionN2 from '../librarys/seccionN2.jsx';
 
 const tema5Content = [
     {
@@ -333,7 +335,96 @@ const tema5Content = [
       id: "section6",
       title: "Dimensionamiento Simplificado (Norma OSN)",
       content:
-      <>si fuera factible
+      <>
+        <h3>Conexión Domiciliaria</h3>
+        <p>La norma estableció un procedimiento empírico para la determinación del diámetro de la
+          conexión domiciliaria y que, según apunta el Ing. Dante Casale, “da resultados seguros
+          frente a las determinaciones teóricas más optimistas”. Para ello es preciso conocer la
+          presión de servicio de la red pública de agua potable, la presión disponible y el caudal
+          de la conexión domiciliaria.</p>
+        <h4>Presión de Servicio</h4>
+        <p>Es la presión manométrica referida a la cota del cordón de la vereda y es un dato que
+          suministra a la Empresa Prestadora del Servicio de Agua Potable.</p>
+        <h4>Presión Disponible</h4>
+        <ol type='a'>
+          <li>En Provisión Directa a la instalación de distribución, es la presión estática en el
+            artefacto de mayor cota y más alejado de uso frecuente a alimentar.</li>
+          <li>En Provisión Directa a Tanque de Reserva, es la presión estática en la válvula a
+            flotante.</li>
+          <li>En Provisión con Tanque de Bombeo, es la presión estática en la válvula a flotante.</li>
+        </ol>
+        <p>Denominamos ∆H<sub>top</sub> al desnivel entre el cordón de la vereda y la cota de
+          alimentación al artefacto o al tanque de reserva o al tanque de bombeo,se tienen dos
+          situaciones:</p>
+        <ul>
+          <li>Si el artefacto o el tanque de reserva, o el tanque de bombeo se encuentra instalado por
+          sobre el cordón de la vereda:</li>
+          <dd>P<sub>disp</sub> = P<sub>serv</sub> - ∆H<sub>top</sub></dd>
+          <li>Si el TB se encuentra instalado por debajo del cordón de la vereda:</li>
+          <dd>P<sub>disp</sub> = P<sub>serv</sub> + ∆H<sub>top</sub></dd>
+        </ul>
+        <p>Se acota que, de acuerdo a la Norma, la Presión Disponible se redondea al valor entero,
+          por exceso o por defecto que resulte más desfavorable, según sea que el artefacto o el TR
+          o el TB esté por debajo del nivel del cordón de la vereda o por arriba de este.</p>
+        <h4>Caudal de la Conexión</h4>
+        <p>De acuerdo a la normativa "[...]para alimentación directa o de bombeo a tanques de
+          reservas, la conexión debe dar entre, un mínimo de 1 hora y un máximo de 4 horas, el
+          volumen de reserva,[...]". Esto es:</p>
+        <p>Q<sub>conx</sub> = R.T.D. / tiempo de llenado</p>
+        <h4>Diámetro de la Conexión</h4>
+        <p>Con la presión disponible y el caudal de la conexión, se determina el diámetro con la
+          Tabla de Presiones, Caudales y Diámetros. El diámetro dado por la tabla, es diámetro
+          interno para la cañería de polietileno PEAD PN10 (sistema para la conexión domiciliaria).</p>
+        <TableRenderer table={tablesLibrary.diamPyQ} />
+        <h3>Cañería de Alimentación: desde Ll.P. a T.B.</h3>
+        <p>El diámetro de la conexión determinado con la tabla, no depende de la longitud de cañería
+          (pérdidas de carga por fricción), ni de las pérdidas localizadas en su recorrido, por lo
+          tanto se entiende que la Norma ha considerado las situaciones posibles que se pueden dar
+          en relación a trazas y distancias desde la red.</p>
+        <p>Si bien se define la conexión domiciliaria como la cañería que va desde la red hasta la
+          llave de paso. Desde el punto de vista hidraúlico, la instalación desde la red al T.B.
+          constituye un único tramo, y es por esta razón que corresponde utilizar el mismo diámetro
+          (o uno mayor según el sistema seleccionado), para la cañería que va desde la llave de paso
+          hasta el TB</p>
+        <h3>Cañerías de Bajada, Colector y Puente de Empalme</h3>
+        <h4>Método de las Secciones Necesarias</h4>
+        <p>Para las instalaciones que son alimentadas desde un tanque de reserva, se utiliza un
+          método empírico para asignar diámetros de cañerías de bajada, colectores y puentes de
+          empalme, aplicable a edificios en altura, donde los recorridos horizontales de las
+          bajadas y los cambios de dirección no son significativos. Artefactos y grupos de
+          artefactos tienen asignadas secciones de cañerías que denominamos Secciones Necesarias
+          o Teóricas.</p>
+        <TableRenderer table={tablesLibrary.seccNec} />
+        <p>Cada diámetro de cañería posee una Sección Real y tiene asociada una Sección Límite.
+          Conocida la Sección Necesaria de cañerías, de acuerdo a la dotación de artefactos que
+          alimenta la bajada, se asigna el diámetro con la cañería cuya Sección Límite sea mayor
+          o igual que la Sección Necesaria.</p>
+        <SeccionN1 />
+        <TableRenderer table={tablesLibrary.seccLim} />
+        <h4>Sección Límite para Bajadas</h4>
+        <p>Si denominamos D<sub>i</sub> a un diámetro interno cualquiera, D<sub>i+1</sub> será
+        el diámetro inmediato superior y S<sub>i</sub>, S<sub>i+1</sub>, las secciones reales
+        correspondientes, entonces la sección límite para el diámetro D<sub>i</sub> es:</p>
+        <SeccionN2 />
+        <h4>Limitaciones al Método de Secciones Necesarias</h4>
+        <p>El Reglamento CABA exige la justificación hidráulica para la adopción de diámetros
+          en los siguientes casos:</p>
+        <ul type="a">
+          <li>Bajadas cuyo desarrollo horizontal supere tres veces la carga mínima disponible.</li>
+          <li>En edificios de más de 45 m de altura.</li>
+          <li>En edificios cuya superficie a construir supere los 3.000 m<sup>2</sup>.</li>
+          <li>Cualquier otro edificio en que dada su complejidad la autoridad de aplicación
+            lo solicite.</li>
+        </ul>
+        <h3>Asignación de diámetros de Ruptores de Vacío</h3>
+        <p>El diámetro se determina según la altura de la bajada:</p>
+        <ul>
+          <li>Mayor a 45 m: Un diámetro menor al de la bajada.</li>
+          <li>Entre 15 y 45 m: Dos diámetros menores al de la bajada.</li>
+          <li>Menor a 15 m: Tres diámetros menores al de la bajada.</li>
+        </ul>
+        Cualquiera sea el caso, el diámetro mínimo exigible será de 9 mm, y el diámetro
+        máximo exigible, de 50 mm.
       </>
     }
   ];
