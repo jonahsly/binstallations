@@ -117,6 +117,7 @@ const tema6Content = [
       title: "Sistema Individual por Termotanque",
       content:
       <>
+        
       </>
     },
     {
