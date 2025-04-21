@@ -8,7 +8,7 @@ import tema2Content from '../../contents/tema2';
 import tema3Content from '../../contents/tema3';
 import tema4Content from '../../contents/tema4';
 import tema5Content from '../../contents/tema5';
-//import tema6Content from '../../contents/tema6';
+import tema6Content from '../../contents/tema6';
 
 const getSectionsByTheme = (theme) => {
   switch (theme) {
@@ -22,6 +22,8 @@ const getSectionsByTheme = (theme) => {
       return tema4Content;
     case 'tema5':
         return tema5Content;
+    case 'tema6':
+        return tema6Content;
     default:
       return [];
   }
