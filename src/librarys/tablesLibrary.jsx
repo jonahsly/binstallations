@@ -184,7 +184,24 @@ const tablesLibrary = {
           ["145,26", "140,62", "126,68", "5", "125"],
           ["204,38", "198,89", "182,42", "6", "150"]
         ]
-    },      
+    },
+    capTerm: {
+      title: "Volumen promedio de agua caliente según su uso (elaborada por Rheem)",
+      headers: [[
+          "Aplicación",
+          "Periodo de mayor demanda",
+          "Agua caliente a 45°C por encima de la temperatura de entrada"
+        ]
+      ],
+      data: [
+          ["Cantinas, cafés, cocinas de hotel", "1 a 2 horas", "3,5 lts/cada comida de 3 platos (para cocinar y lavar)"],
+          ["Pisos/dptos., hoteles, casas de pensión", "1 hora", "23 lts/persona"],
+          ["Oficinas", "8 horas", "5 lts/persona por día"],
+          ["Fábricas, vestuarios", "1 hora", "10 lts/persona (ducha), 3 lts/persona (lavatorio)"],
+          ["Lavaderos", "8 horas", "70 lts/máquina por hora"],
+          ["Cancha de tenis", "4 horas", "20 lts por jugador (promedio de 16 jugadores por cancha)"]
+        ]
+    },
 };
 
 const TableRenderer = ({ table }) => {
