@@ -214,16 +214,18 @@ const tema6Content = [
     },
     {
       id: "section4",
-      title: "Sistema Centralizado con Caldera y Tanque Intermediario",
+      title: "Sistemas de Provisión Centralizados",
       content:
       <>
+        <h3>Sistema con Caldera y Tanque Intermediario</h3>
       </>
     },
     {
       id: "section5",
-      title: "Sistema Centralizado con Termotanque de Alta Recuperación",
+      title: "Distribución de Agua Caliente Centralizada",
       content:
       <>
+
       </>
     },
     {
@@ -231,6 +233,7 @@ const tema6Content = [
       title: "Distribución de Agua Caliente Centralizada",
       content:
       <>
+
       </>
     }
   ];
