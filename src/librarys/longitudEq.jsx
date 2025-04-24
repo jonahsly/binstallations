@@ -1,6 +1,6 @@
 import React from "react";
 import MathRenderer from "./MathRenderer";
-import "../styles/equations.css";
+import "./equations.css";
 
 const LongitudEq = () => {
     return (

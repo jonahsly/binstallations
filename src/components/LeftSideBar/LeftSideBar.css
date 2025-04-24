@@ -1,6 +1,6 @@
 .left-sidebar {
   width: 200px;
-  background-color: #eeeeee;
+  background-color: var(--bg-color1);
   padding: 15px;
   margin: 5px;
   border-radius: 7px;
@@ -30,7 +30,7 @@
 }
 
 .left-sidebar li.active {
-  background-color: #194b7d;
+  background-color: var(--list-color);
   font-weight: bold;
   color: white;
 }

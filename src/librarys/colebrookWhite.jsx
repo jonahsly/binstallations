@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MathRenderer from "./MathRenderer";
-import "../styles/equations.css";
+import "./equations.css";
 
 const ColebrookWhite = () => {
     const [result, setResult] = useState({  V: "", re: "", f: "" });

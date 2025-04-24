@@ -1,6 +1,31 @@
+:root {
+  /*Light Theme*/
+  --bg-color1: #eeeeee; /*body, nav, leftbar, maincontent*/
+  --bg-color2: #3d3d3d; /*home*/
+  --bg-color3: #3d3d3d;
+
+  --text-color: #222222;
+  --list-color: #194b7d;
+}
+
+.dark {
+  /*Dark Theme*/
+  --bg-color1: #1e1e1e;
+  --bg-color2: #eeeeee;
+  --text-color: #f5f5f5;
+  --accent-color: #194b7d;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
+  background-color: var(--bg-color1);
+  color: var(--text-color);
+  transition: background-color .3s, color .3s;
   overflow: hidden;
+}
+
+.button-toggle {
+  background-color: var(--accent-color);
+  color: var(--bg-color1);
 }

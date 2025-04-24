@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eeeeee;
+  background-color: var(--bg-color1);
+  transition: background-color .3s, color .3s;
   padding: 10px 20px;
   border-radius: 8px;
   margin: 5px;
@@ -18,16 +19,6 @@
 .navbar-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: rgb(32, 32, 32);
+  color: var(--text-color);
 
 }
-
-.language-switch {
-  background: #444;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
