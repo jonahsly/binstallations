@@ -1,6 +1,6 @@
 .left-sidebar {
   width: 200px;
-  background-color: var(--bg-color1);
+  background-color: var(--color-07);
   padding: 15px;
   margin: 5px;
   border-radius: 7px;
@@ -13,24 +13,25 @@
 }
 
 .left-sidebar li {
-  color: #194b7d;
-  padding: 10px;
+  color: var(--color-00);
+  padding: 7px;
   cursor: pointer;
   transition: background 0.3s;
   border-radius: 7px;
+  font-weight: 500;
 }
 
 .left-sidebar li:hover,
 .left-sidebar li.active {
   font-weight: bold;
-  background-color: #666666;
+  background-color: var(--color-09);
   border-radius: 7px;
   font-weight: 500;
   color: white;
 }
 
 .left-sidebar li.active {
-  background-color: var(--list-color);
-  font-weight: bold;
-  color: white;
+  background-color: var(--color-04);
+  font-weight: 700;
+  color: var(--color-08);
 }

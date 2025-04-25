@@ -1,31 +1,42 @@
-:root {
-  /*Light Theme*/
-  --bg-color1: #eeeeee; /*body, nav, leftbar, maincontent*/
-  --bg-color2: #3d3d3d; /*home*/
-  --bg-color3: #3d3d3d;
+:root {/*Light Theme*/
+  --color-00: black;
+  --color-01: #222222;
+  --color-02: #153448;
+  --color-03: #194b7d;
+  --color-04: #3C5B6F;
+  --color-05: #948979;
+  --color-06: #DFD0B8;
+  --color-07: #999999;
+  --color-08: white;
+  --color-09: #7d7d7d;
 
-  --text-color: #222222;
-  --list-color: #194b7d;
+  --bg-c1: #eeeeee; /*body, nav, leftbar, maincontent*/
+  --bg-c2: #3d3d3d; /*home*/
+  --bg-c3: #3d3d3d;
+  --text-c: #222222;
+  --list-c: #194b7d;
 }
 
 .dark {
   /*Dark Theme*/
-  --bg-color1: #1e1e1e;
-  --bg-color2: #eeeeee;
-  --text-color: #f5f5f5;
-  --accent-color: #194b7d;
+  --bg-c1: #1e1e1e;
+  --bg-c2: #eeeeee;
+
+  --text-c: #f5f5f5;
+
+  --accent-c: #194b7d;
 }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg-color1);
-  color: var(--text-color);
+  background-color: var(--color-08);
+  color: var(--text-c);
   transition: background-color .3s, color .3s;
   overflow: hidden;
 }
 
 .button-toggle {
-  background-color: var(--accent-color);
-  color: var(--bg-color1);
+  background-color: var(--accent-c);
+  color: var(--bg-c1);
 }

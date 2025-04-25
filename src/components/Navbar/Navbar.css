@@ -3,22 +3,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color1);
+  background-color: var(--color-08);
   transition: background-color .3s, color .3s;
   padding: 10px 20px;
   border-radius: 8px;
   margin: 5px;
 }
 
-.language-selector {
+.button-toggle {
   padding: 5px;
   border-radius: 5px;
-  border: none;
+  margin: 25px;
 }
 
 .navbar-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-color);
-
+  color: var(--color-01);
 }

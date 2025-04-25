@@ -1,8 +1,8 @@
 .main-content {
     flex: 1;
     padding: 10px;
-    background-color: #eeeeee;
+    background-color: var(--color-06);
     margin: 5px;
-    border-radius: 8px;
+    border-radius: 7px;
     overflow-y: auto;
   }
