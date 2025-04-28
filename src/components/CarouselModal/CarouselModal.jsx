@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CarouselModal.css";
 
-const pages = ["isanitarias", "contra incendio", "inst. de gas", "ieléctrica","vias","otro curso","laminares"]
+const pages = ["Instalación Sanitaria", "Instalación contra Incendio", "Instalación de Gas", "Instalación Eléctrica","vias","otro curso","laminares"]
 
 const CarouselModal = ({ options = pages, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
