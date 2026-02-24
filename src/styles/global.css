@@ -1,42 +1,73 @@
-:root {/*Light Theme*/
-  --color-00: black;
-  --color-01: #222222;
-  --color-02: #153448;
-  --color-03: #194b7d;
-  --color-04: #3C5B6F;
-  --color-05: #948979;
-  --color-06: #DFD0B8;
-  --color-07: #999999;
-  --color-08: white;
-  --color-09: #7d7d7d;
+:root {
+  --color-00: #101317;
+  --color-01: #1b2430;
+  --color-03: #1f5f9a;
+  --color-04: #325a79;
+  --color-06: #f3efe7;
+  --color-07: #d7dde5;
+  --color-08: #ffffff;
+  --color-09: #91a3b8;
 
-  --bg-c1: #eeeeee; /*body, nav, leftbar, maincontent*/
-  --bg-c2: #3d3d3d; /*home*/
-  --bg-c3: #3d3d3d;
-  --text-c: #222222;
-  --list-c: #194b7d;
+  --page-bg: #e8edf3;
+  --layout-bg: #233343;
+  --surface-1: #ffffff;
+  --surface-2: #eef2f7;
+  --surface-3: #f7f9fc;
+  --surface-overlay: rgba(8, 12, 18, 0.88);
+  --border-color: #c8d2de;
+  --text-primary: #13202d;
+  --text-secondary: #395064;
+  --text-on-accent: #ffffff;
+  --accent: #1f5f9a;
+  --accent-hover: #184d7d;
+  --hover-bg: #dfe8f2;
+  --hover-text: #0f2234;
+  --active-bg: #325a79;
+  --active-text: #ffffff;
+  --button-bg: #1f5f9a;
+  --button-bg-hover: #184d7d;
+  --button-text: #ffffff;
+  --button-border: #15476f;
+  --table-head-bg: #e8edf4;
+  --table-head-text: #13202d;
+  --table-cell-bg: #ffffff;
+  --table-cell-text: #13202d;
+  --shadow-soft: 0 4px 16px rgba(10, 20, 30, 0.12);
 }
 
-.dark {
-  /*Dark Theme*/
-  --bg-c1: #1e1e1e;
-  --bg-c2: #eeeeee;
-
-  --text-c: #f5f5f5;
-
-  --accent-c: #194b7d;
+body[data-theme='dark'] {
+  --page-bg: #0d1117;
+  --layout-bg: #121a24;
+  --surface-1: #182230;
+  --surface-2: #202c3c;
+  --surface-3: #1a2431;
+  --surface-overlay: rgba(2, 5, 9, 0.92);
+  --border-color: #314156;
+  --text-primary: #edf3fa;
+  --text-secondary: #bfd0e4;
+  --text-on-accent: #ffffff;
+  --accent: #66a8e8;
+  --accent-hover: #8abef0;
+  --hover-bg: #2a394d;
+  --hover-text: #f4f8fd;
+  --active-bg: #3f6f97;
+  --active-text: #ffffff;
+  --button-bg: #2f6fa9;
+  --button-bg-hover: #3c83c4;
+  --button-text: #f5fbff;
+  --button-border: #5596ce;
+  --table-head-bg: #253447;
+  --table-head-text: #f0f6ff;
+  --table-cell-bg: #1a2431;
+  --table-cell-text: #e8f0fb;
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--color-08);
-  color: var(--text-c);
-  transition: background-color .3s, color .3s;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
   overflow: hidden;
-}
-
-.button-toggle {
-  background-color: var(--accent-c);
-  color: var(--bg-c1);
 }

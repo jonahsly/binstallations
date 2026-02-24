@@ -1,35 +1,55 @@
 .expandable-section {
-  border: 2px solid var(--color-01);
+  border: 1px solid var(--border-color);
   margin-bottom: 10px;
   transition: all 0.4s ease;
   border-radius: 8px;
-
+  background-color: var(--surface-3);
 }
 
 .section-header {
   padding: 2px 20px 2px 20px;
   cursor: pointer;
   font-weight: bold;
-  color: var(--color-03);
+  color: var(--text-secondary);
   border-radius: 8px;
-  background-color: var(--color-08);
+  background-color: var(--surface-1);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .section-header:hover {
-  color: var(--color-08);
-  background-color: var(--color-09);
+  color: var(--hover-text);
+  background-color: var(--hover-bg);
 }
 
 .section-content {
   padding: 16px;
-  background-color: var(--color-08);
-  color: var(--color-01);
+  background-color: var(--surface-1);
+  color: var(--text-primary);
   font-weight: 500;
   max-height: 600px;
   overflow-y: auto;
+  border-top: 1px solid var(--border-color);
   border-radius: 0 0 8px 8px;
   animation: fadeIn 0.4s ease;
   white-space: pre-line;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+@media (max-width: 900px) {
+  .section-header {
+    padding: 6px 12px;
+  }
+
+  .section-header h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .section-content {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
 }
 
 @keyframes fadeIn {

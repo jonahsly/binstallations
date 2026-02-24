@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--surface-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
   top: 20px;
   right: 30px;
   font-size: 24px;
-  color: white;
+  color: var(--text-on-accent);
   cursor: pointer;
   z-index: 1001;
 }
@@ -40,7 +40,7 @@
 }
 
 .menu-option {
-  color: #aaa;
+  color: var(--text-secondary);
   font-size: 1.2rem;
   opacity: 0.6;
   margin: 10px 0;
@@ -51,7 +51,7 @@
 
 .menu-option.active {
   font-size: 2rem;
-  color: #fff;
+  color: var(--text-on-accent);
   opacity: 1;
   font-weight: bold;
   transform: scale(1.2);

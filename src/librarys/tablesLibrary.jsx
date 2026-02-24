@@ -217,12 +217,14 @@ const TableRenderer = ({ table }) => {
           colSpan={cell.colspan || 1}
           rowSpan={cell.rowspan || 1}
           style={{
-            backgroundColor: type === "th" ? "#f0f0f0" : undefined,
+            backgroundColor: type === "th" ? "var(--table-head-bg)" : "var(--table-cell-bg)",
+            color: type === "th" ? "var(--table-head-text)" : "var(--table-cell-text)",
             textAlign: "center",
             padding: "8px",
             minWidth: "50px",
             maxWidth: "150px",
             wordBreak: "break-word",
+            borderColor: "var(--border-color)",
           }}
         >
           {cell.label}
@@ -233,12 +235,14 @@ const TableRenderer = ({ table }) => {
         <Tag
           key={key}
           style={{
-            backgroundColor: type === "th" ? "#f0f0f0" : undefined,
+            backgroundColor: type === "th" ? "var(--table-head-bg)" : "var(--table-cell-bg)",
+            color: type === "th" ? "var(--table-head-text)" : "var(--table-cell-text)",
             textAlign: "center",
             padding: "8px",
             minWidth: "50px",
             maxWidth: "150px",
             wordBreak: "break-word",
+            borderColor: "var(--border-color)",
           }}
         >
           {cell}
@@ -257,6 +261,9 @@ const TableRenderer = ({ table }) => {
           borderCollapse: "collapse",
           width: "100%",
           tableLayout: "auto",
+          color: "var(--table-cell-text)",
+          backgroundColor: "var(--table-cell-bg)",
+          borderColor: "var(--border-color)",
         }}
       >
         <thead>

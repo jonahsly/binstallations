@@ -1,30 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import CarouselModal from '../CarouselModal/CarouselModal';
-import '../../styles/global.css';
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return localStorage.getItem('theme') === 'dark';
+  });
+
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle('dark', darkMode);
+    const theme = darkMode ? 'dark' : 'light';
+    document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [darkMode]);
 
   return (
     <nav className="navbar">
-      <div className="navbar-title" onClick={openModal}>
-        {"Instalaciones Sanitarias"}
-      </div>
+      <button type="button" className="navbar-title" onClick={openModal}>
+        Instalaciones Sanitarias
+      </button>
+
       {isModalOpen && <CarouselModal onClose={closeModal} />}
+
       <button
-      className="button-toggle"
-      onClick={() => setDarkMode(prev => !prev)}
-    >
-      {darkMode ? '🌞 Light' : '🌙 Dark'}
-    </button>
+        type="button"
+        className="button-toggle"
+        onClick={() => setDarkMode((prev) => !prev)}
+        aria-label={darkMode ? 'Cambiar a modo dia' : 'Cambiar a modo nocturno'}
+      >
+        {darkMode ? 'Modo dia' : 'Modo nocturno'}
+      </button>
     </nav>
   );
 };

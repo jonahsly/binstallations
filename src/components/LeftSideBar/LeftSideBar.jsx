@@ -17,17 +17,31 @@ const themes = [
   { id: 'tema12', label: '- Desagüe Pluvial' },
 ];
 
-const LeftSidebar = () => {
+const LeftSidebar = ({ id, className = '', isMobile = false, onClose }) => {
   const { selectedTheme, setSelectedTheme } = useAppContext();
+  const sidebarClassName = ['left-sidebar', className].filter(Boolean).join(' ');
+
+  const handleThemeSelect = (themeId) => {
+    setSelectedTheme(themeId);
+    if (isMobile) onClose?.();
+  };
 
   return (
-    <aside className="left-sidebar">
+    <aside id={id} className={sidebarClassName}>
+      {isMobile && (
+        <div className="left-sidebar-header">
+          <span>Temas</span>
+          <button type="button" className="left-sidebar-close" onClick={onClose} aria-label="Cerrar menu">
+            Cerrar
+          </button>
+        </div>
+      )}
       <ul>
         {themes.map((theme) => (
           <li
             key={theme.id}
             className={selectedTheme === theme.id ? 'active' : ''}
-            onClick={() => setSelectedTheme(theme.id)}>
+            onClick={() => handleThemeSelect(theme.id)}>
             {theme.label}
           </li>
         ))}
