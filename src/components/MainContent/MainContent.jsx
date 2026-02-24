@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import { useAppContext } from '../../context/AppContext';
 import ExpandableSection from '../ExpandableSection/ExpandableSection';
 import './MainContent.css';
@@ -30,12 +30,24 @@ const getSectionsByTheme = (theme) => {
 };
 
 const MainContent = () => {
-  const { selectedTheme } = useAppContext();
+  const { selectedCourse, selectedTheme } = useAppContext();
   const sections = getSectionsByTheme(selectedTheme);
   const [activeIndex, setActiveIndex] = useState(null);
   const handleToggle = (index) => {
     setActiveIndex(prev => (prev === index ? null : index));
   };
+
+  if (selectedCourse !== 'sanitaria') {
+    return (
+      <div className="main-content">
+        <section className="coming-soon-panel">
+          <h2>Proximamente</h2>
+          <p>El contenido de este curso aun no esta disponible.</p>
+          <p>Selecciona "Instalaciones Sanitarias" desde el titulo para volver al material actual.</p>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="main-content">

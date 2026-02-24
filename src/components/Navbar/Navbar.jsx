@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import CarouselModal from '../CarouselModal/CarouselModal';
+import { useAppContext } from '../../context/AppContext';
+
+const courseLabels = {
+  sanitaria: 'Instalaciones Sanitarias',
+  incendio: 'Instalacion contra Incendio',
+  gas: 'Instalacion de Gas',
+};
+
+const courseRoutes = {
+  sanitaria: '/sanitaria',
+  incendio: '/incendio',
+  gas: '/gas',
+};
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const { selectedCourse, setSelectedCourse } = useAppContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window === 'undefined') return false;
@@ -11,6 +27,11 @@ const Navbar = () => {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const handleSelectCourse = (courseId) => {
+    setSelectedCourse(courseId);
+    navigate(courseRoutes[courseId] ?? '/sanitaria');
+    closeModal();
+  };
 
   useEffect(() => {
     const theme = darkMode ? 'dark' : 'light';
@@ -21,10 +42,12 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <button type="button" className="navbar-title" onClick={openModal}>
-        Instalaciones Sanitarias
+        {courseLabels[selectedCourse] ?? courseLabels.sanitaria}
       </button>
 
-      {isModalOpen && <CarouselModal onClose={closeModal} />}
+      {isModalOpen && (
+        <CarouselModal selectedOption={selectedCourse} onSelect={handleSelectCourse} onClose={closeModal} />
+      )}
 
       <button
         type="button"

@@ -1,12 +1,30 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import LeftSideBar from '../components/LeftSideBar/LeftSideBar';
 import MainContent from '../components/MainContent/MainContent';
+import { useAppContext } from '../context/AppContext';
 import "./Home.css";
 
+const courseByPath = {
+  '/sanitaria': 'sanitaria',
+  '/incendio': 'incendio',
+  '/gas': 'gas',
+};
+
 const Home = () => {
+  const location = useLocation();
+  const { selectedCourse, setSelectedCourse } = useAppContext();
   const [isMobile, setIsMobile] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const showThemeMenu = selectedCourse === 'sanitaria';
+
+  useEffect(() => {
+    const routeCourse = courseByPath[location.pathname] ?? 'sanitaria';
+    if (routeCourse !== selectedCourse) {
+      setSelectedCourse(routeCourse);
+    }
+  }, [location.pathname, selectedCourse, setSelectedCourse]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined;
@@ -36,7 +54,7 @@ const Home = () => {
   return (
     <div className="app-layout">
       <Navbar/>
-      {isMobile && (
+      {isMobile && showThemeMenu && (
         <div className="mobile-theme-bar">
           <button
             type="button"
@@ -50,7 +68,7 @@ const Home = () => {
         </div>
       )}
       <div className="main-area">
-        {isMobile && isSidebarOpen && (
+        {isMobile && showThemeMenu && isSidebarOpen && (
           <button
             type="button"
             className="sidebar-backdrop"
@@ -58,12 +76,14 @@ const Home = () => {
             onClick={handleCloseSidebar}
           />
         )}
-        <LeftSideBar
-          id="theme-sidebar"
-          className={isMobile ? `mobile-drawer ${isSidebarOpen ? 'open' : ''}` : ''}
-          isMobile={isMobile}
-          onClose={handleCloseSidebar}
-        />
+        {showThemeMenu && (
+          <LeftSideBar
+            id="theme-sidebar"
+            className={isMobile ? `mobile-drawer ${isSidebarOpen ? 'open' : ''}` : ''}
+            isMobile={isMobile}
+            onClose={handleCloseSidebar}
+          />
+        )}
         <MainContent />
       </div>
     </div>
