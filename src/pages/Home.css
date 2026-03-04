@@ -24,6 +24,11 @@
     display: none;
   }
 
+  /* Current selected theme shown in the mobile top bar. */
+  .mobile-theme-current {
+    display: none;
+  }
+
   .mobile-theme-toggle {
     border: 1px solid var(--button-border);
     background-color: var(--button-bg);
@@ -54,13 +59,37 @@
 
     .mobile-theme-bar {
       display: flex;
-      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      margin: 5px;
+      min-width: 0;
+    }
+
+    .mobile-theme-toggle {
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    .mobile-theme-current {
+      display: block;
+      flex: 1;
+      min-width: 0;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background-color: var(--surface-1);
+      color: var(--text-primary);
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .main-area {
       min-height: 0;
     }
 
+    /* Backdrop closes the sidebar when tapping outside on mobile. */
     .sidebar-backdrop {
       display: block;
       position: absolute;

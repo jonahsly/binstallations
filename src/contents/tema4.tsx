@@ -1,4 +1,4 @@
-import imageLibrary from "../librarys/imageLibrary";
+﻿import imageLibrary from "../librarys/imageLibrary";
 
 import "./generalContent.css";
 const tema4Content = [
@@ -37,7 +37,7 @@ const tema4Content = [
               válvula de retención de bronce.</dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img02a} /><img src={imageLibrary.img02b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li >
           <li className="hover-item">Válvula Esférica de Bronce
             <dd>También llamadas de ¼ de vuelta, poseen una esfera perforada en su
@@ -45,7 +45,7 @@ const tema4Content = [
               palanca, permite o no el paso del fluido.</dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img04a}/>  <img src={imageLibrary.img04b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li>
           <li className="hover-item">Medidor de Consumo
             <dd>Son instrumentos de medición del consumo del edificio y son provistos por
@@ -56,7 +56,7 @@ const tema4Content = [
               m3/h: 1,5 - 2,5 - 3,5 - 5 - 10 </dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img05a} /><img src={imageLibrary.img05b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li>
           <li className="hover-item">Válvula de Retención de Bronce
             <dd>Como su nombre lo indica, este tipo de válvulas permiten el flujo del
@@ -64,18 +64,18 @@ const tema4Content = [
               el reflujo.</dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img08a}/>  <img src={imageLibrary.img08b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li>
           <li className="hover-item">Caja para Medidor (vereda o pared sobre L.M.)
             <div className="imagen-flotante">
-              <img src={imageLibrary.img06a} /><div className="texto-overlay">Abrazadera</div>
+              <img src={imageLibrary.img06a} /><div className="imagen-caption"></div>
               <img src={imageLibrary.img06b} />
-              <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-caption"></div></div>
           </li>
           <li className="hover-item">Soporte de acero inoxidable  
             <div className="imagen-flotante">
               <img src={imageLibrary.img07a}/>  <img src={imageLibrary.img07b} />
-              <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-caption"></div></div>
           </li>
         </ol>
       </div>
@@ -119,13 +119,13 @@ const tema4Content = [
               el fenómeno denominado golpe de ariete.</dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img13a} /><img src={imageLibrary.img13b} /><img src={imageLibrary.img13c} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li >
           <li className="hover-item">Válvula de Bronce Cuarto de Vuelta:
             <dd>Se utiliza como válvula de limpieza de tanques. Son llaves de cierre rápido.</dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img12a}/>  <img src={imageLibrary.img12b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li>
           <li className="hover-item">Válvula de Retención de Pie de Bomba
             <dd>Se instala en el pie de la cañería de aspiración de la bomba a fin de evitar la
@@ -134,14 +134,14 @@ const tema4Content = [
               por el tapón que tiene la bomba en el cuerpo de la turbina.</dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img11a} /><img src={imageLibrary.img11b} /><img src={imageLibrary.img11c} /><img src={imageLibrary.img11d} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li>
           <li className="hover-item">Válvula a Flotante
             <dd>Se instala en la entrada de agua en el tanque de bombeo; en la entrada de agua
               en el tanque de reserva cuando está alimentado en forma directa.</dd>
               <div className="imagen-flotante">
                 <img src={imageLibrary.img15a}/>  <img src={imageLibrary.img15b} />
-                <div className="texto-overlay">Abrazadera</div></div>
+                <div className="imagen-caption"></div></div>
           </li>
           <li className="hover-item">Bomba de Impulsión
             <p>Es el elemento de la instalación encargado de mover el agua y suministrarle
@@ -164,9 +164,9 @@ const tema4Content = [
               </ul>
               Cada bomba tiene su Curva de Funcionamiento especificada por el fabricante.</p>
             <div className="imagen-flotante">
-              <img src={imageLibrary.img17a} /><div className="texto-overlay">Abrazadera</div>
+              <img src={imageLibrary.img17a} /><div className="imagen-caption"></div>
               <img src={imageLibrary.img17b} /><img src={imageLibrary.img17c} />
-              <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-caption"></div></div>
           </li>
           <li>Control de Nivel de Líquido
           <p>Es un dispositivo eléctrico, que actúa sobre el circuito de mando del contactor
@@ -186,17 +186,17 @@ const tema4Content = [
                   <li className="hover-item">Tipo boya deslizante
                   <div className="imagen-flotante">
               <img src={imageLibrary.img18a}/>  <img src={imageLibrary.img18b} /><img src={imageLibrary.img18c} />
-              <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-caption"></div></div>
                   </li>
                   <li className="hover-item">Tipo boya hermético
                   <div className="imagen-flotante">
               <img src={imageLibrary.img19a}/>  <img src={imageLibrary.img19b} /><img src={imageLibrary.img19c} />
-              <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-caption"></div></div>
                   </li>
                   <li className="hover-item">A tanza
                   <div className="imagen-flotante">
               <img src={imageLibrary.img20a}/>  <img src={imageLibrary.img20b} />
-              <div className="texto-overlay">Abrazadera</div></div>
+              <div className="imagen-caption"></div></div>
                   </li>
                 </ul>
                 </li>
@@ -206,7 +206,7 @@ const tema4Content = [
                   contactor.
                   <div className="imagen-flotante">
               <img src={imageLibrary.img21a}/>
-              <div className="texto-overlay">Abrazadera</div></div></li>
+              <div className="imagen-caption"></div></div></li>
               </ul>
           </p>
           </li>
@@ -356,5 +356,7 @@ const tema4Content = [
   
   export default tema4Content;
   
+
+
 
 

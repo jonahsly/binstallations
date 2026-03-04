@@ -23,14 +23,29 @@
   border-radius: 8px;
   box-shadow: 0 4px rgba(0, 0, 0, 0.4);
 }
+
+/* Legacy overlay badge kept hidden to avoid showing placeholder labels (e.g. "Abrazadera"). */
 .texto-overlay {
+  display: none !important;
+}
+
+/* Optional per-image caption for future descriptions. */
+.imagen-caption {
   position: absolute;
   bottom: 10px;
-  right: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.6);
-  color: rgb(214, 28, 28);
-  padding: 5px 10px;
+  color: #ffffff;
+  padding: 4px 8px;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  max-width: calc(100% - 16px);
+}
+
+.imagen-caption:empty {
+  display: none;
 }
   

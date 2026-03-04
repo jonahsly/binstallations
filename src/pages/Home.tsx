@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-import LeftSideBar from '../components/LeftSideBar/LeftSideBar';
+import LeftSideBar, { themes } from '../components/LeftSideBar/LeftSideBar';
 import MainContent from '../components/MainContent/MainContent';
 import { useAppContext } from '../context/AppContext';
 import "./Home.css";
@@ -14,10 +14,13 @@ const courseByPath = {
 
 const Home = () => {
   const location = useLocation();
-  const { selectedCourse, setSelectedCourse } = useAppContext();
+  const { selectedCourse, setSelectedCourse, selectedTheme } = useAppContext();
   const [isMobile, setIsMobile] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const showThemeMenu = selectedCourse === 'sanitaria';
+  // Keep the badge text in sync with the real theme selection.
+  const selectedThemeLabel = themes.find((theme) => theme.id === selectedTheme)?.label ?? 'Tema';
+  const selectedThemeTitle = selectedThemeLabel.replace(/^-+\s*/, '');
 
   useEffect(() => {
     const routeCourse = courseByPath[location.pathname] ?? 'sanitaria';
@@ -54,8 +57,12 @@ const Home = () => {
   return (
     <div className="app-layout">
       <Navbar/>
+      {/* Mobile theme bar: current topic on the left, drawer toggle on the right. */}
       {isMobile && showThemeMenu && (
         <div className="mobile-theme-bar">
+          <span className="mobile-theme-current" aria-live="polite">
+            {`Tema: ${selectedThemeTitle}`}
+          </span>
           <button
             type="button"
             className="mobile-theme-toggle"
@@ -63,11 +70,12 @@ const Home = () => {
             aria-expanded={isSidebarOpen}
             aria-controls="theme-sidebar"
           >
-            {isSidebarOpen ? 'Ocultar temas' : 'Ver temas'}
+            {isSidebarOpen ? 'Ocultar temas' : 'Más temas'}
           </button>
         </div>
       )}
       <div className="main-area">
+        {/* Clicking outside the drawer closes it. */}
         {isMobile && showThemeMenu && isSidebarOpen && (
           <button
             type="button"
@@ -76,6 +84,7 @@ const Home = () => {
             onClick={handleCloseSidebar}
           />
         )}
+        {/* Keep close behavior centralized in Home for mobile interactions. */}
         {showThemeMenu && (
           <LeftSideBar
             id="theme-sidebar"

@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: var(--bg-c1);
+    /* Reuse global theme token to keep loading view in sync with app themes. */
+    background: var(--page-bg);
   }
   
   .progress-circle {

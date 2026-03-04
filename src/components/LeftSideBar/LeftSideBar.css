@@ -9,38 +9,71 @@
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-.left-sidebar-header {
-  display: none;
-}
-
-.left-sidebar ul {
+/* Shared reset for both first-level topics and nested subtopic lists. */
+.left-sidebar-list,
+.theme-sublist {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-.left-sidebar li {
+.theme-group + .theme-group {
+  margin-top: 6px;
+}
+
+/* Visual nesting cue for subtopics under each parent topic. */
+.theme-sublist {
+  margin-top: 4px;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 2px solid var(--border-color);
+}
+
+.theme-item {
+  width: 100%;
+  border: none;
+  background: transparent;
   color: var(--text-primary);
   padding: 7px;
+  text-align: left;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
   border-radius: 7px;
-  font-weight: 500;
+  font: inherit;
 }
 
-.left-sidebar li:hover,
-.left-sidebar li.active {
+.theme-parent {
+  font-weight: 700;
+}
+
+.theme-child {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.theme-item:hover {
   background-color: var(--hover-bg);
   color: var(--hover-text);
 }
 
-.left-sidebar li.active {
+.theme-item.active {
   background-color: var(--active-bg);
-  font-weight: 700;
   color: var(--active-text);
 }
 
+.theme-parent.active-parent:not(.active) {
+  background-color: var(--hover-bg);
+  color: var(--hover-text);
+}
+
+.theme-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
+  /* Off-canvas drawer pattern for mobile topic navigation. */
   .left-sidebar.mobile-drawer {
     position: absolute;
     top: 5px;
@@ -56,25 +89,5 @@
 
   .left-sidebar.mobile-drawer.open {
     transform: translateX(0);
-  }
-
-  .left-sidebar.mobile-drawer .left-sidebar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 10px;
-    color: var(--text-primary);
-    font-weight: 700;
-  }
-
-  .left-sidebar-close {
-    border: 1px solid var(--button-border);
-    background: var(--button-bg);
-    color: var(--button-text);
-    border-radius: 6px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-weight: 600;
   }
 }

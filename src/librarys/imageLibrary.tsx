@@ -26,7 +26,7 @@ import img12a from "../assets/img_af/acc12a.png";
 import img12b from "../assets/img_af/acc12b.png";
 import img13a from "../assets/img_af/acc13a.png";
 import img13b from "../assets/img_af/acc13b.png";
-import img13c from "../assets/img_af/acc13a.png";
+import img13c from "../assets/img_af/acc13c.png";
 import img14a from "../assets/img_af/acc14a.png";
 import img14b from "../assets/img_af/acc14b.png";
 import img14c from "../assets/img_af/acc14c.png";
